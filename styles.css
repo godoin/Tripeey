@@ -3528,10 +3528,6 @@ footer .bottom .copyright .fa-copyright {
 }
 
 @media (max-width: 1280px) {
-  html {
-    font-size: 60%;
-  }
-
   .shop-container {
     display: flex;
   }
@@ -3551,10 +3547,6 @@ footer .bottom .copyright .fa-copyright {
 
 
 @media (max-width: 1080px) {
-  html {
-    font-size: 58%;
-  }
-
   .product-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -3571,10 +3563,6 @@ footer .bottom .copyright .fa-copyright {
 }
 
 @media (max-width: 850px) {
-  html {
-    font-size: 57%;
-  }
-  
   .product-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -3585,10 +3573,6 @@ footer .bottom .copyright .fa-copyright {
 }
 
 @media (max-width: 650px) {
-  html {
-    font-size: 56%;
-  }
-
   #menu-btn {
     display: flex;
   }
@@ -3700,10 +3684,6 @@ footer .bottom .copyright .fa-copyright {
 }
 
 @media (max-width: 550px) {
-  html {
-    font-size: 55%;
-  }
-
   .product-grid {
     grid-template-columns: 1fr;
   }
