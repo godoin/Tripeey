@@ -321,12 +321,26 @@ header .search button {
   color: var(--grey-color-1);
 }
 
-header .category-group {
+#menu-btn {
+  font-size: 1.7rem;
+}
+
+header .nav-group {
   display: none;
 }
 
-header .member {
+header .user {
   display: none;
+}
+
+header .member-buy {
+  display: none;
+}
+
+.title-group {
+  font-weight: 500;
+  font-size: 1.9rem;
+  color: var(--main-color);
 }
 
 @media (max-width: 1050px) {
@@ -345,13 +359,14 @@ header .member {
   #menu-btn {
     display: flex;
   }
+
   header .right {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
     top: 72px;
-    right: 0%;
+    right: -110%;
     width: 100%;
     z-index: 0;
     border: 1px solid var(--grey-color);
@@ -365,6 +380,10 @@ header .member {
     gap: 2em;
   }
 
+  header .right.active {
+    right: 0%;
+  }
+  
   header .group {
     display: flex;
     width: 100%;
@@ -387,11 +406,69 @@ header .member {
     width: 100%;
   }
 
-  header .category-group {
+  header .nav-group {
+    display: none;
+  }
+
+  header .user {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  header .user .group-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  header .user .group-actions .actions {
+    display: flex;
+    padding: 0 1em 0 0;
+    gap: 1em;
+  }
+
+  header .user a {
+    border: 1px solid var(--main-color);
+    background-color: var(--light-color);
+    padding: 0.2em 0.5em;
+    transition: all .3s ease;
+  }
+
+  header .user a:hover {
+    background-color: var(--main-color);
+    color: var(--text-color);
+  }
+
+  header img {
+    width: 220px;
+  }
+
+  header .member-buy {
+    display: flex;
+    min-width: 100%;
+  }
+
+  header .member-buy .shopping-cart-items {
+    min-width: 100%;
+  }
+
+  header .member-buy .shopping-cart-items .item-row {
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 550px) {
+  header .nav {
+    display: none;
+  }
+
+  header .nav-group {
     display: flex;
   }
 
-  header .group .category-group {
+  header .group .nav-group {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -401,12 +478,6 @@ header .member {
     display: flex;
     flex-direction: column;
     gap: 1em;
-  }
-
-  .title-group {
-    font-weight: 500;
-    font-size: 1.9rem;
-    color: var(--main-color);
   }
 
   header .icon-nav {
@@ -431,46 +502,26 @@ header .member {
   header .navbar a:hover .icon-nav {
     border: 1px solid var(--main-color);
     color: var(--main-color);
+    display: flex;
+    align-items: center;
   }
 
   header .navbar a:hover .title {
     color: var(--main-color); 
   }
 
-  header .member {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-  }
-  
-  header .member .group-actions {
+  header .category-group {
+    margin: 0 2em;
     display: flex;
     flex-direction: column;
     gap: 1em;
-  }
-
-  header .member .group-actions .actions {
-    display: flex;
-    padding: 0 1em 0 0;
-    gap: 1em;
-  }
-
-  header .member a {
-    border: 1px solid var(--main-color);
-    background-color: var(--light-color);
-    padding: 0.2em 0.5em;
-    transition: all .3s ease;
-  }
-
-  header .member a:hover {
-    background-color: var(--main-color);
-    color: var(--text-color);
   }
 }
 
-@media (max-width: 550px) {
-  header .nav {
-    display: none;
+@media (max-width: 400px) {
+  header .user .actions {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -705,10 +756,15 @@ header .member {
   color: var(--main-color);
 }
 
-.shopping-cart .shopping-cart-items {
+.shopping-cart form {
+  min-width: 100%;
+}
+
+.shopping-cart-items {
   display: flex;
   flex-direction: column;
   padding: 1em 0;
+  min-width: 100%;
   gap: 1em;
 }
 
@@ -720,6 +776,7 @@ header .member {
 }
 
 .item-row .img {
+  flex: 30%;
   max-width: 80px;
   min-height: 60px;
   object-fit: contain;
@@ -727,6 +784,7 @@ header .member {
 }
 
 .item-row .item-details {
+  flex: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -765,10 +823,17 @@ header .member {
 }
 
 .item-row .item-details .cancel-group button {
-  border: none;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
   background-color: var(--light-color);
-  text-decoration: underline;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.item-row .item-details .cancel-group button:hover {
+  color: var(--light-color);
+  background-color: var(--main-color);
 }
 
 .shopping-cart .actions {
@@ -1569,7 +1634,6 @@ footer .bottom .group h4 {
 .products {
   flex: 80%;
   margin: 2em 1em;
-  padding: 1em 0 5em;
   display: flex;
   flex-direction: column;
   gap: 1em;

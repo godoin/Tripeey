@@ -18,6 +18,7 @@ const loggedPopModal = document.querySelector('.logged');
 const sellerPopModal = document.querySelector('.seller');
 const categoriesModal = document.querySelector('.categories');
 const shopModal = document.querySelector('.shopping-cart');
+const userModal = document.querySelector('.right');
 
 // Toggles
 const toggleColor = document.querySelector('toggle-color');
@@ -41,6 +42,11 @@ orderExitButton.addEventListener('click', () => {
 });
 
 // Popup Modals
+menuButton.addEventListener('click', () => {
+  menuButton.classList.toggle('fa-xmark');
+  userModal.classList.toggle('active');
+});
+
 categoriesButton.addEventListener('click', () => {
   categoriesToggle.classList.toggle('fa-angle-up');
   categoriesToggle.classList.toggle('fa-angle-down');
