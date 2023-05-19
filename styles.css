@@ -160,6 +160,15 @@ hr {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 } */
 
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 /* Header */
 header {
   position: fixed;
@@ -171,11 +180,25 @@ header {
   border-bottom: 1px solid var(--grey-color);
 }
 
+#cate-btn.active {
+  color: var(--main-color);
+}
+
+#menu-btn {
+  display: none;
+}
+
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2em 3.5em;
+}
+
+header .group {
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
 
 header .left {
@@ -214,10 +237,6 @@ header .nav li i {
   font-size: 1.2rem;
 }
 
-#cate-btn.active {
-  color: var(--main-color);
-}
-
 header .nav li a {
   font-size: 1.7rem;
   font-weight: 500;
@@ -235,7 +254,7 @@ header .icons {
   align-items: center;
 }
 
-header .icons .icon {
+header .icon {
   position: relative;
   min-height: 35px;
   min-width: 35px;
@@ -248,11 +267,11 @@ header .icons .icon {
   cursor: pointer;
 }
 
-header .icons .icon:hover {
+header .icon:hover {
   background-color: var(--hover-color);
 }
 
-header .icons .icon .item-count {
+header .icon .item-count {
   position: absolute;
   top: 0;
   right: 2px;
@@ -266,7 +285,7 @@ header .icons .icon .item-count {
   align-items: center;
 }
 
-header .icons .icon i {
+header .icon i {
   font-size: 1.7rem;
 }
 
@@ -279,6 +298,7 @@ header .search {
 }
 
 header .search input {
+  max-width: 380px;
   min-width: 380px;
   border-radius: 2px;
   padding: 0.5em 0.7em;
@@ -287,8 +307,171 @@ header .search input {
   background-color: var(--light-color);
 }
 
-header .search i {
+header .search button {
+  display: flex;
+  position: absolute;
+  top: 45%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  background-color: var(--light-color);
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--grey-color-1);
+}
+
+header .category-group {
   display: none;
+}
+
+header .member {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  header .search input {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 850px) {
+  header .search {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  #menu-btn {
+    display: flex;
+  }
+  header .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 72px;
+    right: 0%;
+    width: 100%;
+    z-index: 0;
+    border: 1px solid var(--grey-color);
+    border-right: none;
+    border-left: none;
+    background-color: var(--light-color);
+    padding: 1em 2.4em;
+    color: var(--dark-color);
+    display: flex;
+    font-size: 1.5rem;
+    gap: 2em;
+  }
+
+  header .group {
+    display: flex;
+    width: 100%;
+  }
+
+  header .icons .icon {
+    display: none;
+  }
+
+  header .group form {
+    min-width: 100%;
+  }
+
+  header .search {
+    display: flex;
+  }
+
+  header .search input {
+    max-width: none;
+    width: 100%;
+  }
+
+  header .category-group {
+    display: flex;
+  }
+
+  header .group .category-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  header .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .title-group {
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: var(--main-color);
+  }
+
+  header .icon-nav {
+    background-color: var(--light-color);
+    border: 1px solid var(--grey-color-1);
+    color: var(--grey-color-1);
+    padding: 0.5em 0.5em;
+    font-size: 1.5rem;
+  }
+
+  header .navbar a {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  header .navbar a .title {
+    color: var(--grey-color-1);
+    font-size: 1.7rem;
+  }
+
+  header .navbar a:hover .icon-nav {
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+  }
+
+  header .navbar a:hover .title {
+    color: var(--main-color); 
+  }
+
+  header .member {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  header .member .group-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  header .member .group-actions .actions {
+    display: flex;
+    padding: 0 1em 0 0;
+    gap: 1em;
+  }
+
+  header .member a {
+    border: 1px solid var(--main-color);
+    background-color: var(--light-color);
+    padding: 0.2em 0.5em;
+    transition: all .3s ease;
+  }
+
+  header .member a:hover {
+    background-color: var(--main-color);
+    color: var(--text-color);
+  }
+}
+
+@media (max-width: 550px) {
+  header .nav {
+    display: none;
+  }
 }
 
 /* User Pop Hamburger */
@@ -1144,14 +1327,13 @@ footer .bottom .group h4 {
 /* Shop */
 .shop-container {
   display: flex;
-  margin: 3% 0 0;
-  padding: 2em 3.5em 0;
+  margin: 8em 5em 0;
   gap: 1em;
 }
 
 /* Shop Filter */
 .shop-container .filter {
-  flex: 18%;
+  flex: 20%;
   border: 1px solid var(--grey-color);
   border-top: none;
   border-bottom: none;
@@ -1385,7 +1567,7 @@ footer .bottom .group h4 {
 
 /* Shop Products */
 .products {
-  flex: 85%;
+  flex: 80%;
   margin: 2em 1em;
   padding: 1em 0 5em;
   display: flex;
@@ -1412,6 +1594,7 @@ footer .bottom .group h4 {
 
 .products .header-details .sort .sort-form {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 1em;
 }
@@ -1447,18 +1630,10 @@ footer .bottom .group h4 {
 .product-grid {
   margin: 1em 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 1em;
   align-items: center;
 }
-
-/* .product-grid form {
-  margin: 1.5em 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1em;
-  align-items: center;
-} */
 
 .buy-order {
   display: flex;
@@ -1496,7 +1671,7 @@ footer .bottom .group h4 {
 .grid-member {
   margin: 1em 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1em;
   align-items: center;
 }
@@ -3452,6 +3627,16 @@ footer .bottom .group h4 {
 
   .product-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: 58%;
+  }
+  
+  .product-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -4,6 +4,7 @@ const loggedButton = document.querySelector('#logged-btn');
 const sellerButton = document.querySelector('#seller-btn');
 const shopButton = document.querySelector('#shop-btn');
 const categoriesButton = document.querySelector('#cate-btn');
+const menuButton = document.querySelector('#menu-btn');
 
 // Exit Buttons
 const orderExitButton = document.querySelector('#order-exit');

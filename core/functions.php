@@ -165,7 +165,7 @@ $row = mysqli_fetch_assoc($total_amount_of_products);
 $total_amount_of_products = $row['total_records'];
 
 // Max amount of products to display in one page
-$max_products_per_page = 9;
+$max_products_per_page = 15;
 
 // Setting and getting the page number
 if (isset($_GET['page_number']) && $_GET['page_number'] !== "") {
