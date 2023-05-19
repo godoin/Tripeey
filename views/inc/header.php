@@ -102,7 +102,7 @@
           <ul class="navbar">
             <span class="title-group">Site</span>
             <li>
-              <a href="">
+              <a href="index.php">
                 <div class="icon-nav">
                   <i class="fa-solid fa-angle-right"></i>
                 </div>
@@ -110,7 +110,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="shop.php">
                 <div class="icon-nav">
                   <i class="fa-solid fa-angle-right"></i>
                 </div>
@@ -140,7 +140,7 @@
               ?>
             </ul>
             <li>
-              <a href="">
+              <a href="shop.php">
                 <div class=" icon-nav">
                   <i class="fa-solid fa-angle-right"></i>
                 </div>
