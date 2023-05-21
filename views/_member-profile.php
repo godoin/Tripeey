@@ -33,7 +33,7 @@
           <tr>
             <th class="col1">Image</th>
             <th class="col2">Product Name</th>
-            <th class="col3">Quantity Bought</th>
+            <th class="col3">Qty</th>
             <th class="col4">Size</th>
             <th class="col5">Color</th>
             <th class="col6">Total</th>
@@ -52,20 +52,23 @@
               
             <?php
             if (mysqli_num_rows($bill) > 0) {
+              $row_counter = 0;
               foreach ($bill as $item) {
+                $row_counter++;
+                $row_class = ($row_counter % 2 == 0) ? 'even-row' : '';
             ?>
             <form action="" method="post">
-              <tr>
-                <td class="col1"><img src="assets/uploads/<?php echo $item['image'] ?>" alt="<?php echo $item['product_name'] ?>"></td>
-                <td class="col2"><?php echo $item['product_name'] ?></td>
-                <td class="col3"><?php echo $item['quantity_bought'] ?></td>
-                <td class="col4"><?php echo $item['size'] ?></td>
-                <td class="col5"><?php echo $item['color'] ?></td>
-                <td class="col6"><?php echo '$'. $item['total'] ?></td>
-                <td class="col7"><?php echo $item['city'] ?></td>
-                <td class="col8"><?php echo $item['address'] ?></td>
-                <td class="col9"><?php echo $item['payment_type'] ?></td>
-                <td class="col10">
+              <tr class="<?php echo $row_class ?>">
+                <td data-title="Image" class="col1"><img src="assets/uploads/<?php echo $item['image'] ?>" alt="<?php echo $item['product_name'] ?>"></td>
+                <td data-title="Product Name" class="col2"><?php echo $item['product_name'] ?></td>
+                <td data-title="Quantity" class="col3"><?php echo $item['quantity_bought'] ?></td>
+                <td data-title="Size" class="col4"><?php echo $item['size'] ?></td>
+                <td data-title="Color" class="col5"><?php echo $item['color'] ?></td>
+                <td data-title="Total" class="col6"><?php echo '$'. $item['total'] ?></td>
+                <td data-title="City" class="col7"><?php echo $item['city'] ?></td>
+                <td data-title="Address" class="col8"><?php echo $item['address'] ?></td>
+                <td data-title="Payment Type" class="col9"><?php echo $item['payment_type'] ?></td>
+                <td data-title="Actions" class="col10">
                   <input type="hidden" name="product_id" value="<?php echo $item['product_id'] ?>">
                   <input type="hidden" name="quantity" value="<?php echo $item['quantity_bought'] ?>">
                   <button name="cancel-order" class="cancel">Cancel Order</button>
@@ -127,19 +130,22 @@
           $member_id = $_SESSION['member_id'];
           $liked_products = getProdByMemberId('liked_product', $member_id);
           if (mysqli_num_rows($liked_products) > 0) {
+            $row_counter = 0;
             foreach ($liked_products as $item_check) {
+              $row_counter++;
+              $row_class = ($row_counter % 2 == 0) ? 'even-row' : '';
               $res = getProductById('product', $item_check['product_id']);
               $product = mysqli_fetch_array($res);
-         ?>
+        ?>
             <form action="" method="post">
-              <tr>
-                <td class="col1"><img src="assets/uploads/<?php echo $product['image'] ?>" alt="<?php echo $product['name'] ?>"></td>
-                <td class="col2"><?php echo $product['name']?></td>
-                <td class="col3"><?php echo limitWords($product['description'], 20) ?></td>
-                <td class="col4"><?php echo '$'. $product['price']?></td>
-                <td class="col5"><?php echo $product['sizes']?></td>
-                <td class="col6"><?php echo $product['colors']?></td>
-                <td class="col7">
+              <tr class="<?php echo $row_class ?>">
+                <td data-title="Image" class="col1"><img src="assets/uploads/<?php echo $product['image'] ?>" alt="<?php echo $product['name'] ?>"></td>
+                <td data-title="Product Name" class="col2"><?php echo $product['name']?></td>
+                <td data-title="Description" class="col3"><?php echo limitWords($product['description'], 20) ?></td>
+                <td data-title="Price" class="col4"><?php echo '$'. $product['price']?></td>
+                <td data-title="Sizes" class="col5"><?php echo $product['sizes']?></td>
+                <td data-title="Colors" class="col6"><?php echo $product['colors']?></td>
+                <td data-title="Actions" class="col7">
                   <input type="hidden" name="member_id" value="<?php echo $member_id ?>">
                   <input type="hidden" name="product_id" value="<?php echo $product['id'] ?>">
                   <button name="unlike-product" class="cancel">Unlike Product</button>

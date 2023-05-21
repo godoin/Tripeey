@@ -45,7 +45,10 @@
             $products = getProdBySeller($seller_id);
 
             if (mysqli_num_rows($products) > 0) {
+              $row_counter = 0;
               foreach ($products as $item) {
+                $row_counter++;
+                $row_class = ($row_counter % 2 == 0) ? 'even-row' : '';
                 $res = checkDiscountProduct('discount_product', $item['id']);
                 $product_discount = mysqli_fetch_assoc($res);
                 $discount = 0;
@@ -56,25 +59,25 @@
                 ?>
                 <a href="view-products.php?product=<?php echo $item['name'] ?>">
                   <form action="" method="post">
-                    <tr>
-                      <td class="col1"><img src="assets/uploads/<?php echo $item['image'] ?>" alt="<?php echo $item['name'] ?>"></td>
-                      <td class="col2"><?php echo $item['name'] ?></td>
-                      <td class="col4"><?php echo limitWords($item['description'], 20) ?></td>
-                      <td class="col5"><?php echo $item['quantity'] ?></td>
+                    <tr class="<?php echo $row_class ?>">
+                      <td data-title="Image" class="col1"><img src="assets/uploads/<?php echo $item['image'] ?>" alt="<?php echo $item['name'] ?>"></td>
+                      <td data-title="Product Name" class="col2"><?php echo $item['name'] ?></td>
+                      <td data-title="Description" class="col4"><?php echo limitWords($item['description'], 20) ?></td>
+                      <td data-title="Quantity" class="col5"><?php echo $item['quantity'] ?></td>
                       <?php 
                         if ($product_discount !== null) { 
                       ?>
-                        <td class="col6"><?php echo $price ?></td>
-                        <td class="col7"><?php echo $product_discount['discount'] . '%' ?></td>
+                        <td data-title="Price" class="col6"><?php echo $price ?></td>
+                        <td data-title="Discount" class="col7"><?php echo $product_discount['discount'] . '%' ?></td>
                       <?php 
                         } else { 
                       ?>
-                        <td class="col6"><?php echo $item['price'] ?></td>
-                        <td class="col7">No discount set</td>
+                        <td data-title="Price" class="col6"><?php echo $item['price'] ?></td>
+                        <td data-title="Discount" class="col7">No discount set</td>
                       <?php 
                         } 
                       ?>
-                      <td class="col8">
+                      <td data-title="Actions" class="col8">
                         <input type="hidden" name="product_id" value="<?php echo $item['id'] ?>">
                         <div class="actions">
                         <?php 
