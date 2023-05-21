@@ -2,52 +2,53 @@
   <main class="landing-container">
     <!-- Intro -->
     <section class="intro">
-      <article>
-        <div class="top">
-          <h1>LOREM IPSUM <br> DOLOR SIT AMET <br> CONSECTETUR</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, <br> beatae alias at optio atque pariatur
-            officia corporis officiis!</p>
-        </div>
-        <div class="redirects">
-          <?php
-          $category = getTableData('category');
-          $counter = 0;
-          if (mysqli_num_rows($category) > 0) {
-            foreach ($category as $item) {
-              if ($counter == 2) {
-                break;
+      <div class="intro-content">
+        <article>
+          <div class="top">
+            <h1>LOREM IPSUM <br> DOLOR SIT AMET <br> CONSECTETUR</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, <br> beatae alias at optio atque pariatur
+              officia corporis officiis!</p>
+          </div>
+          <div class="redirects">
+            <?php
+            $category = getTableData('category');
+            $counter = 0;
+            if (mysqli_num_rows($category) > 0) {
+              foreach ($category as $item) {
+                if ($counter == 2) {
+                  break;
+                }
+            ?>
+                <a href="shop-category.php?category=<?php echo $item['id']; ?>" class="links">
+                  <img src="assets/images/category/<?php echo $item['image'] ?>" alt="<?php echo $item['name'] ?>">
+                  <h1 class="name"><?php echo $item['name'] ?></h1>
+                </a>
+            <?php
+                $counter++;
               }
-          ?>
-              <a href="shop-category.php?category=<?php echo $item['id']; ?>" class="links">
-                <img src="assets/images/category/<?php echo $item['image'] ?>" alt="<?php echo $item['name'] ?>">
-                <h1 class="name"><?php echo $item['name'] ?></h1>
-              </a>
-          <?php
-              $counter++;
+            } else {
+              echo '<span class="error-stmt"> There are no categories found. </span>';
             }
-          } else {
-            echo '<span class="error-stmt"> There are no categories found. </span>';
-          }
-          ?>
-        </div>
-      </article>
-      <aside>
-        <!-- <img src="assets/images/sam_2_edit.jpg" alt=""> -->
-        <div class="links">
-          <a href="#">
-            <h4>Learn More</h4>
-            <div class="icon">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-          </a>
-          <a href="#">
-            <h4>Explore</h4>
-            <div class="icon">
-              <i class="fa-solid fa-location-arrow"></i>
-            </div>
-          </a>
-        </div>
-      </aside>
+            ?>
+          </div>
+        </article>
+        <aside>
+          <div class="links">
+            <a href="#">
+              <h4>Learn More</h4>
+              <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </a>
+            <a href="#">
+              <h4>Explore</h4>
+              <div class="icon">
+                <i class="fa-solid fa-location-arrow"></i>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </div>
     </section>
     <!-- About -->
     <section class="about">

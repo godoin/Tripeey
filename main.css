@@ -859,10 +859,16 @@ header .member-buy {
   gap: 1em;
 }
 
+.intro-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 100%;
+}
+
 .landing-container .intro article {
   min-height: 600px;
   border-radius: 5px;
-  flex: 50%;
   background-color: var(--main-color);
 }
 
@@ -872,13 +878,13 @@ header .member-buy {
 }
 
 .landing-container .intro article .top h1 {
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 700;
 }
 
 .landing-container .intro article .top p {
   margin-top: 3.5em;
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 .landing-container .intro article .redirects {
@@ -1009,6 +1015,7 @@ header .member-buy {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 2em;
   gap: 1.5em;
 }
 
@@ -1048,7 +1055,7 @@ header .member-buy {
 }
 
 .shop-categories .header-details a {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 1em;
   transition: all .3s ease;
@@ -1066,7 +1073,7 @@ header .member-buy {
 .shop-categories .gallery {
   margin: 1.5em 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
 }
 
@@ -1222,7 +1229,7 @@ footer .bottom .group h4 {
 footer .bottom .copyright {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 1.5em;
 }
 
 footer .bottom .copyright .fa-copyright {
@@ -2852,6 +2859,7 @@ footer .bottom .copyright .fa-copyright {
   margin: 0.5em 0em;
   border: 1px solid var(--grey-color);
   border-radius: 5px;
+  overflow-x: auto;
 }
 
 .seller-table table {
@@ -2954,6 +2962,7 @@ footer .bottom .copyright .fa-copyright {
   border-radius: 5px;
   border: 1px solid var(--grey-color);
   width: 100%;
+  overflow-x: auto;
 }
 
 .member-table table {
@@ -3560,6 +3569,12 @@ footer .bottom .copyright .fa-copyright {
     flex-direction: column;
     gap: 5em;
   }
+
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
 }
 
 @media (max-width: 850px) {
@@ -3681,6 +3696,18 @@ footer .bottom .copyright .fa-copyright {
     align-items: flex-start;
     gap: 5em;
   }
+
+  .shop-categories .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .landing-container .intro article .redirects {
+    flex-direction: column;
+  }
+
+  .landing-container .intro article .redirects .links {
+    width: 100%;
+  }
 }
 
 @media (max-width: 550px) {
@@ -3754,11 +3781,28 @@ footer .bottom .copyright .fa-copyright {
     flex-direction: column;
     gap: 3em;
   }
+  
+  .products .header-details .sort .sort-form {
+    display: none;
+  }
+
+  .landing-container .intro aside .links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-container .intro aside .links a {
+    width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
   header .user .actions {
     display: flex;
     flex-direction: column;
+  }
+
+  .shop-categories .gallery {
+    grid-template-columns: 1fr;
   }
 }
