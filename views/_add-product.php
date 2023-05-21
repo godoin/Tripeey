@@ -67,50 +67,50 @@
             <div class="field input">
               <label for="color">Color*</label>
               <div class="colors">
-                <div class="select">
-                  <input type="checkbox" value="Red" name="colors[]">
-                  <span>Red</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="colors[]" value="red" id="color-red">
+                  <label class="checkbox-label red" for="color-red"></label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="Blue" name="colors[]">
-                  <span>Blue</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="colors[]" value="blue" id="color-blue">
+                  <label class="checkbox-label blue" for="color-blue"></label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="Yellow" name="colors[]">
-                  <span>Yellow</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="colors[]" value="yellow" id="color-yellow">
+                  <label class="checkbox-label yellow" for="color-yellow"></label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="Green" name="colors[]">
-                  <span>Green</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="colors[]" value="green" id="color-green">
+                  <label class="checkbox-label green" for="color-green"></label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="White" name="colors[]">
-                  <span>White</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="colors[]" value="white" id="color-white">
+                  <label class="checkbox-label white" for="color-white"></label>
                 </div>
               </div>
             </div>
             <div class="field input">
               <label for="size">Sizes*</label>
               <div class="sizes">
-                <div class="select">
-                  <input type="checkbox" value="XS" name="sizes[]">
-                  <span>XS</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="sizes[]" value="XS" id="size-xs">
+                  <label class="checkbox-label" for="size-xs">XS</label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="S" name="sizes[]">
-                  <span>S</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="sizes[]" value="S" id="size-s">
+                  <label class="checkbox-label" for="size-s">S</label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="M" name="sizes[]">
-                  <span>M</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="sizes[]" value="M" id="size-m">
+                  <label class="checkbox-label" for="size-m">M</label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="L" name="sizes[]">
-                  <span>L</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="sizes[]" value="L" id="size-l">
+                  <label class="checkbox-label" for="size-l">L</label>
                 </div>
-                <div class="select">
-                  <input type="checkbox" value="XL" name="sizes[]">
-                  <span>XL</span>
+                <div class="group">
+                  <input class="checkbox-input" type="checkbox" name="sizes[]" value="XL" id="size-xl">
+                  <label class="checkbox-label" for="size-xl">XL</label>
                 </div>
               </div>
             </div>
