@@ -59,7 +59,7 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <h4 class="value"><?php echo $average ?></h4>
+              <h4 class="value"><?php echo round($average, 2) ?></h4>
             </div>
             <h4 class="reviews"><?php echo $total_reviews ?> Reviews</h4>
             <h4 class="sold"><?php echo $item_sold ?> Sold</h4>
@@ -230,7 +230,7 @@
       $average = $total / $total_reviews;
     ?>
       <div class="rating-total">
-        <span class="total"><?php echo $average ?></span>
+        <span class="total"><?php echo round($average, 2) ?></span>
         <div class="group">
           <div class="stars">
             <i class="fa-solid fa-star"></i>

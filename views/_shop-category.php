@@ -119,6 +119,13 @@
               $member_id = $_SESSION['member_id'];
               $res = getLikedProduct('liked_product', $member_id, $item['id']);
               $check = mysqli_fetch_assoc($res);
+              $discountRes = checkDiscountProduct('discount_product', $item['id']);
+              $product_discount = mysqli_fetch_assoc($discountRes);
+              $discount = 0;
+              if ($product_discount !== null) {
+                $discount = intval($product_discount['discount']);
+                $price = $item['price'] * ($discount / 100);
+              }
         ?>
               <div class="content">
                 <a href="view-products.php?product=<?php echo $item['name'] ?>">
@@ -144,11 +151,43 @@
                           <h4><?php echo $item["name"]; ?></h4>
                         </div>
                         <div class="rating-group" style="display:flex; gap:7em;">
+                        <?php
+                        $product_id = $item['id'];
+                        $reviews = getProdById("review", $product_id);
+                        if (mysqli_num_rows($reviews) > 0) {
+                          $total_reviews = 0;
+                          $total = 0;
+                          foreach ($reviews as $item_review) {
+                            $total_reviews += 1;
+                            $total += intval($item_review['rating']);
+                          }
+                          $average = $total / $total_reviews;
+                        ?>
                           <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <h5>5.0 (#)</h5>
+                            <h5><?php echo round($average, 2) ?> (<?php echo $total_reviews ?>)</h5>
                           </div>
+                        <?php
+                        } else {
+                        ?>
+                          <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <h5>5.0 (0)</h5>
+                          </div>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if ($product_discount !== null) {
+                        ?>
+                          <h2 class="price"><?php echo "$" . $price; ?></h2>
+                        <?php
+                        } else {
+                        ?>
                           <h2 class="price"><?php echo "$" . $item["price"]; ?></h2>
+                        <?php
+                        }
+                        ?>
                         </div>
                       </div>
                     </div>

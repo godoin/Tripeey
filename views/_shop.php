@@ -194,7 +194,7 @@
                         ?>
                           <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <h5><?php echo $average ?> (<?php echo $total_reviews ?>)</h5>
+                            <h5><?php echo round($average, 2) ?> (<?php echo $total_reviews ?>)</h5>
                           </div>
                         <?php
                         } else {
