@@ -3623,7 +3623,12 @@ footer .bottom .copyright .fa-copyright {
   }
 
   .products-container .product .product-pic {
-    min-height: 100vh;
+    min-height: 50vh;
+  }
+
+  .products-container .product .product-pic {
+    object-fit: cover;
+    min-width: 100%;
   }
 
   .products-container .product .product-details {
@@ -3952,6 +3957,12 @@ footer .bottom .copyright .fa-copyright {
     gap: 1em;
   }
   .modal-pop .product-buy-details .buy-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .products-container .product .product-details .details .price {
     display: flex;
     flex-direction: column;
     gap: 1em;
