@@ -394,7 +394,7 @@
         </ul>
         <!-- shows what current page the user is in out of all the total amount of pages -->
         <div>
-          <span>Page <?= $page_number; ?> of <?= $max_amount_of_pages ?></span>
+          <span class="page-num">Page <?= $page_number; ?> of <?= $max_amount_of_pages ?></span>
         </div>
       </div>
   </section>

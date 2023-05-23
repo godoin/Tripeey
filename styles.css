@@ -1760,6 +1760,7 @@ footer .bottom .copyright .fa-copyright {
   flex-direction: column;
   align-items: center;
   margin: 3em 0;
+  gap: 1em;
 }
 
 .products .pagination .page-select {
@@ -1767,6 +1768,10 @@ footer .bottom .copyright .fa-copyright {
   align-items: center;
   justify-content: center;
   gap: 1em;
+}
+
+.products .pagination .page-num {
+  font-size: 1.3rem;
 }
 
 .products .pagination .page-select .select {

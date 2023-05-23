@@ -67,12 +67,12 @@
                       <?php 
                         if ($product_discount !== null) { 
                       ?>
-                        <td data-title="Price" class="col6"><?php echo $price ?></td>
+                        <td data-title="Price" class="col6"><?php echo "$" . $price ?></td>
                         <td data-title="Discount" class="col7"><?php echo $product_discount['discount'] . '%' ?></td>
                       <?php 
                         } else { 
                       ?>
-                        <td data-title="Price" class="col6"><?php echo $item['price'] ?></td>
+                        <td data-title="Price" class="col6"><?php echo "$" . $item['price'] ?></td>
                         <td data-title="Discount" class="col7">No discount set</td>
                       <?php 
                         } 
