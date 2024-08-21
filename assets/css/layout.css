@@ -1,0 +1,70 @@
+/* Navbar Section */
+nav {
+  position: absolute;
+  left: 0;
+  min-width: 100%;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--white);
+  z-index: 999;
+}
+
+nav .left-content {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+nav .left-content .nav-items {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+nav .right-content {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+nav .right-content .icon-list {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+nav .right-content a.login {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+nav button.menu {
+  display: flex;
+}
+
+@media (min-width: 320px) {
+  nav .left-content .nav-items,
+  nav .right-content .icon-list,
+  nav .right-content a.login {
+    display: none;
+  }
+}
+
+@media (min-width: 728px) {
+  nav .left-content .nav-items,
+  nav .right-content .icon-list,
+  nav .right-content a.login {
+    display: flex;
+  }
+
+  nav button.menu {
+    display: none;
+  }
+}
+
+/* Footer Section */

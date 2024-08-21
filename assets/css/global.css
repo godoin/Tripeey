@@ -13,30 +13,55 @@
 
 /* Global */
 :root {
-  --bg-color: #222327;
-  --text-color: #efe8e8;
-  --red-color: red;
-  --blue-color: blue;
-  --green-color: green;
-  --yellow-color: yellow;
-  --dark-color: #000;
-  --grey-color: #d4d4d4;
-  --grey-color-1: #929292;
-  --grey-color-2: #eaeaea;
-  --breadcrumbs-color: #929292;
-  --rating-color: #ff9529;
-  --btn-color: #b8b8b8;
-  --green-color: #32cd32;
-  --main-color: #5e17eb;
-  --main-color-1: #40119d;
-  --body-color: #707070;
-  --hover-color: #e9dfdf;
-  --light-color: #fff;
-  --red-color: rgb(202, 89, 69);
-  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
-  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
-  --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
-  --outline-hover: 0.2rem solid rgba(var(--black));
+  /* Primary Colors */
+  --primary: #6d28d9;
+  --secondary: #d4d4d8;
+  --accent: #ffc107;
+  --background: #f8f9fa;
+  --text: #fff;
+  --white: #fff;
+  --black: #18181b;
+
+  /* Modes */
+  --primary-light: ;
+  --primary-dark: ;
+
+  /* Violet Color Scale */
+  --violet-50: #f5f3ff;
+  --violet-100: #ede9fe;
+  --violet-200: #ddd6fe;
+  --violet-300: #c4b5fd;
+  --violet-400: #a78bfa;
+  --violet-500: #8b5cf6;
+  --violet-600: #7c3aed;
+  --violet-700: #6d28d9;
+  --violet-800: #5b21b6;
+  --violet-900: #4c1d95;
+
+  /* Zinc Color Scale */
+  --zinc-50: #fafafa;
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b;
+
+  /* Message Colors */
+  --success: #28a745;
+  --warning: #ffc107;
+  --error: #dc3545;
+  --info: #17a2b8;
+
+  /* Box Shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -45,13 +70,14 @@ html {
 
 body {
   position: relative;
-  background-color: var(--light-color);
+  background-color: var(--background);
 }
 
-body .shh {
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
-  padding: 0.2em;
-  background-color: var(--light-color);
+a {
+  color: var(--black);
+}
+
+main {
+  min-width: 100vw;
+  min-height: 100vh;
 }
