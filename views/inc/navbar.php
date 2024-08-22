@@ -15,15 +15,11 @@
     </div>
     <div class="right-content">
         <ul class="icon-list">
-            <li>
-                <a href="/search" aria-label="Search">
-                    <img src="assets/images/icons/search.svg" alt="Search" width="20">
-                </a>
+            <li class="icon">
+                <img src="assets/images/icons/search.svg" alt="Search" width="20">
             </li>
-            <li>
-                <a href="/cart" aria-label="Shopping Cart">
-                    <img src="assets/images/icons/cart.svg" alt="Cart" width="20">
-                </a>
+            <li class="icon">
+                <img src="assets/images/icons/cart.svg" alt="Cart" width="20">
             </li>
         </ul>
         <a href="/login" class="ghost login" aria-label="Log In">

@@ -33,7 +33,7 @@ nav .right-content {
 nav .right-content .icon-list {
   display: flex;
   align-items: center;
-  gap: 2em;
+  gap: 0.5em;
 }
 
 nav .right-content a.login {

@@ -27,21 +27,32 @@
 .ghost {
   padding: 0.5em;
   border-radius: 0.2em;
-  background-color: none;
-  border: none;
   color: var(--black);
+  background-color: transparent;
   cursor: pointer;
 }
 
 .ghost:hover {
-  background-color: var(--zinc-400);
+  background-color: var(--zinc-200);
+}
+
+.icon {
+  position: relative;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background-color: var(--zinc-200);
 }
 
 .outline {
   padding: 0.5em;
   border-radius: 0.2em;
-  background-color: none;
-  columns: var(--black);
+  background-color: transparent;
+  color: var(--black);
   border: 1px solid var(--black);
 }
 
