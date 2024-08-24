@@ -3,11 +3,11 @@ button,
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8em 1.2em;
+  padding: 0.8em 1.8em;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 1.5em;
+  border-radius: 0.6em;
   white-space: nowrap;
 }
 
@@ -55,8 +55,12 @@ button:hover,
   background-color: transparent;
   color: var(--black);
   border: 1px solid var(--black);
+  padding: 0.4em;
 }
 
+.outline:hover {
+  background-color: var(--zinc-300);
+}
 .badge {
   background-color: transparent;
   border: 1px solid var(--black);
@@ -86,4 +90,69 @@ button:hover,
 .info {
   background-color: var(--info);
   color: var(--text);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+form .fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+form .fields .group {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 1fr;
+  gap: 0.8em;
+}
+
+form .fields .field {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: start;
+  gap: 0.4em;
+}
+
+form .fields .field label {
+  font-weight: 600;
+}
+
+form .fields .field input {
+  padding: 0.6em;
+  outline: none;
+  border: 1px solid var(--zinc-300);
+  transition: all 0.3s ease;
+}
+
+form .fields .field input:focus {
+  border: 2px solid var(--zinc-600);
+}
+
+form .fields .field textarea {
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--zinc-300);
+  transition: all 0.3s ease;
+  min-height: 8em;
+  resize: none;
+}
+
+@media (min-width: 728px) {
+  form .fields .group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  form .fields .group {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

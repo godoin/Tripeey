@@ -18,6 +18,7 @@ include_once 'core/functions.php';
   <link rel="stylesheet" href="assets/css/common.css" type="text/css">
   <link rel="stylesheet" href="assets/css/index.css" type="text/css">
   <link rel="stylesheet" href="assets/css/support.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/profile.css" type="text/css">
   <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/fontawesome-web/css/all.css">
 </head>
@@ -31,13 +32,7 @@ include_once 'core/functions.php';
 
 
   <!-- JS Link -->
-  <script src="assets/javascript/main.js" type="text/javascript"></script>
-  <script src="assets/javascript/shop.js" type="text/javascript"></script>
-  <script src="assets/javascript/products.js" type="text/javascript"></script>
-  <!-- <script src="assets/javascript/selector.js" type="text/javascript"></script> -->
-  <script src="assets/javascript/seller.js" type="text/javascript"></script>
-  <script src="assets/javascript/member.js" type="text/javascript"></script>
-  <!-- <script src="assets/javascript/click.js"></script> -->
+  <script src="assets/javascript/accordion.js" type="text/javascript"></script>
 </body>
 
 </html>

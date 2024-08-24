@@ -1,18 +1,18 @@
 /* Globals */
 .error-container,
-.faqs-container {
-  padding: 2.5em 1em;
+.faqs-container,
+.contact-container {
   min-height: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   gap: 5em;
 }
 
 .error-container header,
-.faqs-container header {
+.faqs-container header,
+.contact-container header {
   display: flex;
   flex-direction: column;
   gap: 0.8em;
@@ -107,3 +107,63 @@
 }
 
 /* Contact Page */
+.contact-container header h1 {
+  font-size: 3.5rem;
+}
+
+.contact-container .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.contact-container .wrapper .contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+}
+
+.contact-container .wrapper .contact-details .group {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: left;
+  gap: 0.2em;
+}
+
+.contact-container .wrapper .contact-details .details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  justify-content: start;
+}
+.contact-container .wrapper .contact-details .details .detail {
+  display: flex;
+  gap: 0.4em;
+  justify-content: start;
+  text-align: left;
+}
+
+.contact-container .wrapper form .fields {
+  grid-template-columns: 1fr;
+}
+
+.contact-container .wrapper form .fields .field input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--zinc-300);
+}
+
+.contact-container .wrapper form .fields .field input:focus {
+  border-bottom: 2px solid var(--zinc-600);
+}
+
+@media (min-width: 728px) {
+  .contact-container .wrapper {
+    flex-direction: row;
+  }
+
+  .contact-container .wrapper .contact-details .group {
+    max-width: 28em;
+  }
+}

@@ -1,0 +1,329 @@
+/* Global */
+.settings .img-group {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.settings .img-group > h4 {
+  font-weight: 600;
+  color: var(--zinc-600);
+}
+
+/* Profile Page */
+.settings {
+  min-width: inherit;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.settings h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.settings .horizontal-align {
+  min-width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.settings .tabs {
+  display: none;
+}
+
+.settings .group-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings .group-content .content {
+  min-width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+@media (min-width: 728px) {
+  .settings .horizontal-align {
+    flex-direction: row;
+  }
+
+  .settings .tabs {
+    flex: 0 0 10%;
+    display: flex;
+  }
+
+  .settings .group-content {
+    min-width: inherit;
+    flex: 0 0 90%;
+  }
+}
+
+/* Content ~ Background */
+.settings .background {
+  min-width: inherit;
+  position: relative;
+  background: linear-gradient(to right, var(--violet-200), var(--violet-400));
+  min-height: 16em;
+  border-radius: 0.8em;
+  overflow: visible;
+}
+
+.settings .content .background .profile {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(75%);
+  padding: 0.4em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.settings .content .background .profile .profile-group {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.settings .content .background .profile .profile-group .img-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.settings
+  .content
+  .background
+  .profile
+  .profile-group
+  .img-wrapper
+  .profile-img {
+  border-radius: 100%;
+  max-width: 12.5em;
+  border: 4px solid var(--white);
+}
+
+.settings .content .background .profile .actions {
+  min-width: 100%;
+}
+
+.settings .content .background .profile .actions button {
+  min-width: inherit;
+}
+
+@media (min-width: 728px) {
+  .settings .content .background .profile {
+    padding: 0 1em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .settings .content .background .profile .profile-group {
+    min-width: fit-content;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .settings .content .background .profile .actions,
+  .settings .content .background .profile .actions button {
+    min-width: fit-content;
+  }
+}
+
+/* Content ~ Form Fields */
+.settings .content .fields {
+  margin: 16em 0;
+}
+
+/* Single Field */
+.settings .content .fields .field {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--zinc-300);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.settings .content .fields .field .input-wrapper {
+  flex: 0 0 80%;
+  border-radius: 0.4em;
+  border: 1px solid var(--zinc-300);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.settings .content .fields .field span {
+  padding: 0.4em 0.8em;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  background-color: var(--zinc-200);
+}
+
+.settings .content .fields .field input {
+  border: none;
+  border-left: 1px solid var(--zinc-300);
+}
+
+.settings .content .fields .field .icon {
+  padding: 0 0.8em;
+}
+
+.settings .content .fields .field .actions {
+  min-width: 100%;
+}
+
+.settings .content .fields .field .actions button {
+  min-width: inherit;
+}
+
+/* All Field Labels  */
+.settings .content .fields .field label,
+.settings .content .fields .group label,
+.settings .content .fields .field.img label,
+.fields .content .fields .field.textarea description {
+  flex: 0 0 20%;
+}
+
+.settings .content .fields .field label,
+.settings .content .fields .field.img label,
+.settings .content .fields .field.textarea label,
+.settings .content .fields .group label,
+.settings .content .fields .field .description label {
+  font-weight: 600;
+}
+
+/* Two Field Columns */
+.settings .content .fields .group {
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--zinc-300);
+  gap: 0;
+}
+
+.settings .content .fields .group .group-item {
+  flex: 0 0 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings .content .fields .group .group-item .field.grouped {
+  padding: 0.5em 0;
+}
+
+.settings .content .fields .field:first-child span {
+  background-color: var(--zinc-300);
+}
+
+.settings .content .fields .group .group-item .field.grouped .input-wrapper {
+  flex: 0 0 100%;
+}
+
+/* Field for Profile Image and Textarea*/
+.settings .content .fields .field.img,
+.settings .content .fields .field.textarea {
+  gap: 0.4em;
+}
+
+.settings .content .fields .field.img .right-group,
+.settings .content .fields .field.textarea .right-group {
+  flex: 0 0 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.settings
+  .content
+  .fields
+  .field.textarea
+  .right-group
+  .text-group
+  .text-actions,
+.settings .content .fields .field.img .right-group .img-group {
+  display: flex;
+  gap: 0.4em;
+}
+
+.settings .content .fields .field.img .right-group .img-group .img-wrapper {
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  overflow: hidden;
+  max-width: 8em;
+  border: 2px solid var(--whitE);
+}
+
+.settings
+  .content
+  .fields
+  .field.img
+  .right-group
+  .img-group
+  .img-wrapper
+  .profile-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 728px) {
+  .settings .content .fields {
+    min-width: inherit;
+    margin: 8em 0;
+  }
+
+  .settings .content .fields .field .input-wrapper {
+    max-width: 32em;
+    border-radius: 0.4em;
+    border: 1px solid var(--zinc-300);
+    display: flex;
+  }
+
+  .settings .content .fields .field {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .settings .content .fields .group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .settings .content .fields .field .actions,
+  .settings .content .fields .field .actions button {
+    min-width: auto;
+  }
+
+  .settings .content .fields .field.img,
+  .settings .content .fields .field.textarea {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .settings .content .fields .field.img .right-group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .settings .content .fields .group .group-item {
+    flex-direction: row;
+    gap: 1em;
+  }
+}

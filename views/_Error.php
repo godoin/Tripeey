@@ -1,6 +1,6 @@
 <main>
 
-    <div class="error-container">
+    <section class="error-container">
 
         <header>
             <h1>Hmm, That Didn't Work</h1>
@@ -13,7 +13,6 @@
         </button>
 
         <span>Error Code: 404</span>
-    </div class="group">
-
-
+    </section>
+    
 </main>

@@ -1,6 +1,6 @@
 <main>
 
-    <div class="faqs-container">
+    <section class="faqs-container">
 
         <header>
             <h1>Frequently Asked Questions</h1>
@@ -34,6 +34,6 @@
             </details>
         </div>
 
-    </div>
+    </section>
 
 </main>

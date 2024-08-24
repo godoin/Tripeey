@@ -1,6 +1,7 @@
 /* .navbar Section */
 .nav {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   min-height: 4.5em;
   min-width: 100%;
