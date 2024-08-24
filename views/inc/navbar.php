@@ -1,4 +1,5 @@
-<nav>
+<nav class="nav">
+
     <div class="left-content">
         <div class="logo-wrapper">
             <a href="/" aria-label="Homepage">
@@ -13,7 +14,9 @@
             <li><a href="#support">Support</a></li>
         </ul>
     </div>
+
     <div class="right-content">
+
         <ul class="icon-list">
             <li class="icon">
                 <img src="assets/images/icons/search.svg" alt="Search" width="20">
@@ -22,12 +25,15 @@
                 <img src="assets/images/icons/cart.svg" alt="Cart" width="20">
             </li>
         </ul>
+        
         <a href="/login" class="ghost login" aria-label="Log In">
             <!-- <img src="assets/images/icons/user.svg" alt="User" width="20"> -->
             <span>LOG IN</span>
         </a>
+
         <button class="ghost menu">
             <img src="assets/images/icons/menu.svg" alt="Menu" width="20">
         </button>
     </div>
+
 </nav>

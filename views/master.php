@@ -25,9 +25,7 @@ include_once 'core/functions.php';
   <div class="container">
     <?php include('views/inc/navbar.php') ?>
     
-    <main>
-      <?php include($contentView) ?>
-    </main>
+    <?php include($contentView) ?>
     
     <?php include('views/inc/footer.php') ?>
   </div>

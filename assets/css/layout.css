@@ -1,9 +1,10 @@
-/* Navbar Section */
-nav {
+/* .navbar Section */
+.nav {
   position: absolute;
   left: 0;
+  min-height: 4.5em;
   min-width: 100%;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,59 +13,158 @@ nav {
   z-index: 999;
 }
 
-nav .left-content {
+.nav .left-content {
   display: flex;
   gap: 2em;
   align-items: center;
 }
 
-nav .left-content .nav-items {
-  display: flex;
+.nav .left-content .nav-items {
+  display: none;
   align-items: center;
   gap: 2em;
 }
 
-nav .right-content {
+.nav .right-content {
   display: flex;
   align-items: center;
   gap: 1em;
 }
 
-nav .right-content .icon-list {
-  display: flex;
+.nav .right-content .icon-list {
+  display: none;
   align-items: center;
   gap: 0.5em;
 }
 
-nav .right-content a.login {
+.nav .right-content a.login {
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1em;
 }
 
-nav button.menu {
+.nav button.menu {
   display: flex;
 }
 
-@media (min-width: 320px) {
-  nav .left-content .nav-items,
-  nav .right-content .icon-list,
-  nav .right-content a.login {
-    display: none;
-  }
-}
-
 @media (min-width: 728px) {
-  nav .left-content .nav-items,
-  nav .right-content .icon-list,
-  nav .right-content a.login {
+  .nav .left-content .nav-items,
+  .nav .right-content .icon-list,
+  .nav .right-content a.login {
     display: flex;
   }
 
-  nav button.menu {
+  .nav button.menu {
     display: none;
   }
 }
 
 /* Footer Section */
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12.5em;
+  padding: 2.5em 1rem;
+  background-color: var(--violet-200);
+}
+
+footer .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+footer .content .group .newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+footer .content .group .newsletter h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+footer .content .group .newsletter .subscribe {
+  max-width: 20em;
+  display: flex;
+  border: 1px solid var(--zinc-900);
+  border-radius: 0.2em;
+}
+
+footer .content .group .newsletter .subscribe input {
+  padding: 0.2em 1em;
+  border: none;
+  background-color: transparent;
+}
+
+footer .content .group .newsletter .subscribe button {
+  border: none;
+  bottom: transparent;
+  border-left: 1px solid var(--zinc-900);
+  border-radius: 0;
+}
+
+footer .content .group {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+footer .content .group nav {
+  display: grid;
+  grid: 1fr;
+  gap: 1.8em;
+}
+
+footer .content .group nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+footer .content .group nav ul li:first-child {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+footer .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 0.5em 0;
+  border-top: 1px solid var(--zinc-900);
+}
+
+footer .bottom h4 {
+  font-weight: 400;
+}
+
+footer .bottom .socials {
+  display: flex;
+  gap: 0.2em;
+}
+
+@media (min-width: 728px) {
+  footer .content .group {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  footer .content .group nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer .content .group nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

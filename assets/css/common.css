@@ -1,25 +1,27 @@
-/* Button */
-
+button,
 .button {
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.8em 1.2em;
-  font-weight: 600;
+  border: none;
   cursor: pointer;
-  transition: 0.3s ease-in;
-  border-radius: 1.2em;
+  transition: all 0.3s ease;
+  border-radius: 1.5em;
+  white-space: nowrap;
 }
 
+button:hover,
 .button:hover {
   background-color: var(--zinc-400);
 }
 
-.button.primary {
+.primary {
   background-color: var(--primary);
   color: var(--text);
 }
 
-.button.secondary {
+.secondary {
   background-color: var(--secondary);
   color: var(--text);
 }
@@ -42,38 +44,46 @@
   border-radius: 0.2em;
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .icon:hover {
-  background-color: var(--zinc-200);
+  background-color: var(--zinc-100);
 }
 
 .outline {
-  padding: 0.5em;
-  border-radius: 0.2em;
   background-color: transparent;
   color: var(--black);
   border: 1px solid var(--black);
 }
 
-.button.success {
+.badge {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-size: 0.8rem;
+}
+
+.badge:hover {
+  background-color: none;
+}
+
+.success {
   background-color: var(--success);
   color: var(--text);
 }
 
-.button.warning {
+.warning {
   background-color: var(--warning);
   color: var(--text);
 }
 
-.button.error {
+.error {
   background-color: var(--error);
   color: var(--text);
 }
 
-.button.info {
+.info {
   background-color: var(--info);
   color: var(--text);
 }
-
-/* Socials */

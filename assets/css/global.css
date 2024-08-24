@@ -9,6 +9,7 @@
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
   font-size: 1rem;
+  color: var(--zinc-900);
 }
 
 /* Global */
@@ -70,7 +71,7 @@ html {
 
 body {
   position: relative;
-  background-color: var(--background);
+  background-color: #fff;
 }
 
 a {
@@ -78,6 +79,69 @@ a {
 }
 
 main {
+  margin-top: 4.5em;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 4.5em);
+}
+
+section {
+  padding: 2.5em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+}
+
+h6 {
+  font-size: 0.6rem;
+}
+
+/* p {
+  color: var(--zinc-700);
+} */
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.8rem;
+  }
+
+  h6 {
+    font-size: 0.6rem;
+  }
 }

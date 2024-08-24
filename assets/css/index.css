@@ -1,0 +1,358 @@
+/* Global */
+
+/* Product, Fashion and Image Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.card.main {
+  order: -1;
+}
+
+.card.reversed {
+  flex-direction: column-reverse;
+}
+
+.card .description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  overflow: hidden;
+}
+
+.card:hover .description h3 {
+  color: var(--violet-700);
+}
+
+.card .image-container {
+  position: relative;
+  flex: 70%;
+  background-color: var(--violet-200);
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  border-radius: 0.7em;
+}
+
+.card .image-container .model_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card .description h3 {
+  font-size: 1.2rem;
+}
+
+.card .description p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card .redirect {
+  display: none;
+}
+
+.card:hover .redirect {
+  display: flex;
+}
+
+.top-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em 1em;
+  width: 100%;
+}
+
+.bottom-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em 1em;
+  width: 100%;
+}
+
+.top-position > .button.badge {
+  margin-right: auto;
+}
+
+.top-position > .icon.redirect {
+  margin-left: auto;
+}
+
+.top-position:only-child {
+  justify-content: flex-end;
+}
+
+.top-position .redirect {
+  background-color: var(--zinc-100);
+  border-radius: 100%;
+}
+
+@media (min-width: 728px) {
+  .card.main {
+    flex: 44%;
+    order: 0;
+  }
+
+  .card {
+    flex: 28%;
+  }
+
+  .card.reversed {
+    flex-direction: column;
+  }
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 4.2em;
+}
+
+.hero header .group {
+  font-weight: 600;
+  padding-bottom: 1em;
+}
+
+.hero header {
+  overflow: hidden;
+}
+
+.hero header h1 {
+  display: block;
+  white-space: normal;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+@media (min-width: 520px) {
+  .hero header {
+    display: flex;
+    gap: 0.5em;
+    align-items: end;
+  }
+}
+
+@media (min-width: 728px) {
+  .hero .card:last-of-type {
+    margin-top: 2em;
+  }
+  .hero .content {
+    flex-direction: row;
+  }
+}
+
+/* Products Section */
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.products .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+.products header .group {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.products header .group .description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.products header .group .description h2 {
+  white-space: nowrap;
+}
+
+.products header .group .actions {
+  max-width: 12em;
+}
+
+.products nav .categories {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.products nav .categories::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 728px) {
+  .products .content {
+    flex-direction: row;
+  }
+
+  .products header,
+  .products nav {
+    min-width: 100%;
+  }
+
+  .products header .group {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .products header .group .description {
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .products header .group .actions {
+    display: flex;
+    justify-content: flex-end;
+    max-width: none;
+  }
+}
+
+/* Styles Section */
+.styles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.styles header .group {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.styles header .group .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.styles header .group .description .actions {
+  max-width: 12em;
+}
+
+.styles .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+@media (min-width: 728px) {
+  .styles .content {
+    flex-direction: row;
+  }
+
+  .styles header .group {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+/* CTA section */
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.cta header {
+  text-align: center;
+}
+
+.cta header h2 {
+  font-size: 3rem;
+}
+
+.cta .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+  gap: 2em;
+}
+
+.cta .content .model_img {
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cta .content .model_img::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  height: 30em;
+  background-color: var(--violet-500);
+  border-radius: 50%;
+}
+
+.cta .content .tabs {
+  display: flex;
+  gap: 0.5em;
+}
+
+.cta .content .tabs .tab {
+  background-color: var(--white);
+  border: 1px solid var(--zinc-500);
+  box-shadow: var(--shadow-md);
+  border-radius: 100%;
+  min-width: 1.2em;
+  min-height: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta .content .tabs .tab:hover {
+  background-color: var(--zinc-200);
+}
+
+.cta .content .tabs .tab:first-child {
+  background-color: var(--violet-500);
+}
+
+@media (min-width: 728px) {
+  .cta {
+    padding: 2.5em 5em;
+  }
+
+  .cta header h2 {
+    font-size: 4.5rem;
+  }
+}
