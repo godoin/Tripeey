@@ -17,17 +17,16 @@ include_once 'core/functions.php';
   <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
   <link rel="stylesheet" href="assets/css/common.css" type="text/css">
   <link rel="stylesheet" href="assets/css/index.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/support.css" type="text/css">
   <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/fontawesome-web/css/all.css">
 </head>
 
 <body>
   <div class="container">
-    <?php include('views/inc/navbar.php') ?>
+    <?php include('views/inc/Navbar.php') ?>
     
     <?php include($contentView) ?>
-    
-    <?php include('views/inc/footer.php') ?>
   </div>
 
 

@@ -1,0 +1,109 @@
+/* Globals */
+.error-container,
+.faqs-container {
+  padding: 2.5em 1em;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5em;
+}
+
+.error-container header,
+.faqs-container header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.error-container header a,
+.faqs-container header a {
+  text-decoration: underline;
+  font-size: inherit;
+}
+
+/* Error Page */
+
+.error-container header p {
+  font-size: 1.5rem;
+}
+
+.error-container button span {
+  color: var(--white);
+}
+
+@media (min-width: 728px) {
+  .error-container header {
+    max-width: 70%;
+  }
+}
+
+/* FAQs Page */
+.faqs-container header h1 {
+  font-size: 3.5rem;
+}
+
+.faqs-container .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  text-align: left;
+}
+
+.faqs-container .accordion details {
+  overflow: hidden;
+}
+
+.faqs-container .accordion summary {
+  padding: 0.8em;
+  cursor: pointer;
+  position: relative;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faqs-container .accordion summary::marker {
+  display: none;
+}
+
+.faqs-container .accordion summary::after {
+  content: "+";
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-out;
+}
+
+.faqs-container .accordion details[open] summary::after {
+  content: "-";
+  /* transform: rotate(180deg); */
+}
+
+.faqs-container .accordion-item {
+  min-width: inherit;
+}
+
+.faqs-container .accordion .accordion-content {
+  display: none;
+  padding: 0 0.8em;
+}
+
+.faqs-container .accordion .accordion-item[open] .accordion-content {
+  display: block;
+}
+
+@media (min-width: 728px) {
+  .faqs-container header {
+    max-width: 60%;
+  }
+
+  .faqs-container .accordion {
+    min-width: 60%;
+    max-width: 60%;
+  }
+}
+
+/* Contact Page */

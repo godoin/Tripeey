@@ -18,7 +18,7 @@ button:hover,
 
 .primary {
   background-color: var(--primary);
-  color: var(--text);
+  color: var(--white);
 }
 
 .secondary {
