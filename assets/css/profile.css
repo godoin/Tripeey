@@ -225,9 +225,9 @@
 .settings .content .fields .field label,
 .settings .content .fields .field.img label,
 .settings .content .fields .field.textarea label,
-.settings .content .fields .field.delete label {
+.settings .content .fields .field.delete label,
 .settings .content .fields .group label,
-.settings .content .fields .field .description label,
+.settings .content .fields .field .description label {
   font-weight: 600;
 }
 
