@@ -7,11 +7,10 @@
             </a>
         </div>
         <ul class="nav-items">
-            <li><a href="#men">Men</a></li>
-            <li><a href="#women">Women</a></li>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#categories">Categories</a></li>
-            <li><a href="#support">Support</a></li>
+            <li><a href="#support">FAQs</a></li>
+            <li><a href="#support">Contact</a></li>
         </ul>
     </div>
 

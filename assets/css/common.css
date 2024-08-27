@@ -129,11 +129,7 @@ button:hover,
 
 /* Forms */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 4em;
 }
-
 form .fields {
   display: flex;
   flex-direction: column;

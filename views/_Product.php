@@ -1,0 +1,291 @@
+<main class="product-container">
+
+    <section class="product-item">
+        <!-- Image Display -->
+        <div class="image-display">
+            <ul class="sub-images">
+                <li class="image-container">
+                    <img src="assets/images/items/product-02.png" alt="">
+                </li>
+                <li class="image-container">
+                    <img src="assets/images/items/product-03.png" alt="">
+                </li>
+                <li class="image-container">
+                    <img src="assets/images/items/product-04.png" alt="">
+                </li>
+            </ul>
+            <div class="main-image image-container">
+                <img src="assets/images/items/product-01.png" alt="">
+            </div>
+        </div>
+        <!-- Product -->
+        <div class="product">
+            <a href="#" class="redirect">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span>Back to Shop</span>
+            </a>
+
+            <!-- Header -->
+            <header>
+                <div class="header-group">
+                    <div class="details">
+                        <h1>Sunset Polo Shirt</h1>
+                        <span class="created-by">By XYZ Company</span>
+                    </div>
+    
+                    <div class="review-rating">
+                        <div class="rating">
+                            <span class="number">5.0</span>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="review-num">187 Reviews</span>
+                    </div>
+                </div>
+
+                <div class="product-descriptions">
+                    <!-- Profiles -->
+                    <ul class="profiles">
+                        <h2>Merchandise Profile</h2>
+                        <li class="profile">
+                            <img src="assets/images/icons/truck-01.svg" alt="Delivery" class="icon">
+                            <p>Free and Fast Shipping at No Cost</p>
+                        </li>
+                        <li class="profile">
+                            <img src="assets/images/icons/check-circle-broken.svg" alt="Delivery" class="icon">
+                            <p>Quick-Dry Material, Ideal for Travel</p>
+                        </li>
+                        <li class="profile">
+                            <img src="assets/images/icons/check-circle-broken.svg" alt="Delivery" class="icon">
+                            <p>Wrinkle-Resistant for Fresh Look</p>
+                        </li>
+                        <li class="profile">
+                            <img src="assets/images/icons/check-circle-broken.svg" alt="Delivery" class="icon">
+                            <p>Soft Cotton for All-Day Comfort</p>
+                        </li>
+                    </ul>
+
+                    <!-- Price -->
+                    <div class="price-group">
+                        <div class="left">
+                            <span class="original">PHP 399.99</span>
+                            <span class="discount">Discount available at 15%</span>
+                        </div>
+                        <div class="right">
+                            <span class="new">PHP 339.99</span>
+                            <span class="discount">Applied Discount</span>
+                        </div>
+                    </div>
+
+                    <!-- Colors -->
+                    <div class="filter-group">
+                        <h2>Color</h2>
+                        <div class="group color">
+                            <label class="color-option" style="background-color: #ffffff;">
+                                <input type="radio" name="color" value="white">
+                            </label>
+                            <label class="color-option" style="background-color: #000000;">
+                                <input type="radio" name="color" value="black">
+                            </label>
+                            <label class="color-option" style="background-color: #ff0000;">
+                                <input type="radio" name="color" value="red">
+                            </label>
+                            <label class="color-option" style="background-color: #00ff00;">
+                                <input type="radio" name="color" value="green">
+                            </label>
+                            <label class="color-option" style="background-color: #0000ff;">
+                                <input type="radio" name="color" value="blue">
+                            </label>
+                            <label class="color-option" style="background-color: #ffff00;">
+                                <input type="radio" name="color" value="yellow">
+                            </label>
+                            <label class="color-option" style="background-color: #ff00ff;">
+                                <input type="radio" name="color" value="magenta">
+                            </label>
+                            <label class="color-option" style="background-color: #00ffff;">
+                                <input type="radio" name="color" value="cyan">
+                            </label>
+                            <label class="color-option" style="background-color: #800080;">
+                                <input type="radio" name="color" value="purple">
+                            </label>
+                            <label class="color-option" style="background-color: #ffa500;">
+                                <input type="radio" name="color" value="orange">
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Sizes -->
+                    <div class="filter-group">
+                        <h2>Sizes</h2>
+                        <div class="group size">
+                            <label class="size-option">
+                                <input type="radio" name="size" value="xxs"> XXS
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="xs"> XS
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="s"> S
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="m"> M
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="l"> L
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="xl"> XL
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="xxl"> XXL
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="actions">
+                        <div class="actions-top">
+
+                            <!-- Quantity Selector -->
+                            <div class="qty-container">
+                                <label for="qty-input" class="qty-title">QTY</label>
+                                <div class="qty-counter">
+                                    <input type="number" id="qty-input" class="qty-input" value="1" min="1" aria-label="Quantity input" readonly>
+                                    <div class="qty-buttons">
+                                        <button type="ghost" class="qty-btn qty-up" aria-label="Increase quantity">▲</button>
+                                        <button type="ghost" class="qty-btn qty-down" aria-label="Decrease quantity">▼</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add to Cart Button -->
+                            <button class="primary cart" aria-label="Add to Cart">Add to Cart</button>
+
+                            <!-- Share Button -->
+                            <button class="ghost share" aria-label="Share this product">
+                                <img src="assets/images/icons/link-04.svg" alt="Share Icon">
+                            </button>
+                        </div>
+
+                        <!-- Add to Favorites Button -->
+                        <button class="ghost favorites" aria-label="Add to Favorites">
+                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                            <span>Add to Favorites</span>
+                        </button>
+                    </div>
+
+                </div>
+            </header>
+        </div>
+
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <ul class="tabs">
+            <li class="tab" data-tab="description" active>Description</li>
+            <li class="tab" data-tab="seller">Seller</li>
+            <li class="tab" data-tab="reviews">Reviews</li>
+        </ul>
+        <div class="tab-content">
+            <div id="description" class="tab-content-item" active>
+                <h2>Product Description</h2>
+                <p>
+                    The Slate Sunset Polo Shirt combines style and functionality for the modern adventurer. This versatile polo features a sophisticated slate gray color with subtle sunset-inspired accents, perfect for both casual outings and semi-formal occasions.
+                    Key Features:
+                    Quick-Dry Material, Ideal for Travel
+                    Wrinkle-Resistant for Fresh Look
+                    Soft Cotton for All-Day Comfort
+                    Whether you're jet-setting across continents or heading to a weekend brunch, this polo keeps you looking crisp and feeling relaxed. Its quick-dry fabric ensures you stay comfortable in various climates, while the wrinkle-resistant properties maintain a polished appearance throughout the day. Crafted from soft cotton, it provides unparalleled comfort for extended wear.
+                    The Slate Sunset Polo Shirt is your go-to choice for effortless style and practicality.
+                </p>
+            </div>
+            <div id="seller" class="tab-content-item">
+                <h2>Seller Information</h2>
+                <p>Information about the seller goes here.</p>
+            </div>
+            <div id="reviews" class="tab-content-item">
+                <h2>Customer Reviews</h2>
+                <p>Here are some reviews from customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <ul class="cards">
+
+            <article class="card item">
+                <div class="image-container">
+                    <img src="assets/images/items/shirt_one.png" class="model_img" alt="Midnight Wanderer 705">
+                    <div class="top-position">
+                        <span class="button badge-02">New</span>
+                        <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="description">
+                    <h3>Midnight Wanderer 705</h3>
+                    <div class="details">
+                        <div class="price-group">
+                            <span class="title">Price</span>
+                            <span class="price">PHP 1199.99</span>
+                        </div>
+                        <a href="product-page.html" class="button primary" aria-label="Buy Midnight Wanderer 705">
+                            <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card item">
+                <div class="image-container">
+                    <img src="assets/images/items/shirt_two.png" class="model_img" alt="Midnight Wanderer 705">
+                    <div class="top-position">
+                        <span class="button badge-02">New</span>
+                        <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="description">
+                    <h3>Los Angeles CA 705</h3>
+                    <div class="details">
+                        <div class="price-group">
+                            <span class="title">Price</span>
+                            <span class="price">PHP 1199.99</span>
+                        </div>
+                        <a href="product-page.html" class="button primary" aria-label="Buy Los Angeles CA 705">
+                            <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card item">
+                <div class="image-container">
+                    <img src="assets/images/items/shirt_three.png" class="model_img" alt="Seamless Stussy Shirt">
+                    <div class="top-position">
+                        <span class="button badge-02">New</span>
+                        <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="description">
+                    <h3>Seamless Stussy Shirt</h3>
+                    <div class="details">
+                        <div class="price-group">
+                            <span class="title">Price</span>
+                            <span class="price">PHP 1199.99</span>
+                        </div>
+                        <a href="product-page.html" class="button primary" aria-label="Buy Seamless Stussy Shirt">
+                            <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </ul>
+    </section>
+
+</main>
