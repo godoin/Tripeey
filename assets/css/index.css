@@ -1,136 +1,26 @@
 /* Global */
 
-/* Product, Fashion and Image Card */
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1em;
-}
-
-.card.main {
-  order: -1;
-}
-
-.card.reversed {
-  flex-direction: column-reverse;
-}
-
-.card .description {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  overflow: hidden;
-}
-
-.card:hover .description h3 {
-  color: var(--violet-700);
-}
-
-.card .image-container {
-  position: relative;
-  flex: 70%;
-  background-color: var(--violet-200);
-  overflow: hidden;
-  aspect-ratio: 1/1;
-  border-radius: 0.7em;
-}
-
-.card .image-container .model_img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.card .description h3 {
-  font-size: 1.2rem;
-}
-
-.card .description p {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.card .redirect {
-  display: none;
-}
-
-.card:hover .redirect {
-  display: flex;
-}
-
-.top-position {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 1em 1em;
-  width: 100%;
-}
-
-.bottom-position {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1em 1em;
-  width: 100%;
-}
-
-.top-position > .button.badge {
-  margin-right: auto;
-}
-
-.top-position > .icon.redirect {
-  margin-left: auto;
-}
-
-.top-position:only-child {
-  justify-content: flex-end;
-}
-
-.top-position .redirect {
-  background-color: var(--zinc-100);
-  border-radius: 100%;
-}
-
-@media (min-width: 728px) {
-  .card.main {
-    flex: 44%;
-    order: 0;
-  }
-
-  .card {
-    flex: 28%;
-  }
-
-  .card.reversed {
-    flex-direction: column;
-  }
-}
-
 /* Hero Section */
 .hero {
   padding-top: 2.5em;
   display: flex;
   flex-direction: column;
+  text-align: center;
   gap: 4.2em;
+}
+
+.hero header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: left;
+  overflow: hidden;
+  gap: 0.5em;
 }
 
 .hero header .group {
   font-weight: 600;
   padding-bottom: 1em;
-}
-
-.hero header {
-  overflow: hidden;
 }
 
 .hero header h1 {
@@ -149,8 +39,8 @@
 
 @media (min-width: 520px) {
   .hero header {
-    display: flex;
-    gap: 0.5em;
+    flex-direction: row;
+    justify-content: center;
     align-items: end;
   }
 }

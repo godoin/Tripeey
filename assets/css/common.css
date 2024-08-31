@@ -9,7 +9,8 @@ button,
   transition: all 0.3s ease;
   border-radius: 0.6em;
   white-space: nowrap;
-  gap: 1em;
+  gap: 0.4em;
+  font-weight: 500;
 }
 
 button:hover,
@@ -129,7 +130,9 @@ button:hover,
 
 /* Forms */
 form {
+  flex: 1;
 }
+
 form .fields {
   display: flex;
   flex-direction: column;
@@ -149,21 +152,47 @@ form .fields .field {
   justify-content: start;
   text-align: start;
   gap: 0.4em;
+  position: relative;
+}
+
+form .fields .field.checkbox,
+form .fields .field.radio {
+  flex-direction: row;
+}
+
+form .fields .field.checkbox label,
+form .fields .field.radio label {
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 form .fields .field label {
   font-weight: 600;
 }
 
+form .fields .field .placeholder-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+form .fields .field input:focus ~ .placeholder-text {
+  transform: translateY(-175%);
+}
+
 form .fields .field input {
   padding: 0.6em;
   outline: none;
-  border: 1px solid var(--zinc-300);
+  border: 1px solid var(--zinc-200);
   transition: all 0.3s ease;
+  border-radius: 0.6em;
 }
 
 form .fields .field input:focus {
-  border: 2px solid var(--zinc-600);
+  border: 1px solid blue;
 }
 
 form .fields .field textarea {
@@ -242,14 +271,14 @@ input[type="checkbox"]:checked {
 
 .filter-group > .group.color {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
   place-content: center;
 }
 
 .filter-group > .size {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .color-option {
@@ -359,6 +388,7 @@ input[type="checkbox"]:checked {
 .card .description {
   display: flex;
   flex-direction: column;
+
   gap: 0.5em;
   overflow: hidden;
 }
