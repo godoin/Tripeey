@@ -84,6 +84,11 @@ main {
   min-height: calc(100vh - 4.5em);
 }
 
+main.login-container {
+  margin-top: 0;
+  max-height: 100vh;
+}
+
 /* section {
   padding: 2.5em 1em;
   display: flex;

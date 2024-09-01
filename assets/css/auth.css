@@ -1,0 +1,83 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (min-width: 728px) {
+  .login-container {
+    flex-direction: row;
+  }
+
+  .login-container form {
+    max-width: 25em;
+  }
+}
+
+/* Login Form */
+.login-container form {
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2em;
+  min-height: 100vh;
+}
+
+.login-container form header,
+.login-container form .fields,
+.login-container form .actions,
+.login-container form .description {
+  min-width: 100%;
+}
+
+.login-container form header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.login-container form header .logo {
+  max-width: 4em;
+}
+
+.login-container form header .title {
+  font-size: 2.2rem;
+}
+
+.login-container form .actions {
+  display: flex;
+}
+
+.login-container form .actions button {
+  flex: 1;
+}
+
+.login-container form .description {
+  font-size: 0.9rem;
+  color: var(--zinc-500);
+}
+
+.login-container form .description a {
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+/* Image Container */
+.image-container {
+  min-height: 100vh;
+  flex: 1;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.image-container .img-show {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

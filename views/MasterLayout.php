@@ -19,6 +19,7 @@ include_once 'core/functions.php';
   <link rel="stylesheet" href="assets/css/common.css" type="text/css">
   <link rel="stylesheet" href="assets/css/layout.css" type="text/css">
   <link rel="stylesheet" href="assets/css/index.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/auth.css" type="text/css">
   <link rel="stylesheet" href="assets/css/support.css" type="text/css">
   <link rel="stylesheet" href="assets/css/profile.css" type="text/css">
   <link rel="stylesheet" href="assets/css/shop.css" type="text/css">

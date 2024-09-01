@@ -189,6 +189,7 @@ form .fields .field input {
   border: 1px solid var(--zinc-200);
   transition: all 0.3s ease;
   border-radius: 0.6em;
+  width: 100%;
 }
 
 form .fields .field input:focus {
