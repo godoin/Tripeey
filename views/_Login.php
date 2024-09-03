@@ -13,11 +13,14 @@
             </div>
             <div class="field">
                 <label for="password" class="">Password*</label>
-                <input type="password" name="password" id="password" placeholder="e.g., tester123">
+                <input type="password" name="password" id="password-input" placeholder="e.g., tester123">
+                <span class="ghost" id="password-btn">
+                    <img src="assets/images/icons/eye.svg" id="password-icon" alt="Show Password">
+                </span>
             </div>
         </div>
         <div class="actions">
-            <button class="primary">Sign in</button>
+            <button type="submit" class="primary">Sign in</button>
         </div>
         <div class="description">
             By continuing, you agree to Tripeey's <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.

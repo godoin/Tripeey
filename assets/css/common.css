@@ -1,3 +1,4 @@
+/* Button */
 button,
 .button {
   display: flex;
@@ -147,12 +148,25 @@ form .fields .group {
 }
 
 form .fields .field {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: start;
   text-align: start;
   gap: 0.4em;
   position: relative;
+}
+
+form .fields .field #password-btn {
+  position: absolute;
+  right: 0.6em;
+  top: 50%;
+  transform: translateY(-20%);
+  cursor: pointer;
+}
+
+form .fields .field #password-btn:hover {
+  background-color: transparent;
 }
 
 form .fields .field.checkbox,
@@ -298,12 +312,12 @@ input[type="checkbox"]:checked {
   border-radius: 0.2em;
   text-align: center;
   padding: 0.6em;
-  border: 1px solid var(--zinc-300);
+  border: 2px solid var(--zinc-300);
   cursor: pointer;
 }
 
 .size-option:hover {
-  border: 1px solid var(--violet-500);
+  border: 2px solid var(--violet-500);
 }
 
 .color-option input[type="radio"]:checked,
@@ -354,18 +368,18 @@ input[type="checkbox"]:checked {
 @media (min-width: 1024px) {
   .filter-group > .size {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-wdith: 1440px) {
   .filter-group .group.color {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .filter-group > .size {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

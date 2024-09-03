@@ -68,14 +68,14 @@
 }
 
 /* Image Container */
-.image-container {
+.login-container .image-container {
   min-height: 100vh;
   flex: 1;
   overflow: hidden;
   aspect-ratio: 1/1;
 }
 
-.image-container .img-show {
+.login-container .image-container .img-show {
   height: 100%;
   width: 100%;
   object-fit: cover;

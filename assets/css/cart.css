@@ -102,6 +102,7 @@
   background-color: var(--zinc-100);
   aspect-ratio: 1/1;
   overflow: hidden;
+  height: fit-content;
   border-radius: 0.6em;
 }
 

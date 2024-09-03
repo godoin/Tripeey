@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2em;
+  padding: 1em;
 }
 
 .product-container > .product-item {
@@ -209,12 +210,16 @@
   font-weight: 700;
 }
 
+.product-container .product-item .product .price-group .original-price {
+  text-decoration: line-through;
+}
+
 .product-container .product-item .product .price-group span:last-child {
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.product-container .product-item .product .price-group span.new {
+.product-container .product-item .product .price-group span.new-price {
   color: var(--violet-500);
 }
 
@@ -231,12 +236,36 @@
 .product-container .product-item .product .filter-group .color-option {
   min-width: 3.5em;
   min-height: 3.5em;
-  border: 1px solid var(--zinc-500);
+  border: 2px solid var(--zinc-300);
+}
+
+.product-container .product-item .product .filter-group .color-option.active,
+.product-container .product-item .product .filter-group .color-option:hover,
+.product-container .product-item .product .filter-group .size-option.active,
+.product-container .product-item .product .filter-group .size-option:hover {
+  border: 2px solid var(--violet-800);
 }
 
 .product-container .product-item .product .filter-group .size-option {
   font-weight: 600;
   padding: 1em;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.product-container
+  .product-item
+  .product
+  .filter-group
+  .size-option
+  input[type="checkbox"],
+.product-container
+  .product-item
+  .product
+  .filter-group
+  .color-option
+  input[type="checkbox"] {
+  display: none;
 }
 
 /* Sizes */
@@ -310,7 +339,7 @@
 }
 
 .product-container .product-item .product .qty-container input {
-  width: 1em;
+  width: 1.8em;
   border: none;
   outline: none;
   margin: 0;
@@ -322,7 +351,7 @@
 .product-container .product-item .product .qty-container .qty-counter {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  justify-content: space-evenly;
 }
 
 .product-container .product-item .product .qty-container .qty-counter button {
@@ -341,6 +370,7 @@
 
 .product-container .product-item .product .actions .actions-top > button {
   padding: 1.5em;
+  font-size: 1.1rem;
 }
 
 .product-container .product-item .product .actions .actions-top .cart {

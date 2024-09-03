@@ -78,6 +78,48 @@ a {
   color: var(--black);
 }
 
+/* Loaders */
+#loader {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#spinner {
+  min-width: 5em;
+  min-height: 5em;
+  border: 0.8em solid var(--zinc-300);
+  border-radius: 50%;
+  border-bottom-color: var(--violet-400);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: inline-block;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-animation: rotate(0deg);
+  }
+  100% {
+    -webkit-animation: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#content {
+  display: none;
+}
+
 main {
   margin-top: 4.5em;
   min-width: 100vw;

@@ -1,4 +1,9 @@
 /* Global */
+.landing-container section {
+  padding: 2.5em 1em;
+  display: flex;
+  flex-direction: column;
+}
 
 /* Hero Section */
 .hero {

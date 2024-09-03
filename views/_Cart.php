@@ -105,11 +105,11 @@
                             <!-- Quantity -->
                             <div class="qty-container">
                                 <label for="quantity" class="sr-only">Quantity</label>
-                                <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">
+                                <button type="button" id="qty-minus" class="qty-btn qty-minus" aria-label="Decrease quantity">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
-                                <input type="number" id="quantity" name="quantity" value="1" aria-label="Quantity" readonly>
-                                <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">
+                                <input type="number" id="qty-field" name="quantity" class="qty-field" value="1" aria-label="Quantity" readonly>
+                                <button type="button" id="qty-plus" class="qty-btn qty-plus" aria-label="Increase quantity">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -181,11 +181,11 @@
                             <!-- Quantity -->
                             <div class="qty-container">
                                 <label for="quantity" class="sr-only">Quantity</label>
-                                <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">
+                                <button type="button" id="qty-minus" class="qty-btn qty-minus" aria-label="Decrease quantity">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
-                                <input type="number" id="quantity" name="quantity" value="1" aria-label="Quantity" readonly>
-                                <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">
+                                <input type="number" id="qty-field" class="qty-field" name="quantity" value="1" aria-label="Quantity" readonly>
+                                <button type="button" id="qty-plus" class="qty-btn qty-plus" aria-label="Increase quantity">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>

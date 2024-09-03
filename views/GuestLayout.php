@@ -35,9 +35,12 @@ include_once 'core/functions.php';
     <?php include($contentView) ?>
   </div>
 
-
   <!-- JS Link -->
-  <script src="assets/javascript/accordion.js" type="text/javascript"></script>
+  <!-- <script src="js/index.js" type="text/javascript"></script>
+  <script src="js/ui/product.js" type="text/javascript"></script>
+  <script src="js/ui/menu_toggle.js" type="text/javascript"></script>
+  <script src="js/ui/cart.js" type="text/javascript"></script>
+  <script src="js/ui/password_toggle.js" type="text/javascript"></script> -->
 </body>
 
 </html>

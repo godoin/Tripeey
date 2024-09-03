@@ -67,11 +67,11 @@
                     <!-- Price -->
                     <div class="price-group">
                         <div class="left">
-                            <span class="original">PHP 399.99</span>
+                            <span class="original-price" id="original-price">PHP 399.99</span>
                             <span class="discount">Discount available at 15%</span>
                         </div>
                         <div class="right">
-                            <span class="new">PHP 339.99</span>
+                            <span class="new-price" id="new-price">PHP 339.99</span>
                             <span class="discount">Applied Discount</span>
                         </div>
                     </div>
@@ -79,67 +79,95 @@
                     <!-- Colors -->
                     <div class="filter-group">
                         <h2>Color</h2>
-                        <div class="group color">
-                            <label class="color-option" style="background-color: #ffffff;">
-                                <input type="radio" name="color" value="white">
-                            </label>
-                            <label class="color-option" style="background-color: #000000;">
-                                <input type="radio" name="color" value="black">
-                            </label>
-                            <label class="color-option" style="background-color: #ff0000;">
-                                <input type="radio" name="color" value="red">
-                            </label>
-                            <label class="color-option" style="background-color: #00ff00;">
-                                <input type="radio" name="color" value="green">
-                            </label>
-                            <label class="color-option" style="background-color: #0000ff;">
-                                <input type="radio" name="color" value="blue">
-                            </label>
-                            <label class="color-option" style="background-color: #ffff00;">
-                                <input type="radio" name="color" value="yellow">
-                            </label>
-                            <label class="color-option" style="background-color: #ff00ff;">
-                                <input type="radio" name="color" value="magenta">
-                            </label>
-                            <label class="color-option" style="background-color: #00ffff;">
-                                <input type="radio" name="color" value="cyan">
-                            </label>
-                            <label class="color-option" style="background-color: #800080;">
-                                <input type="radio" name="color" value="purple">
-                            </label>
-                            <label class="color-option" style="background-color: #ffa500;">
-                                <input type="radio" name="color" value="orange">
-                            </label>
-                        </div>
+                        <ul class="group color">
+                            <li class="color-option" style="background-color: #ffffff;">
+                                <label for="color-white"></label>
+                                <input type="checkbox" id="color-white" name="color" value="white">
+                            </li>
+
+                            <li class="color-option" style="background-color: #000000;">
+                                <label for="color-black"></label>
+                                <input type="checkbox" id="color-black" name="color" value="black">
+                            </li>
+
+                            <li class="color-option" style="background-color: #ff0000;">
+                                <label for="color-red"></label>
+                                <input type="checkbox" id="color-red" name="color" value="red">
+                            </li>
+
+                            <li class="color-option" style="background-color: #00ff00;">
+                                <label for="color-green"></label>
+                                <input type="checkbox" id="color-green" name="color" value="green">
+                            </li>
+
+                            <li class="color-option" style="background-color: #0000ff;">
+                                <label for="color-blue"></label>
+                                <input type="checkbox" id="color-blue" name="color" value="blue">
+                            </li>
+
+                            <li class="color-option" style="background-color: #ffff00;">
+                                <label for="color-yellow"></label>
+                                <input type="checkbox" id="color-yellow" name="color" value="yellow">
+                            </li>
+
+                            <li class="color-option" style="background-color: #ff00ff;">
+                                <label for="color-magenta"></label>
+                                <input type="checkbox" id="color-magenta" name="color" value="magenta">
+                            </li>
+
+                            <li class="color-option" style="background-color: #00ffff;">
+                                <label for="color-cyan"></label>
+                                <input type="checkbox" id="color-cyan" name="color" value="cyan">
+                            </li>
+
+                            <li class="color-option" style="background-color: #800080;">
+                                <label for="color-purple"></label>
+                                <input type="checkbox" id="color-purple" name="color" value="purple">
+                            </li>
+
+                            <li class="color-option" style="background-color: #ffa500;">
+                                <label for="color-orange"></label>
+                                <input type="checkbox" id="color-orange" name="color" value="orange">
+                            </li>
+                        </ul>
+
                     </div>
                     
                     <!-- Sizes -->
                     <div class="filter-group">
                         <h2>Sizes</h2>
-                        <div class="group size">
-                            <label class="size-option">
-                                <input type="radio" name="size" value="xxs"> XXS
-                            </label>
-                            <label class="size-option">
-                                <input type="radio" name="size" value="xs"> XS
-                            </label>
-                            <label class="size-option">
-                                <input type="radio" name="size" value="s"> S
-                            </label>
-                            <label class="size-option">
-                                <input type="radio" name="size" value="m"> M
-                            </label>
-                            <label class="size-option">
-                                <input type="radio" name="size" value="l"> L
-                            </label>
-                            <label class="size-option">
-                                <input type="radio" name="size" value="xl"> XL
-                            </label>
-                            <label class="size-option">
-                                <input type="radio" name="size" value="xxl"> XXL
-                            </label>
-                        </div>
+                        <ul class="group size">
+                            <li class="size-option">
+                                <label for="xxs"></label>
+                                <input type="checkbox" name="size" value="xxs"> XXS
+                            </li>
+                            <li class="size-option">
+                                <label for="xs"></label>
+                                <input type="checkbox" name="size" value="xs"> XS
+                            </li>
+                            <li class="size-option">
+                                <label for="s"></label>
+                                <input type="checkbox" name="size" value="s"> S
+                            </li>
+                            <li class="size-option">
+                                <label for="m"></label>
+                                <input type="checkbox" name="size" value="m"> M
+                            </li>
+                            <li class="size-option">
+                                <label for="l"></label>
+                                <input type="checkbox" name="size" value="l"> L
+                            </li>
+                            <li class="size-option">
+                                <label for="xl"></label>
+                                <input type="checkbox" name="size" value="xl"> XL
+                            </li>
+                            <li class="size-option">
+                                <label for="xxl"></label>
+                                <input type="checkbox" name="size" value="xxl"> XXL
+                            </li>
+                        </ul>
                     </div>
+
                     <!-- Actions -->
                     <div class="actions">
                         <div class="actions-top">
@@ -148,10 +176,10 @@
                             <div class="qty-container">
                                 <label for="qty-input" class="qty-title">QTY</label>
                                 <div class="qty-counter">
-                                    <input type="number" id="qty-input" class="qty-input" value="1" min="1" aria-label="Quantity input" readonly>
+                                    <input type="number" id="qty-input" class="qty-field" value="1" min="1" aria-label="Quantity input" readonly>
                                     <div class="qty-buttons">
-                                        <button type="ghost" class="qty-btn qty-up" aria-label="Increase quantity">▲</button>
-                                        <button type="ghost" class="qty-btn qty-down" aria-label="Decrease quantity">▼</button>
+                                        <button type="ghost" id="qty-add" class="qty-btn" aria-label="Increase quantity">▲</button>
+                                        <button type="ghost" id="qty-subtract" class="qty-btn" aria-label="Decrease quantity">▼</button>
                                     </div>
                                 </div>
                             </div>

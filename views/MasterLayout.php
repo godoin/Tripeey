@@ -31,7 +31,10 @@ include_once 'core/functions.php';
 </head>
 
 <body>
-  <div class="container">
+  <div class="loader-container" id="loader">
+    <div id="spinner"></div>
+  </div>
+  <div class="container" id="content">
     <?php include('views/inc/Navbar.php') ?>
     
     <?php include($contentView) ?>
@@ -41,6 +44,12 @@ include_once 'core/functions.php';
 
 
   <!-- JS Link -->
+  <script src="js/index.js" type="text/javascript"></script>
+  <script src="js/ui/checkbox-toggle.js" type="text/javascript"></script>
+  <script src="js/ui/menu_toggle.js" type="text/javascript"></script>
+  <script src="js/ui/size.js" type="text/javascript"></script>
+  <!-- <script src="js/utils.js" type="module"></script> -->
+  <!-- <script src="js/ui/password_toggle.js" type="text/javascript"></script> -->
 </body>
 
 </html>

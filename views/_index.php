@@ -1,4 +1,4 @@
-<main>
+<main class="landing-container">
     <!-- Hero Section -->
     <section class="hero">
         

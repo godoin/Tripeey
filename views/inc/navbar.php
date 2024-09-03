@@ -6,11 +6,25 @@
                 <img src="assets/images/logo-with-name.png" class="logo" alt="Tripeey">
             </a>
         </div>
-        <ul class="nav-items">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#support">FAQs</a></li>
-            <li><a href="#support">Contact</a></li>
+        <ul id="nav-items">
+            <li class="nav-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#shop">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a href="#categories">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a href="#support">FAQs</a>
+            </li>
+            <li class="nav-item">
+                <a href="#support">Contact</a>
+            </li>
+            <li class="actions">
+                <a href="" class="button primary">Get Started</a>
+            </li>
         </ul>
     </div>
 
@@ -30,8 +44,8 @@
             <span>LOG IN</span>
         </a>
 
-        <button class="ghost menu">
-            <img src="assets/images/icons/menu.svg" alt="Menu" width="20">
+        <button class="ghost menu" id="menu-btn">
+            <img src="assets/images/icons/menu.svg" id="menu-icon" alt="Menu" width="20">
         </button>
     </div>
 
