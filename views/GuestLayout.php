@@ -29,7 +29,10 @@ include_once 'core/functions.php';
 </head>
 
 <body>
-  <div class="container">
+  <div class="loader-container" id="loader">
+    <div id="spinner"></div>
+  </div>
+  <div class="container" id="content">
     <?php include('views/inc/Navbar.php') ?>
     
     <?php include($contentView) ?>

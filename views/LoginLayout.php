@@ -43,6 +43,7 @@ include_once 'core/functions.php';
   <script src="js/ui/checkbox_toggle.js" type="text/javascript"></script>
   <script src="js/ui/cart_quantity_manager.js" type="text/javascript"></script>
   <script src="js/ui/product_quantity_manager.js" type="text/javascript"></script>
+  <script src="js/ui/form.js" type="text/javascript"></script>
   <!-- <script src="js/utils.js" type="module"></script> -->
 </body>
 

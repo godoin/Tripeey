@@ -37,7 +37,6 @@ function incrementQtyHandler(input) {
 function decrementQtyHandler(input) {
   const currentFieldValue = parseIntElementValue(input);
   if (currentFieldValue <= 1) return null;
-
   const newValue = input.value - 1;
 
   return {
@@ -47,7 +46,7 @@ function decrementQtyHandler(input) {
 }
 
 /**
- * Updates the quantity input field to the DOM with the neW value.
+ * Updates the quantity input field to the DOM with the new value.
  */
 function updateNewCartQtyStateToDOM(state) {
   state.inputElement.value = state.newValue;

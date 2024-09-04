@@ -11,16 +11,13 @@
                 <a href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#shop">Shop</a>
+                <a href="shop.php">Shop</a>
+            </li>
+            <li class="faqs">
+                <a href="faqs.ph">FAQs</a>
             </li>
             <li class="nav-item">
-                <a href="#categories">Categories</a>
-            </li>
-            <li class="nav-item">
-                <a href="#support">FAQs</a>
-            </li>
-            <li class="nav-item">
-                <a href="#support">Contact</a>
+                <a href="contact.php">Contact</a>
             </li>
             <li class="actions">
                 <a href="" class="button primary">Get Started</a>

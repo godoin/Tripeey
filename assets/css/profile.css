@@ -12,11 +12,10 @@
 
 /* Profile Page */
 .settings {
-  min-width: inherit;
-  min-height: inherit;
+  padding: 2.5em 2em 2.5em 1em;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
   gap: 1em;
 }
@@ -27,17 +26,12 @@
 }
 
 .settings .alignment {
-  min-width: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 @media (min-width: 728px) {
-  .settings .alignment {
-    flex-direction: row;
-  }
-
   .settings .tabs {
     display: flex;
   }
@@ -71,20 +65,30 @@
 
 /* Tabs Aside */
 .settings .tabs {
-  flex: 10%;
   display: none;
 }
 
 .settings .content {
-  flex: 90%;
   min-height: 100%;
 }
 
 @media (min-width: 728px) {
-  .settings .tabs {
+  .settings .alignment {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+    flex: 1;
+  }
+
+  .settings .alignment .tabs {
+    min-width: 8em;
     display: flex;
     flex-direction: column;
     gap: 0.4em;
+  }
+
+  .settings .alignment .content {
+    flex: 1;
   }
 }
 
@@ -168,7 +172,7 @@
 
 /* Content ~ Form Fields */
 .settings .content .fields {
-  margin: 14em 0;
+  margin: 18em 0;
 }
 
 /* Single Field */
@@ -190,6 +194,7 @@
 
 .settings .content .fields .field span {
   padding: 0.4em 0.8em;
+  min-width: 6em;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -198,6 +203,8 @@
 
 .settings .content .fields .field input {
   border: none;
+  flex: 1;
+  border-radius: 0;
   border-left: 1px solid var(--zinc-300);
 }
 
@@ -307,7 +314,7 @@
 
 @media (min-width: 728px) {
   .settings .content .fields {
-    margin: 6em 0;
+    margin: 10em 0;
   }
 
   .settings .content .fields .field .input-wrapper {

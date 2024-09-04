@@ -6,7 +6,6 @@
 
 .shop-container aside {
   display: none;
-  flex: 0 0 15%;
 }
 
 .shop-container aside .filter-group:first-child {
@@ -43,7 +42,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 1em;
+  padding: 1em 2em 1em 1em;
   box-sizing: border-box;
 }
 
@@ -108,9 +107,13 @@
     flex-direction: row;
   }
 
+  .shop-container .applied-filters .sort-form {
+    justify-content: end;
+  }
+
   .shop-container .content .content-items .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 3em;
   }
 
@@ -137,15 +140,21 @@
 
 @media (min-width: 1024px) {
   .shop-container aside {
+    min-width: 6em;
     display: flex;
     flex-direction: column;
   }
 
+  .shop-container aside form {
+    width: 100%;
+    flex: none;
+  }
+
   .shop-container .content {
-    flex: 0 0 85%;
+    flex: 1;
   }
 
   .shop-container .content .content-items .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

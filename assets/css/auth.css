@@ -16,7 +16,7 @@
 
 /* Login Form */
 .login-container form {
-  padding: 1em 2em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
 .login-container form .fields,
 .login-container form .actions,
 .login-container form .description {
-  min-width: 100%;
+  width: 100%;
 }
 
 .login-container form header {

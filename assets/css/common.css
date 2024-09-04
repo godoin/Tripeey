@@ -222,13 +222,13 @@ form .fields .field textarea {
 
 @media (min-width: 728px) {
   form .fields .group {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1440px) {
   form .fields .group {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -296,18 +296,38 @@ input[type="checkbox"]:checked {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Color */
 .color-option {
   height: 2.5em;
   width: 2.5em;
   border-radius: 100%;
   cursor: pointer;
-  border: 1px solid var(--zinc-300);
+  border: 2px solid var(--zinc-300);
 }
 
+.color-option.active,
 .color-option:hover {
-  border: 1px solid var(--violet-500);
+  border: 2px solid var(--violet-800);
 }
 
+.size-option input[type="checkbox"],
+.color-option input[type="checkbox"] {
+  display: none;
+}
+
+/* Colors */
+.product-container .product-item .product .filter-group .color {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.product-container .product-item .product .filter-group .color-option {
+  min-width: 3.5em;
+  min-height: 3.5em;
+  border: 2px solid var(--zinc-300);
+}
+
+/* Size */
 .size-option {
   border-radius: 0.2em;
   text-align: center;
@@ -316,6 +336,7 @@ input[type="checkbox"]:checked {
   cursor: pointer;
 }
 
+.size-option.active,
 .size-option:hover {
   border: 2px solid var(--violet-500);
 }
@@ -326,6 +347,7 @@ input[type="checkbox"]:checked {
   color: var(--violet-500);
 }
 
+/* Sort By */
 .sort-form {
   margin: 0;
   display: flex;
@@ -550,4 +572,80 @@ input[type="checkbox"]:checked {
   .card.reversed {
     flex-direction: column;
   }
+}
+
+.message {
+  display: none;
+  min-width: 100%;
+}
+
+.message.main.active,
+.message.active {
+  display: flex;
+}
+
+.message.main {
+  padding: 0.8em;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.4em;
+}
+
+.message.main .group {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.message.main .group .icon {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  object-position: center;
+}
+
+.message.main.error {
+  border: 1px solid var(--error-border);
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+.message.main.info {
+  border: 1px solid var(--info-border);
+  background-color: var(--info-bg);
+  color: var(--info-text);
+}
+
+.message.main.warning {
+  border: 1px solid var(--warning-border);
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+}
+.message.main.success {
+  border: 1px solid var(--success-border);
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.message.main .group .title {
+  font-weight: 500;
+}
+
+.message .text {
+  font-size: 0.9rem;
+}
+
+.message .text.error {
+  color: var(--error-text);
+}
+
+.message .text.info {
+  color: var(--info-text);
+}
+
+.message .text.warning {
+  color: var(--warning-text);
+}
+
+.message .text.success {
+  color: var(--success-text);
 }
