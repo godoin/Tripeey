@@ -1,3 +1,3 @@
-export function debugPrint(...values) {
-  console.log(`Values: ${values}`);
+export function print_debug(statement, ...values) {
+  console.log(`${statement} : ${values}`);
 }

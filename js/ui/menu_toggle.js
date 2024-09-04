@@ -1,5 +1,11 @@
 /**
- * TODO: Create documentation on what this script/module does.
+ * Navigation Menu Toggle.
+ * This script handles the visibility of the navigation items found on navbar.
+ * It is handled by the menu button that is found at mobile-tablet screens.
+ *
+ * Features:
+ *
+ * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
 /**

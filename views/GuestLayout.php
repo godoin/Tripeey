@@ -36,11 +36,13 @@ include_once 'core/functions.php';
   </div>
 
   <!-- JS Link -->
-  <!-- <script src="js/index.js" type="text/javascript"></script>
-  <script src="js/ui/product.js" type="text/javascript"></script>
+  <script src="js/index.js" type="text/javascript"></script>
   <script src="js/ui/menu_toggle.js" type="text/javascript"></script>
-  <script src="js/ui/cart.js" type="text/javascript"></script>
-  <script src="js/ui/password_toggle.js" type="text/javascript"></script> -->
+  <script src="js/ui/password_toggle.js" type="text/javascript"></script>
+  <script src="js/ui/checkbox_toggle.js" type="text/javascript"></script>
+  <script src="js/ui/cart_quantity_manager.js" type="text/javascript"></script>
+  <script src="js/ui/product_quantity_manager.js" type="text/javascript"></script>
+  <!-- <script src="js/utils.js" type="module"></script> -->
 </body>
 
 </html>

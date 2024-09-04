@@ -71,7 +71,7 @@
                             <span class="discount">Discount available at 15%</span>
                         </div>
                         <div class="right">
-                            <span class="new-price" id="new-price">PHP 339.99</span>
+                            <span class="new-price" id="discount-price">PHP 339.99</span>
                             <span class="discount">Applied Discount</span>
                         </div>
                     </div>

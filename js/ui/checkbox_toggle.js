@@ -14,7 +14,7 @@ function hasActiveClass(element) {
 }
 
 /**
- * Toggles the 'active' state of the selected element based on its asociated checkbox.
+ * Toggles the value 'active' state of the selected element based on its asociated checkbox.
  */
 function toggleItemOption(selectedElement) {
   const checkbox = selectedElement.querySelector('input[type="checkbox"]');
@@ -31,7 +31,7 @@ function toggleItemOption(selectedElement) {
 /**
  * Update the selected item state to DOM elements.
  */
-function updateItemStateToDOM(state) {
+function updateOptionStateToDom(state) {
   state.element.classList.toggle("active");
   state.checkbox.checked = state.newCheckboxState;
 }
@@ -39,10 +39,10 @@ function updateItemStateToDOM(state) {
 /**
  * Handler logic for multiple selection.
  */
-function attachToggleHandler(option) {
+function attachOptionToggleHandler(option) {
   option.addEventListener("click", () => {
     const updatedState = toggleItemOption(option);
-    updateItemStateToDOM(updatedState);
+    updateOptionStateToDom(updatedState);
   });
 }
 
@@ -56,5 +56,5 @@ function setupToggleOptions(optionsSelector, toggleHandler) {
 }
 
 // Events fired.
-setupToggleOptions(".color-option", attachToggleHandler);
-setupToggleOptions(".size-option", attachToggleHandler);
+setupToggleOptions(".color-option", attachOptionToggleHandler);
+setupToggleOptions(".size-option", attachOptionToggleHandler);

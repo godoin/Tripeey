@@ -1,9 +1,18 @@
+/**
+ * Form Script
+ * This script handles form on submission with validation-checking...
+ *
+ * Features:
+ *
+ * TODO: Proper error handling such as missing DOM elements when querying.
+ */
+
 const NOT_EMPTY = "NOT_EMPTY";
 const MAX_LENGTH = "MAX_LENGTH";
 const VALID_EMAIL = "VALID_EMAIL";
 
 /**
- *
+ * Generic validation flags for evaluating user inputs.
  */
 function validate(value, flag, validatorValue) {
   if (flag === NOT_EMPTY) {
@@ -19,7 +28,7 @@ function validate(value, flag, validatorValue) {
 }
 
 /**
- *
+ * Validation of user input for login form.
  */
 function validateLoginUser(userEmail, userPassword) {
   if (!validate(userEmail, NOT_EMPTY)) {
@@ -56,16 +65,16 @@ function validateLoginUser(userEmail, userPassword) {
 }
 
 /**
- *
+ * Gets the value of an input element by id.
  */
 function getUserInput(id) {
   return document.getElementById(id).value;
 }
 
 /**
- *
+ * Handles the login form submission.
  */
-function loginInHandler(event) {
+function loginHandler(event) {
   event.preventDefault();
 
   const enteredEmail = getUserInput("email");
@@ -78,6 +87,7 @@ function loginInHandler(event) {
 
   if (validationResult.success) {
     try {
+      console.log(validationResult.data);
       // TODO: Create API endpoint to create session and redirect user to shop.
     } catch (err) {
       console.log(err);
@@ -95,4 +105,4 @@ function connectForm(formId, onSubmitHandler) {
   form?.addEventListener("submit", onSubmitHandler);
 }
 
-connectForm("user-input", loginInHandler);
+connectForm("user-input", loginHandler);
