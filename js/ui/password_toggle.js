@@ -17,19 +17,19 @@ function switchPasswordIcon(currentType) {
 /**
  * Update password states.
  */
-function updatePasswordState(passwordIcon, passwordField, newType, newSrc) {
+function updatePasswordState(passwordIcon, passwordInput, newType, newSrc) {
   passwordIcon.src = newSrc;
-  passwordField.type = newType;
+  passwordInput.type = newType;
 }
 
 /**
  * Handle password reveal on toggle.
  */
-function handlePasswordToggle(passwordIcon, passwordField) {
-  const newType = switchPasswordType(passwordField);
+function handlePasswordToggle(passwordIcon, passwordInput) {
+  const newType = switchPasswordType(passwordInput);
   const newSrc = switchPasswordIcon(newType);
 
-  updatePasswordState(passwordIcon, passwordField, newType, newSrc);
+  updatePasswordState(passwordIcon, passwordInput, newType, newSrc);
 }
 
 /**
@@ -38,10 +38,10 @@ function handlePasswordToggle(passwordIcon, passwordField) {
 function setupTogglePassword(passBtnId, passIconId, passInputId) {
   const passwordBtn = document.getElementById(passBtnId);
   const passwordIcon = document.getElementById(passIconId);
-  const passwordField = document.getElementById(passInputId);
+  const passwordInput = document.getElementById(passInputId);
 
   passwordBtn?.addEventListener("click", () => {
-    handlePasswordToggle(passwordIcon, passwordField);
+    handlePasswordToggle(passwordIcon, passwordInput);
   });
 }
 

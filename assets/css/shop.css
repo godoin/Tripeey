@@ -23,7 +23,7 @@
   font-size: 1rem;
 }
 
-.shop-container aside form {
+.shop-container aside #shop {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -145,7 +145,7 @@
     flex-direction: column;
   }
 
-  .shop-container aside form {
+  .shop-container aside #shop {
     width: 100%;
     flex: none;
   }

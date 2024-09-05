@@ -130,10 +130,6 @@ button:hover,
 }
 
 /* Forms */
-form {
-  flex: 1;
-}
-
 form .fields {
   display: flex;
   flex-direction: column;
@@ -182,6 +178,7 @@ form .fields .field.radio label {
 
 form .fields .field label {
   font-weight: 600;
+  overflow: hidden;
 }
 
 form .fields .field .placeholder-text {
@@ -246,9 +243,21 @@ input[type="checkbox"]:checked {
   font-size: 0.9rem;
 }
 
+.category-option label,
+.filter-option label {
+  cursor: pointer;
+}
+
+.category-option.active label,
+.category-option:hover label,
+.filter-option label:hover {
+  color: var(--violet-700);
+}
+
 .filter-option input[type="radio"],
 .color-option input[type="radio"],
-.size-option input[type="radio"] {
+.size-option input[type="radio"],
+.category-option input[type="radio"] {
   display: none;
 }
 
@@ -276,8 +285,10 @@ input[type="checkbox"]:checked {
   gap: 0.5em;
 }
 
-.filter-group .group > label {
-  font-size: 0.8rem;
+.filter-group .group > label,
+.filter-group .group .filter-option,
+label {
+  font-size: 0.9rem;
 }
 
 .filter-group:first-child > .group {
@@ -476,6 +487,10 @@ input[type="checkbox"]:checked {
 
 .card.item .description {
   padding: 0.6em;
+}
+.card.item .description h3,
+.card.item .details {
+  overflow: hidden;
 }
 
 .card.item .description h3 {

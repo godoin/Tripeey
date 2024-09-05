@@ -26,11 +26,13 @@
   min-height: 100vh;
 }
 
+.login-container form .title,
 .login-container form header,
 .login-container form .fields,
 .login-container form .actions,
 .login-container form .description {
   width: 100%;
+  overflow: hidden;
 }
 
 .login-container form header {

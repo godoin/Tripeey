@@ -208,13 +208,13 @@
 
     <!-- Product Details -->
     <section class="product-details">
-        <ul class="tabs">
-            <li class="tab" data-tab="description" active>Description</li>
-            <li class="tab" data-tab="seller">Seller</li>
-            <li class="tab" data-tab="reviews">Reviews</li>
+        <ul role="tablist" aria-label="ProductInfo" id="product-tabs" class="tabs">
+            <li class="tab" aria-selected="true" role="tab" aria-controls="panel1">Description</li>
+            <li class="tab" aria-selected="false" role="tab" aria-controls="panel2">Seller</li>
+            <li class="tab" aria-selected="false" role="tab" aria-controls="panel3">Reviews</li>
         </ul>
         <div class="tab-content">
-            <div id="description" class="tab-content-item" active>
+            <div id="panel1" role="tabpanel" aria-hidden="false" class="tab-content-item">
                 <h2>Product Description</h2>
                 <p>
                     The Slate Sunset Polo Shirt combines style and functionality for the modern adventurer. This versatile polo features a sophisticated slate gray color with subtle sunset-inspired accents, perfect for both casual outings and semi-formal occasions.
@@ -226,11 +226,11 @@
                     The Slate Sunset Polo Shirt is your go-to choice for effortless style and practicality.
                 </p>
             </div>
-            <div id="seller" class="tab-content-item">
+            <div id="panel2" role="tabpanel" aria-hidden="true" class="tab-content-item" >
                 <h2>Seller Information</h2>
                 <p>Information about the seller goes here.</p>
             </div>
-            <div id="reviews" class="tab-content-item">
+            <div id="panel3" role="tabpanel" aria-hidden="true" class="tab-content-item">
                 <h2>Customer Reviews</h2>
                 <p>Here are some reviews from customers.</p>
             </div>

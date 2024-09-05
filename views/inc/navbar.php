@@ -2,7 +2,7 @@
 
     <div class="left-content">
         <div class="logo-wrapper">
-            <a href="/" aria-label="Homepage">
+            <a href="/OnlineStore" aria-label="Homepage">
                 <img src="assets/images/logo-with-name.png" class="logo" alt="Tripeey">
             </a>
         </div>
@@ -36,7 +36,7 @@
             </li>
         </ul>
         
-        <a href="/login" class="ghost login" aria-label="Log In">
+        <a href="login.php" class="ghost login" aria-label="Log In">
             <!-- <img src="assets/images/icons/user.svg" alt="User" width="20"> -->
             <span>LOG IN</span>
         </a>

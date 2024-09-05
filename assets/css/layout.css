@@ -170,12 +170,13 @@ footer .content .group .newsletter .subscribe {
 }
 
 footer .content .group .newsletter .subscribe input {
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   border: none;
   background-color: transparent;
 }
 
 footer .content .group .newsletter .subscribe button {
+  padding: 0 1em;
   border: none;
   bottom: transparent;
   border-left: 1px solid var(--zinc-900);

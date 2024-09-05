@@ -1,6 +1,6 @@
 /* Global */
 .landing-container section {
-  padding: 2.5em 1em;
+  padding: 2.5em 2em 2.5em 1em;
   display: flex;
   flex-direction: column;
 }
@@ -96,8 +96,8 @@
 .products nav .categories {
   display: flex;
   justify-content: space-between;
-  gap: 1em;
-  overflow-x: auto;
+  row-gap: 0.5em;
+  flex-wrap: wrap;
   -webkit-overflow-scrolling: touch;
 }
 

@@ -14,7 +14,7 @@ const MAX_LENGTH = "MAX_LENGTH";
 const VALID_EMAIL = "VALID_EMAIL";
 
 function print_debug(statement, ...values) {
-  console.log(`DEBUG - ${statement}:`, values);
+  console.log(`DEBUG ~ ${statement}:`, values);
 }
 /**
  * Generic validation flags for evaluating user inputs.
@@ -40,26 +40,26 @@ function validateLoginUser(userEmail, userPassword) {
 
   if (!validate(userEmail, NOT_EMPTY)) {
     errors.push({
-      elementId: "error-main",
-      message: "Error: Email is required.",
+      elementId: "error-email",
+      message: "Email is required.",
     });
   }
   if (!validate(userEmail, VALID_EMAIL)) {
     errors.push({
       elementId: "error-main",
-      message: "Error: Please enter a valid email address.",
-    });
-  }
-  if (!validate(userPassword, NOT_EMPTY)) {
-    errors.push({
-      elementId: "error-pass",
-      message: "Error: Password is required.",
+      message: "Please enter a valid email address.",
     });
   }
   if (!validate(userPassword, MAX_LENGTH, 8)) {
     errors.push({
       elementId: "error-pass",
-      message: "Error: Password must be atleast 8 characters.",
+      message: "Password must be atleast 8 characters.",
+    });
+  }
+  if (!validate(userPassword, NOT_EMPTY)) {
+    errors.push({
+      elementId: "error-pass",
+      message: "Password is required.",
     });
   }
   // TODO: Create API endpoint call to check user exists.
@@ -68,6 +68,7 @@ function validateLoginUser(userEmail, userPassword) {
     errors.forEach((error) =>
       handleStateErrorToDOM(error.elementId, error.message)
     );
+    return false;
   }
 
   return {
@@ -100,7 +101,7 @@ function handleStateErrorToDOM(displayId, message) {
 
   setTimeout(() => {
     displayElement.classList.remove("active");
-  }, 5000);
+  }, 10000);
 }
 
 /**
@@ -119,7 +120,6 @@ function loginHandler(event) {
   const enteredEmail = getUserInput("email");
   const enteredPassword = getUserInput("password");
 
-  // print_debug(`Check`, enteredEmail, enteredPassword);
   print_debug("Check", enteredEmail, enteredPassword);
 
   const validationResult = validateLoginUser(enteredEmail, enteredPassword);
@@ -127,7 +127,7 @@ function loginHandler(event) {
   if (validationResult.success) {
     try {
       console.log(validationResult.data);
-      // TODO: Create API endpoint to create session and redirect user to shop.
+      // TODO: Create API 6endpoint to create session and redirect user to shop.
     } catch (err) {
       console.log(err);
     }

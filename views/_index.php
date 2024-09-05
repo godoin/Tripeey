@@ -76,16 +76,36 @@
         
         <nav>
             <ul class="categories">
-                <li><a href="#" class="button outline" title="Shop T-Shirts">T-Shirts</a></li>
-                <li><a href="#" class="button outline" title="Shop Tank Tops">Tank Tops</a></li>
-                <li><a href="#" class="button outline" title="Shop Blouses">Blouses</a></li>
-                <li><a href="#" class="button outline" title="Shop Polo Shirts">Polo Shirts</a></li>
-                <li><a href="#" class="button outline" title="Shop Sweatshirts">Sweatshirts</a></li>
-                <li><a href="#" class="button outline" title="Shop Hoodies">Hoodies</a></li>
-                <li><a href="#" class="button outline" title="Shop Crop Tops">Crop Tops</a></li>
-                <li><a href="#" class="button outline" title="Shop Graphic Tees">Graphic Tees</a></li>
-                <li><a href="#" class="button outline" title="Shop Henley Shirts">Henley Shirts</a></li>
-                <li><a href="#" class="button outline" title="Shop Long-sleeves">Long-sleeves</a></li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop T-Shirts">T-Shirts</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Tank Tops">Tank Tops</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Blouses">Blouses</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Polo Shirts">Polo Shirts</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Sweatshirts">Sweatshirts</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Hoodies">Hoodies</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Crop Tops">Crop Tops</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Graphic Tees">Graphic Tees</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Henley Shirts">Henley Shirts</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="button outline" title="Shop Long-sleeves">Long-sleeves</a>
+                </li>
             </ul>
         </nav>
 

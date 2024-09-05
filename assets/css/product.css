@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2em;
-  padding: 1em;
+  padding: 1em 2em 1em 1em;
 }
 
 .product-container > .product-item {
@@ -43,8 +43,12 @@
   overflow: hidden;
 }
 
+.product-container .product-item .main-image.image-container {
+  aspect-ratio: 1/1;
+}
+
 .product-container .product-item .image-container img {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
 }
@@ -57,11 +61,11 @@
   }
 
   .product-container .product-item .image-display {
-    flex: 0 0 60%;
+    flex: 1;
   }
 
   .product-container .product-item .product {
-    flex: 0 0 40%;
+    min-width: 20em;
   }
 
   .product-container .product-item .image-display .sub-images {
@@ -87,7 +91,8 @@
 
 @media (min-width: 1024px) {
   /* .product-container .product-item .image-display {
-    flex-direction: row;
+    min-width: 15em;
+    flex: none;
   } */
 
   /* .product-container .product-item .image-display .sub-images {
@@ -239,6 +244,8 @@
   border: 2px solid var(--zinc-300);
 }
 
+.product-container .product-item .product .filter-group .color-option.active,
+.product-container .product-item .product .filter-group .color-option:hover,
 .product-container .product-item .product .filter-group .size-option.active,
 .product-container .product-item .product .filter-group .size-option:hover {
   border: 2px solid var(--violet-800);
@@ -286,11 +293,11 @@
 
 @media (min-width: 1024px) {
   .product-container .product-item .product .price-group span:first-child {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .product-container .product-item .product .price-group span:last-child {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -372,14 +379,19 @@
 .product-container .product-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 2em;
 }
 
 .product-container .product-details .tabs {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2em;
+}
+
+.product-container .product-details .tab-content {
+  display: block;
+  text-align: left;
 }
 
 .product-container .product-details .tabs .tab {
@@ -391,18 +403,18 @@
   color: var(--zinc-500);
 }
 
-.product-container .product-details .tabs .tab[active] {
+.product-container .product-details .tabs .tab[aria-selected="true"] {
   color: var(--violet-700);
 }
 
-.product-container .product-details .tab-content-item {
-  display: none;
+.product .tab-content .product-details .tab-content-item {
+  display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-.product-container .product-details .tab-content-item[active] {
-  display: flex;
+.product-container .product-details .tab-content-item[aria-hidden="true"] {
+  display: none;
 }
 
 @media (min-width: 728px) {
