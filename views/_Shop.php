@@ -7,24 +7,28 @@
                 <h3 id="categoriesFilter">Categories</h3> 
                 <ul role="radiogroup" aria-labelledby="categoriesFilter" class="group" id="categories">
                     <li class="category-option">
+                        <label for="all">All</label>
+                        <input type="radio" name="category" value="All" aria-checked="true">
+                    </li>
+                    <li class="category-option">
                         <label for="t-shirts">T-shirt</label>
-                        <input type="radio" name="category" value="t-shirts" aria-checked="false"666>
+                        <input type="radio" name="category" value="T-shirts" aria-checked="false">
                     </li>
                     <li class="category-option">
                         <label for="hoodies">Hoodies</label>
-                        <input type="radio" name="category" value="hoodies" aria-checked="false">
+                        <input type="radio" name="category" value="Hoodies" aria-checked="false">
                     </li>
                     <li class="category-option">
                         <label for="sweatshirts">Sweatshirts</label>
-                        <input type="radio" name="category" value="sweatshirts" aria-checked="false">
+                        <input type="radio" name="category" value="Sweatshirts" aria-checked="false">
                     </li>
                     <li class="category-option">
                         <label for="polo-shirts">Polo Shirts</label>
-                        <input type="radio" name="category" value="polo-shirts" aria-checked="false">
+                        <input type="radio" name="category" value="Polo Shirts" aria-checked="false">
                     </li>
                     <li class="category-option">
                         <label for="long-sleeves">Long-Sleeves</label>
-                        <input type="radio" name="category" value="long-sleeves" aria-checked="false">
+                        <input type="radio" name="category" value="Long Sleeves" aria-checked="false">
                     </li>
                 </ul>
             </div>
@@ -37,24 +41,29 @@
                     <h3 id="stylesFilter">Styles</h3>
                     <ul role="group" aria-labelledby="stylesFilter" class="group" id="styles">
                         <li class="filter-option">
-                            <input type="checkbox" name="style" value="casual" aria-checked="false"> 
-                            <label for="casual">Casual</label>
+                            <input 
+                                type="checkbox" 
+                                name="style" 
+                                value="Casual" 
+                                aria-checked="false"
+                            /> 
+                            <label for="Casual">Casual</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="style" value="business" aria-checked="false">
+                            <input type="checkbox" name="style" value="Business" aria-checked="false">
                             <label for="business">Business</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="style" value="formal" aria-checked="false"> 
+                            <input type="checkbox" name="style" value="Formal" aria-checked="false"> 
                             <label for="formal">Formal</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="style" value="athletic" aria-checked="false">
-                            <label for="business">Athletic</label>
+                            <input type="checkbox" name="style" value="Athletic" aria-checked="false">
+                            <label for="athletic">Athletic</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="style" value="vintage" aria-checked="false"> 
-                            <label for="formal">Vintage</label>
+                            <input type="checkbox" name="style" value="Vintage" aria-checked="false"> 
+                            <label for="vintage">Vintage</label>
                         </li>
                     </ul>
                 </div>
@@ -65,52 +74,56 @@
                         <ul class="group color" id="colors">
                             <li class="color-option" style="background-color: #ffffff;">
                                 <label for="color-white"></label>
-                                <input type="checkbox" id="color-white" name="color" value="white" aria-checked="false">
+                                <input type="checkbox" id="color-white" name="color" value="White" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #000000;">
                                 <label for="color-black"></label>
-                                <input type="checkbox" id="color-black" name="color" value="black" aria-checked="false">
+                                <input type="checkbox" id="color-black" name="color" value="Black" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ff0000;">
                                 <label for="color-red"></label>
-                                <input type="checkbox" id="color-red" name="color" value="red" aria-checked="false">
+                                <input type="checkbox" id="color-red" name="color" value="Red" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #00ff00;">
                                 <label for="color-green"></label>
-                                <input type="checkbox" id="color-green" name="color" value="green" aria-checked="false">
+                                <input type="checkbox" id="color-green" name="color" value="Green" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #0000ff;">
                                 <label for="color-blue"></label>
-                                <input type="checkbox" id="color-blue" name="color" value="blue" aria-checked="false">
+                                <input type="checkbox" id="color-blue" name="color" value="Blue" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ffff00;">
                                 <label for="color-yellow"></label>
-                                <input type="checkbox" id="color-yellow" name="color" value="yellow" aria-checked="false">
+                                <input type="checkbox" id="color-yellow" name="color" value="Yellow" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ff00ff;">
                                 <label for="color-magenta"></label>
-                                <input type="checkbox" id="color-magenta" name="color" value="magenta" aria-checked="false">
+                                <input type="checkbox" id="color-magenta" name="color" value="
+                                magenta" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #00ffff;">
                                 <label for="color-cyan"></label>
-                                <input type="checkbox" id="color-cyan" name="color" value="cyan" aria-checked="false">
+                                <input type="checkbox" id="color-cyan" name="color" value="
+                                Cyan" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #800080;">
                                 <label for="color-purple"></label>
-                                <input type="checkbox" id="color-purple" name="color" value="purple" aria-checked="false">
+                                <input type="checkbox" id="color-purple" name="color" value="
+                                Purple" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ffa500;">
                                 <label for="color-orange"></label>
-                                <input type="checkbox" id="color-orange" name="color" value="orange" aria-checked="false">
+                                <input type="checkbox" id="color-orange" name="color" value="
+                                Orange" aria-checked="false">
                             </li>
                         </ul>
                 </div>
@@ -121,31 +134,31 @@
                         <ul role="group" aria-labelledby="sizesFilter" class="group size" id="sizes">
                             <li class="size-option">
                                 <label for="xxs">XXS</label>
-                                <input type="checkbox" name="size" value="xxs" aria-checked="false">
+                                <input type="checkbox" name="size" value="XXS" aria-checked="false">
                             </li>
                             <li class="size-option">
                                 <label for="xs">XS</label>
-                                <input type="checkbox" name="size" value="xs" aria-checked="false">
+                                <input type="checkbox" name="size" value="XS" aria-checked="false">
                             </li>
                             <li class="size-option">
                                 <label for="s">S</label>
-                                <input type="checkbox" name="size" value="s" aria-checked="false">
+                                <input type="checkbox" name="size" value="S" aria-checked="false">
                             </li>
                             <li class="size-option">
                                 <label for="m">M</label>
-                                <input type="checkbox" name="size" value="m" aria-checked="false">
+                                <input type="checkbox" name="size" value="M" aria-checked="false">
                             </li>
                             <li class="size-option">
                                 <label for="l">L</label>
-                                <input type="checkbox" name="size" value="l" aria-checked="false">
+                                <input type="checkbox" name="size" value="L" aria-checked="false">
                             </li>
                             <li class="size-option">
                                 <label for="xl">XL</label>
-                                <input type="checkbox" name="size" value="xl" aria-checked="false">
+                                <input type="checkbox" name="size" value="XL" aria-checked="false">
                             </li>
                             <li class="size-option">
                                 <label for="xxl">XXL</label>
-                                <input type="checkbox" name="size" value="xxl" aria-checked="false">
+                                <input type="checkbox" name="size" value="XXL" aria-checked="false">
                             </li>
                         </ul>
                     </div>
@@ -154,22 +167,22 @@
                 <div class="filter-group">
                     <h3 id="pricesFilter">Price Range</h3>
                     <ul role="group" aria-labelledby="pricesFilter" class="group" id="price-range">
-                        <div class="filter-option">
-                            <label for="below-50">Below $50</label>
-                            <input type="checkbox" name="price" value="below-50" aria-checked="false">
-                        </div>
-                        <label class="filter-option">
-                            <label for="50-100">$50 - $100</label>
-                            <input type="checkbox" name="price" value="50-100" aria-checked="false">
-                        </label>
-                        <label class="filter-option">
-                            <label for="100-200">$100 - $200</label>
-                            <input type="checkbox" name="price" value="100-200" aria-checked="false">
-                        </label>
-                        <label class="filter-option">
-                            <label for="200-plus">$200+</label>
-                            <input type="checkbox" name="price" value="200-plus" aria-checked="false">
-                        </label>
+                        <li class="filter-option">
+                            <input type="checkbox" name="price" value="Below 500" aria-checked="false">
+                            <label for="below-500">Below ₱500</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" name="price" value="500 to 1000" aria-checked="false">
+                            <label for="500-1000">₱500 - ₱1000</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" name="price" value="1000 to 2000" aria-checked="false">
+                            <label for="1000-2000">₱1000 - ₱2000</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" name="price" value="2000 above" aria-checked="false">
+                            <label for="2000-plus">₱2000+</label>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -210,41 +223,41 @@
             <!-- Applied Filters -->
             <div class="applied-filters">
 
-                <ul class="filters">
-                    <li class="button tertiary">
-                        <span class="filter-text">Casual</span>
+                <ul class="filters" id="filter-list">
+                    <li id="filter-btn" class="button tertiary" role="button" aria-label="All filter" aria-pressed="false">
+                        <span class="filter-text">All</span>
                         <span class="filter-remove">&times;</span>
                     </li>
-                    <li class="button tertiary">
+                    <!-- <li class="button tertiary" role="button" aria-label="Business filter" aria-pressed="false">
                         <span class="filter-text">Business</span>
                         <span class="filter-remove">&times;</span>
                     </li>
-                    <li class="button tertiary">
-                        <span class="filter-text">Red</span>
+                    <li class="button tertiary" role="button" aria-label="Formal filter" aria-pressed="false">
+                        <span class="filter-text">Formal</span>
                         <span class="filter-remove">&times;</span>
-                    </li>
+                    </li> -->
                 </ul>
 
-                <form class="sort-form">
+                <div class="sort-form">
                     <div class="select-wrapper">
                         <select id="sort-by" name="sort-by">
-                            <option value="most-popular" selected>Sort by: Most Popular</option>
-                            <option value="newest">Sort by: Newest</option>
-                            <option value="rating">Sort by: Rating</option>
+                            <option name="sort" value="most-popular" aria-selected="true" selected>Sort by: Most Popular</option>
+                            <option name="sort" value="newest" aria-selected="false">Sort by: Newest</option>
+                            <option name="sort" value="rating" aria-selected="false">Sort by: Rating</option>
                         </select>
                     </div>
-                </form>
+                </div>
     
             </div>
         </header>
 
-        <!-- Main Shopping Cards -->
+        <!-- main Shopping Cards -->
         <div class="content-items">
             <ul class="cards">
 
                 <article class="card item">
                     <div class="image-container">
-                        <img src="assets/images/items/shirt_one.png" class="model_img" alt="Midnight Wanderer 705">
+                        <img src="assets/images/items/shirt_one.png" class="model_img" alt="midnight Wanderer 705">
                         <div class="top-position">
                             <span class="button badge-02">New</span>
                             <button class="icon like" aria-label="Add to Favorites" data-id="#">
@@ -253,13 +266,13 @@
                         </div>
                     </div>
                     <div class="description">
-                        <h3>Midnight Wanderer 705</h3>
+                        <h3>midnight Wanderer 705</h3>
                         <div class="details">
                             <div class="price-group">
                                 <span class="title">Price</span>
                                 <span class="price">PHP 1199.99</span>
                             </div>
-                            <a href="product-page.html" class="button primary" aria-label="Buy Midnight Wanderer 705">
+                            <a href="product-page.html" class="button primary" aria-label="Buy midnight Wanderer 705">
                                 <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
                             </a>
                         </div>
@@ -268,7 +281,7 @@
 
                 <article class="card item">
                     <div class="image-container">
-                        <img src="assets/images/items/shirt_two.png" class="model_img" alt="Midnight Wanderer 705">
+                        <img src="assets/images/items/shirt_two.png" class="model_img" alt="midnight Wanderer 705">
                         <div class="top-position">
                             <span class="button badge-02">New</span>
                             <button class="icon like" aria-label="Add to Favorites" data-id="#">

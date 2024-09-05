@@ -2,7 +2,6 @@
  * Checkbox and radio toggling.
  * Script for multiple selection of an element such as colors or sizes using checkboxes or radios.
  *
- * TODO: Create a detailed guide how this script works.
  * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
@@ -34,24 +33,27 @@ function updateCheckboxOptionStateToDOM(option, newState, checkbox) {
 }
 
 /**
- * Update the selected radio button to DOM.
+ * Update the new state selected radio button to DOM.
  */
-function updateRadioOptionStateToDOM(option, newState, radio) {
+function updateRadioOptionStateToDOM(option, radio, newState) {
   option.classList.toggle("active", newState === "true");
   radio.checked = newState === "true";
   radio.setAttribute("aria-checked", newState);
 }
 
+/**
+ * Handles the click event of a radio button.
+ */
 function toggledRadioOption(option) {
   const radio = option.querySelector('input[type="radio"]');
   const radioOptions = document.querySelectorAll(".category-option");
 
   radioOptions.forEach((otherOption) => {
     let otherRadio = otherOption.querySelector('[type="radio"]');
-    updateRadioOptionStateToDOM(otherOption, "false", otherRadio);
+    updateRadioOptionStateToDOM(otherOption, otherRadio, "false");
   });
 
-  updateRadioOptionStateToDOM(option, "true", radio);
+  updateRadioOptionStateToDOM(option, radio, "true");
 }
 
 function attachOptionToggleHandler(option, toggleOption) {

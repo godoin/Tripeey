@@ -31,7 +31,12 @@ button:hover,
 
 .tertiary {
   background-color: var(--zinc-100);
-  column-rule: var(--zinc-400);
+  color: var(--zinc-400);
+}
+
+.tertiary:hover {
+  background-color: var(--zinc-200);
+  color: var(--zinc-500);
 }
 
 .ghost {

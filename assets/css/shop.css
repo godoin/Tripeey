@@ -80,6 +80,7 @@
   display: flex;
   gap: 1em;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .shop-container .applied-filters .filters .filter-text {
