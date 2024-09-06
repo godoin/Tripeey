@@ -105,7 +105,7 @@
                             <li class="color-option" style="background-color: #ff00ff;">
                                 <label for="color-magenta"></label>
                                 <input type="checkbox" id="color-magenta" name="color" value="
-                                magenta" aria-checked="false">
+                                Magenta" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #00ffff;">
@@ -260,7 +260,7 @@
                         <img src="assets/images/items/shirt_one.png" class="model_img" alt="midnight Wanderer 705">
                         <div class="top-position">
                             <span class="button badge-02">New</span>
-                            <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites" data-id="#">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
                         </div>
@@ -284,7 +284,7 @@
                         <img src="assets/images/items/shirt_two.png" class="model_img" alt="midnight Wanderer 705">
                         <div class="top-position">
                             <span class="button badge-02">New</span>
-                            <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
                         </div>
@@ -308,7 +308,7 @@
                         <img src="assets/images/items/shirt_three.png" class="model_img" alt="Seamless Stussy Shirt">
                         <div class="top-position">
                             <span class="button badge-02">New</span>
-                            <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                            <button id="favorite-btn"  class="icon like" aria-label="Add to Favorites" data-id="#">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
                         </div>

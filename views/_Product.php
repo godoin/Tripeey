@@ -135,35 +135,35 @@
                     
                     <!-- Sizes -->
                     <div class="filter-group">
-                        <h2>Sizes</h2>
-                        <ul class="group size">
+                        <h2 id="sizesFilter">Sizes</h2>
+                        <ul role="group" aria-labelledby="sizesFilter" class="group size" id="sizes">
                             <li class="size-option">
-                                <label for="xxs"></label>
-                                <input type="checkbox" name="size" value="xxs"> XXS
+                                <label for="xxs">XXS</label>
+                                <input type="checkbox" name="size" value="XXS" aria-checked="false">
                             </li>
                             <li class="size-option">
-                                <label for="xs"></label>
-                                <input type="checkbox" name="size" value="xs"> XS
+                                <label for="xs">XS</label>
+                                <input type="checkbox" name="size" value="XS" aria-checked="false">
                             </li>
                             <li class="size-option">
-                                <label for="s"></label>
-                                <input type="checkbox" name="size" value="s"> S
+                                <label for="s">S</label>
+                                <input type="checkbox" name="size" value="S" aria-checked="false">
                             </li>
                             <li class="size-option">
-                                <label for="m"></label>
-                                <input type="checkbox" name="size" value="m"> M
+                                <label for="m">M</label>
+                                <input type="checkbox" name="size" value="M" aria-checked="false">
                             </li>
                             <li class="size-option">
-                                <label for="l"></label>
-                                <input type="checkbox" name="size" value="l"> L
+                                <label for="l">L</label>
+                                <input type="checkbox" name="size" value="L" aria-checked="false">
                             </li>
                             <li class="size-option">
-                                <label for="xl"></label>
-                                <input type="checkbox" name="size" value="xl"> XL
+                                <label for="xl">XL</label>
+                                <input type="checkbox" name="size" value="XL" aria-checked="false">
                             </li>
                             <li class="size-option">
-                                <label for="xxl"></label>
-                                <input type="checkbox" name="size" value="xxl"> XXL
+                                <label for="xxl">XXL</label>
+                                <input type="checkbox" name="size" value="XXL" aria-checked="false">
                             </li>
                         </ul>
                     </div>

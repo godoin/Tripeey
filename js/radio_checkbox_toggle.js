@@ -3,6 +3,7 @@
  * Script for multiple selection of an element such as colors or sizes using checkboxes or radios.
  *
  * TODO: Proper error handling such as missing DOM elements when querying.
+ * TODO: Handle the rest of the other click events to update the aria.
  */
 
 /**

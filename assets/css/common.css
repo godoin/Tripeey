@@ -60,7 +60,9 @@ button:hover,
   transition: all 0.3s ease;
 }
 
-.icon.like > i {
+.icon.like > i,
+.icon.like > .fa-heart {
+  color: var(--red-500);
   font-size: 1.2em;
 }
 

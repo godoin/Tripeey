@@ -9,6 +9,7 @@
  * - Prevents decrementing below a minimum quantity (usually 1).
  *
  * TODO: Proper error handling such as missing DOM elements when querying.
+ * TODO: Resolve error when quantity reaches 10.
  */
 
 const PHP = "PHP";

@@ -53,163 +53,14 @@
     <!-- Content -->
     <div class="content">
 
-        <section class="cart-items">
-
-            <article class="item">
-                <!-- Image -->
-                <div class="image-container">
-                    <img src="assets/images/items/product-01.png" class="item-img" alt="Sunset Polo Shirt">
-                </div>
-
-                <div class="details-group">
-                    <!-- Details -->
-                    <div class="details">
-                        <h2 class="title">Sunset Polo Shirt</h2>
-                        <div class="group">
-                            <span class="price">PHP 339.99</span>
-                            <span class="divider">|</span>
-                            <span class="status">In Stock</span>
-                        </div>
-                        <span class="price colored">PHP 339.99</span>
-                    </div>
-    
-                    <!-- Actions -->
-                    <div class="actions">
-                        <div class="group">
-                            <!-- Size -->
-                            <select name="size" id="size" required>
-                                <label for="size" class="sr-only">Size</label>
-                                <option value="x-small">XS</option>
-                                <option value="small">S</option>
-                                <option value="medium">M</option>
-                                <option value="large">L</option>
-                                <option value="x-large" selected>XL</option>
-                                <option value="xx-large">XXL</option>
-                            </select>
-    
-                            <!-- Color -->
-                            <select name="color" id="color" required>
-                                <label for="color" class="sr-only">Color</label>
-                                <option value="white">White</option>
-                                <option value="black">Black</option>
-                                <option value="red">Red</option>
-                                <option value="green">Green</option>
-                                <option value="blue">Blue</option> 
-                                <option value="yellow">Yellow</option>
-                                <option value="magenta">Magenta</option>
-                                <option value="cyan">Cyan</option>
-                                <option value="purple">Purple</option>
-                                <option value="orange">Orange</option>
-                            </select>
-    
-                            <!-- Quantity -->
-                            <div class="qty-container">
-                                <label for="quantity" class="sr-only">Quantity</label>
-                                <button type="button" id="qty-minus" class="qty-btn qty-minus" aria-label="Decrease quantity">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <input type="number" id="qty-field" name="quantity" class="qty-field" value="1" aria-label="Quantity" readonly>
-                                <button type="button" id="qty-plus" class="qty-btn qty-plus" aria-label="Increase quantity">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-    
-                        <!-- Favorite and Delete Actions -->
-                        <div class="group">
-                            <button class="outline" aria-label="Add to Favorites">
-                                <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                                <span class="title">Favorite</span>
-                            </button>
-    
-                            <button class="outline" aria-label="Delete Item">
-                                <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
-                                <span class="title">Delete</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="item">
-                <!-- Image -->
-                <div class="image-container">
-                    <img src="assets/images/items/product-01.png" class="item-img" alt="Sunset Polo Shirt">
-                </div>
-
-                <!-- Details -->
-                <div class="details-group">
-                    <div class="details">
-                        <h2 class="title">Sunset Polo Shirt</h2>
-                        <div class="group">
-                            <span class="price">PHP 339.99</span>
-                            <span class="divider">|</span>
-                            <span class="status">In Stock</span>
-                        </div>
-                        <span class="price colored">PHP 339.99</span>
-                    </div>
-    
-                    <!-- Actions -->
-                    <div class="actions">
-                        <div class="group">
-                            <!-- Size -->
-                            <select name="size" id="size" required>
-                                <label for="size" class="sr-only">Size</label>
-                                <option value="x-small">XS</option>
-                                <option value="small">S</option>
-                                <option value="medium">M</option>
-                                <option value="large">L</option>
-                                <option value="x-large" selected>XL</option>
-                                <option value="xx-large">XXL</option>
-                            </select>
-    
-                            <!-- Color -->
-                            <select name="color" id="color" required>
-                                <label for="color" class="sr-only">Color</label>
-                                <option value="white">White</option>
-                                <option value="black">Black</option>
-                                <option value="red">Red</option>
-                                <option value="green">Green</option>
-                                <option value="blue">Blue</option> 
-                                <option value="yellow">Yellow</option>
-                                <option value="magenta">Magenta</option>
-                                <option value="cyan">Cyan</option>
-                                <option value="purple">Purple</option>
-                                <option value="orange">Orange</option>
-                            </select>
-    
-                            <!-- Quantity -->
-                            <div class="qty-container">
-                                <label for="quantity" class="sr-only">Quantity</label>
-                                <button type="button" id="qty-minus" class="qty-btn qty-minus" aria-label="Decrease quantity">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <input type="number" id="qty-field" class="qty-field" name="quantity" value="1" aria-label="Quantity" readonly>
-                                <button type="button" id="qty-plus" class="qty-btn qty-plus" aria-label="Increase quantity">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-    
-                        <!-- Favorite and Delete Actions -->
-                        <div class="group">
-                            <button class="outline" aria-label="Add to Favorites">
-                                <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                                <span class="title">Favorite</span>
-                            </button>
-    
-                            <button class="outline" aria-label="Delete Item">
-                                <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
-                                <span class="title">Delete</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
+        <section class="cart-items" id="cart-container">
+            <div class="message" id="empty-cart">
+                <span class="text info">No products found. Start Shopping!</span>
+            </div>
         </section>
 
         <!-- Summary -->
-        <section class="summary">
+        <section class="summary" id="cart-summary">
             <!-- Header -->
             <header>
                 <h2 class="title">Order Summary</h2>
@@ -218,11 +69,11 @@
             <!-- Delivery -->
             <div class="delivery">
                 <div class="group">
-                    <h3 class="section-title">Delivery Info</h3>
+                    <h3 id="deliveryOptions" class="section-title">Delivery Info</h3>
                     <span class="order-number">#OR-3421</span>
                 </div>
-                <ul class="delivery-tabs" role="tablist">
-                    <li class="tab" role="tab" aria-selected="true">Standard</li>
+                <ul id="delivery-tabs" class="delivery-tabs" role="tablist" aria-labelledby="deliveryOptions">
+                    <li class="tab" role="tab" aria-selected="true" selected>Standard</li>
                     <li class="tab" role="tab" aria-selected="false">Express</li>
                     <li class="tab" role="tab" aria-selected="false">Overnight</li>
                 </ul>

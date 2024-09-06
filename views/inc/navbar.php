@@ -8,13 +8,13 @@
         </div>
         <ul id="nav-items">
             <li class="nav-item">
-                <a href="/">Home</a>
+                <a href="/OnlineStore">Home</a>
             </li>
             <li class="nav-item">
                 <a href="shop.php">Shop</a>
             </li>
-            <li class="faqs">
-                <a href="faqs.ph">FAQs</a>
+            <li class="nav-items">
+                <a href="faqs.php">FAQs</a>
             </li>
             <li class="nav-item">
                 <a href="contact.php">Contact</a>

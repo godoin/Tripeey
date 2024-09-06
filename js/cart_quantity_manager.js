@@ -23,6 +23,7 @@ function parseIntElementValue(element) {
  */
 function incrementQtyHandler(input) {
   const currentFieldValue = parseIntElementValue(input);
+  if (currentFieldValue > 9) return false;
   const newValue = currentFieldValue + 1;
 
   return {
@@ -61,7 +62,7 @@ function attachQtyChangeHandler(button, eventHandler) {
     const input = container.querySelector(".qty-field");
     const updatedState = eventHandler(input);
 
-    if (!updatedState === null) updateNewCartQtyStateToDOM(updatedState);
+    if (updatedState) updateNewCartQtyStateToDOM(updatedState);
   });
 }
 

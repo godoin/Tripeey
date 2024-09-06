@@ -73,7 +73,7 @@
 .shop-container .applied-filters {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  gap: 1em;
 }
 
 .shop-container .applied-filters .filters {
@@ -108,8 +108,19 @@
     flex-direction: row;
   }
 
+  .shop-container .applied-filters {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .shop-container .applied-filters .filters {
+    flex: 1;
+  }
+
   .shop-container .applied-filters .sort-form {
     justify-content: end;
+    min-width: 12em;
   }
 
   .shop-container .content .content-items .cards {
@@ -130,12 +141,6 @@
 
   .shop-container .title-group .details {
     text-align: right;
-  }
-
-  .shop-container .applied-filters {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 }
 

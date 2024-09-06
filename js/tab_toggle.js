@@ -35,29 +35,61 @@ function updateSelectedTabStateToDOM(tab, newPanelState, newTabState) {
 /**
  * Event handler for selected tab.
  */
-function selectTab(tab, tabList) {
+function selectTabWithPanel(tab, tabList) {
   const allTabs = tabList.querySelectorAll('[role="tab"]');
 
   allTabs.forEach((otherTab) => {
-    updateSelectedTabToDOM(otherTab, "true", "false");
+    updateSelectedTabStateToDOM(otherTab, "true", "false");
   });
 
-  updateSelectedTabToDOM(tab, "false", "true");
+  updateSelectedTabStateToDOM(tab, "false", "true");
 }
 
-function attachTabSelectHandler(tab) {
-  const tabList = tab.closest('[role="tablist"]');
+function selectSingleTab(tab, tabList) {
+  const allTabs = tabList.querySelectorAll('[role="tab"]');
+
+  allTabs.forEach((otherTab) => {
+    otherTab.setAttribute("selected", "false");
+    otherTab.setAttribute("aria-selected", "false");
+  });
+
+  tab.setAttribute("selected", "true");
+  tab.setAttribute("aria-selected", "true");
+}
+
+/**
+ * Attach tab selection to an event.
+ */
+function attachTabSelectHandler(tab, tabListRole, tabHandler) {
+  const tabList = tab.closest(tabListRole);
 
   tab.addEventListener("click", () => {
-    selectTab(tab, tabList);
+    tabHandler(tab, tabList);
   });
 }
 
-function setupTabSelection(tabListId, clickHandler) {
+/**
+ * Setup to allow tab selection.
+ */
+function setupTabSelection(tabListId, tabListRole, clickHandler, tabHandler) {
   const tabList = document.getElementById(tabListId);
-
   const tabs = tabList?.querySelectorAll('[role="tab"]');
-  tabs?.forEach(clickHandler);
+
+  tabs?.forEach((tab) => {
+    clickHandler(tab, tabListRole, tabHandler);
+  });
 }
 
-setupTabSelection("product-tabs", attachTabSelectHandler);
+setupTabSelection(
+  "delivery-tabs",
+  '[role="tablist"]',
+  attachTabSelectHandler,
+  selectSingleTab
+);
+
+setupTabSelection(
+  "product-tabs",
+  '[role="tablist"]',
+  attachTabSelectHandler,
+  selectTabWithPanel
+);

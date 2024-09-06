@@ -7,9 +7,10 @@
  * - Allows multi-selection (filters), single category selection, and sort selection.
  * - Allows removing of the applied filters on the shop.
  *
- * TODO: Create the FETCH API for handling the request to server.
+ * TODO: Create the FETCH API for handling the client-side request to server.
+ * TODO: Handle events where after getting the new products through FETCH API, properly reattach the click events needed.
  * TODO: Proper error handling such as missing DOM elements when querying.
- * TODO: Switch the action of applying filters from button to any click selection from filters.
+ * TODO: Switch the action of applying filters from button to any click selection of filters.
  */
 
 function gatherFilteredData() {
@@ -61,7 +62,7 @@ function checkFilterButton(name) {
 function displayFilteredData(buttonId) {
   const button = document.getElementById(buttonId);
   const select = document.getElementById("sort-by");
-  const selectedOption = select.value;
+  const selectedOption = select?.value;
 
   button?.addEventListener("click", () => {
     let filters = gatherFilteredData();
@@ -145,10 +146,41 @@ function destroyButton(button, parent) {
 function setupDestroyBtnHandler(buttonId, parent) {
   const button = document.getElementById(buttonId);
 
-  button.addEventListener("click", () => {
+  button?.addEventListener("click", () => {
     destroyButton(button, parent);
   });
 }
 
+/**
+ * Switches between fontawesome's solid and regular icons.
+ */
+function switchFavoriteIcon(icon) {
+  return icon.classList.contains("fa-regular") ? "fa-solid" : "fa-regular";
+}
+
+/**
+ * Handles the event change when clicking favorite button.
+ */
+function clickFavorite(button) {
+  const icon = button.querySelector(".fa-heart");
+  const newIcon = switchFavoriteIcon(icon);
+  icon.classList.remove("fa-regular", "fa-solid");
+  icon.classList.add(newIcon);
+}
+
+/**
+ * Setup the click listener to all product items with a favorite button.
+ */
+function setupClickFavorite(buttonClass) {
+  const buttons = document.querySelectorAll(buttonClass);
+
+  buttons.forEach((button) =>
+    button?.addEventListener("click", () => {
+      clickFavorite(button);
+    })
+  );
+}
+
+setupClickFavorite(".like");
 setupDestroyBtnHandler("filter-btn", ".filters");
 displayFilteredData("test-btn");

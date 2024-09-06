@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "category": "T-shirt",
+        "style": "Formal",
+        "size": "M",
+        "color": "Black",
+        "imageUrl": "assets/images/items/product-01.png",
+        "imageAlt": "Sunset Polo Shirt",
+        "title": "Sunset Polo Shirt",
+        "price": "PHP339.99",
+        "status": "In Stock",
+        "quantity": "1",
+        "isFavorite": false
+    },
+    {
+        "id": "2",
+        "category": "T-shirt",
+        "style": "Formal",
+        "imageUrl": "assets/images/items/product-02.png",
+        "imageAlt": "Green Golf Polo",
+        "title": "Green Golf Polo",
+        "price": "PHP 899.50",
+        "status": "In Stock",
+        "quantity": "1",
+        "isFavorite": false
+    }
+]

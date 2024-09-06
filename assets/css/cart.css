@@ -2,7 +2,7 @@
 
 /* Container */
 .cart-container {
-  padding: 1.5em 1em 2.5em;
+  padding: 1.5em 2em 1.5em 1em;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -170,7 +170,13 @@
   gap: 1em;
 }
 
+.cart-container .content .cart-items .actions .qty-container {
+  max-width: 12em;
+  min-width: 8em;
+}
+
 .cart-container .content .cart-items .actions select {
+  flex: 1;
   display: flex;
   gap: 0.2em;
   align-items: center;
@@ -204,11 +210,11 @@
 
 @media (min-width: 728px) {
   .cart-container .content .cart-items .actions > .group {
-    max-width: 20em;
+    max-width: 25em;
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1024px) {
   .cart-container .content .cart-items .actions {
     flex-direction: row;
     justify-content: space-between;
@@ -223,7 +229,8 @@
   border: 1px solid var(--zinc-300);
 }
 
-.cart-container .content .cart-items .actions .qty-container .qty-btn + input {
+.cart-container .content .cart-items .actions .qty-container .qty-btn,
+.cart-container .content .cart-items .actions .qty-container .qty-field {
   flex: 1;
 }
 
@@ -304,9 +311,13 @@
   background-color: var(--zinc-100);
   padding: 1.2em 0.6em;
   border-radius: 0.6em;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0.6em;
+}
+
+.summary.active {
+  display: flex;
 }
 
 @media (min-width: 728px) {
