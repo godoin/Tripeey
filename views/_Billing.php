@@ -53,79 +53,146 @@
     <!-- Content -->
     <div class="content">
 
-        <form class="billing" method="post">
+        <form class="billing" method="post" id="billing-form">
 
-            <!-- Billing Information -->
             <div class="billing-information">
                 <header>
                     <h2 class="title">Billing Information</h2>
                 </header>
                 <div class="fields">
                     <div class="group full_name">
-                        <div class="field">
+                        <div class="field" id="billing_first_name">
                             <label for="billing_first_name">First Name</label>
-                            <input type="text" name="billing_first_name" id="billing_first_name" required placeholder="First Name">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_first_name" placeholder="First Name" value="John"> 
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="billing_last_name">
                             <label for="billing_last_name">Last Name</label>
-                            <input type="text" name="billing_last_name" id="billing_last_name" required placeholder="Last Name">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_last_name" placeholder="Last Name" value="Doe">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="billing_middle_initial">
                             <label for="billing_middle_initial">M.I.</label>
-                            <input type="text" name="billing_middle_initial" id="billing_middle_initial" required placeholder="M.I.">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_middle_initial" placeholder="M.I." value="A"> 
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="billing_email">
                             <label for="billing_email">Email Address</label>
-                            <input type="email" name="billing_email" id="billing_email" required placeholder="Email Address">
+                            <div class="input-wrapper">
+                                <input class="input" type="email" name="billing_email" placeholder="Email Address" value="john.doe@example.com">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="billing_phone_number">
                             <label for="billing_phone">Phone Number</label>
-                            <input type="tel" name="billing_phone" id="billing_phone" required placeholder="Phone Number">
+                            <div class="input-wrapper">
+                                <input class="input" type="tel" name="billing_phone" placeholder="Phone Number" value="+63 9123456789">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="billing_street_address">
                             <label for="billing_street_address">Street Address</label>
-                            <input type="text" name="billing_street_address" id="billing_street_address" required placeholder="Street Address">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_street_address" placeholder="Street Address" value="123 Main St">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="billing_city">
                             <label for="billing_city">City</label>
-                            <input type="text" name="billing_city" id="billing_city" required placeholder="City">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_city" placeholder="City" value="Quezon City">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="billing_state">
                             <label for="billing_state">State</label>
-                            <input type="text" name="billing_state" id="billing_state" required placeholder="State">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_state" placeholder="State" value="Metro Manila">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="billing_province">
                             <label for="billing_province">Province</label>
-                            <input type="text" name="billing_province" id="billing_province" required placeholder="Province">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_province" placeholder="Province" value="Pampanga">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="billing_region">
                             <label for="billing_region">Region</label>
-                            <input type="text" name="billing_region" id="billing_region" required placeholder="Region">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_region" placeholder="Region" value="Region I">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="billing_zip_code">
                             <label for="billing_zip_code">Zip Code</label>
-                            <input type="text" name="billing_zip_code" id="billing_zip_code" required placeholder="Zip Code">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_zip_code" placeholder="Zip Code" value="1100">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field country">
+                        <div class="field country" id="billing_country">
                             <label for="billing_country">Country</label>
-                            <input type="text" name="billing_country" id="billing_country" required placeholder="Country">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="billing_country" placeholder="Country" value="Philippines">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="field checkbox">
-                        <input type="checkbox" id="same_address">
-                        <label for="same_address">Billing address is the same as the shipping address.</label>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Shipping Information -->
             <div class="shipping-information">
                 <header>
@@ -133,62 +200,138 @@
                 </header>
                 <div class="fields">
                     <div class="group full_name">
-                        <div class="field">
+                        <div class="field" id="shipping_first_name">
                             <label for="shipping_first_name">First Name</label>
-                            <input type="text" name="shipping_first_name" id="shipping_first_name" required placeholder="First Name">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_first_name" placeholder="First Name" value="John">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="shipping_last_name">
                             <label for="shipping_last_name">Last Name</label>
-                            <input type="text" name="shipping_last_name" id="shipping_last_name" required placeholder="Last Name">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_last_name" placeholder="Last Name" value="Doe">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="shipping_middle_initial">
                             <label for="shipping_middle_initial">M.I.</label>
-                            <input type="text" name="shipping_middle_initial" id="shipping_middle_initial" required placeholder="M.I.">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_middle_initial" placeholder="M.I." value="A">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="shipping_email">
                             <label for="shipping_email">Email Address</label>
-                            <input type="email" name="shipping_email" id="shipping_email" required placeholder="Email Address">
+                            <div class="input-wrapper">
+                                <input class="input" type="email" name="shipping_email" placeholder="Email Address" value="johndoe@example.com">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="shipping_phone_number">
                             <label for="shipping_phone">Phone Number</label>
-                            <input type="tel" name="shipping_phone" id="shipping_phone" required placeholder="Phone Number">
+                            <div class="input-wrapper">
+                                <input class="input" type="tel" name="shipping_phone" placeholder="Phone Number" value="+1234567890">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="shipping_street_address">
                             <label for="shipping_street_address">Street Address</label>
-                            <input type="text" name="shipping_street_address" id="shipping_street_address" required placeholder="Street Address">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_street_address" placeholder="Street Address" value="123 Main St">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="shipping_city">
                             <label for="shipping_city">City</label>
-                            <input type="text" name="shipping_city" id="shipping_city" required placeholder="City">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_city" placeholder="City" value="New York">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="shipping_state">
                             <label for="shipping_state">State</label>
-                            <input type="text" name="shipping_state" id="shipping_state" required placeholder="State">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_state" placeholder="State" value="NY">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="shipping_province">
                             <label for="shipping_province">Province</label>
-                            <input type="text" name="shipping_province" id="shipping_province" required placeholder="Province">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_province" placeholder="Province" value="Manhattan">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="shipping_region">
                             <label for="shipping_region">Region</label>
-                            <input type="text" name="shipping_region" id="shipping_region" required placeholder="Region">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_region" placeholder="Region" value="Northeast">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="shipping_zip_code">
                             <label for="shipping_zip_code">Zip Code</label>
-                            <input type="text" name="shipping_zip_code" id="shipping_zip_code" required placeholder="Zip Code">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_zip_code" placeholder="Zip Code" value="10001">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field country">
+                        <div class="field country" id="shipping_country">
                             <label for="shipping_country">Country</label>
-                            <input type="text" name="shipping_country" id="shipping_country" required placeholder="Country">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="shipping_country" placeholder="Country" value="USA">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="field checkbox" id="same_address">
+                        <input class="input" type="checkbox">
+                        <label for="same_address">Billing address is the same as the shipping address.</label>
                     </div>
                 </div>
             </div>
@@ -198,48 +341,74 @@
                 <header>
                     <h2 class="title">Payment Method</h2>
                 </header>
-
+                
                 <div class="fields">
-                    <div class="group">
-                        <div class="field radio">
-                            <input type="radio" id="cod" name="payment_method" value="cod" required>
-                            <label for="cod">Card on Delivery</label>
+                    <div class="group" id="payment_method_card">
+                        <div class="field radio" id="cod">
+                            <input class="input" type="radio" name="payment_method" value="cod" checked>
+                            <label for="cod">Cash on Delivery</label>
                         </div>
-                        <div class="field radio">
-                            <input type="radio" id="digital_wallet" name="payment_method" value="digital_wallet">
+                        <div class="field radio" id="digital_wallet">
+                            <input class="input" type="radio" name="payment_method" value="digital_wallet">
                             <label for="digital_wallet">Digital Wallet</label>
                         </div>
-                        <div class="field radio">
-                            <input type="radio" id="paypal" name="payment_method" value="paypal">
+                        <div class="field radio" id="paypal">
+                            <input class="input" type="radio" name="payment_method" value="paypal">
                             <label for="paypal">PayPal</label>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="payment_method_card_number">
                             <label for="card_number">Card Number</label>
-                            <input type="text" name="card_number" id="card_number" required placeholder="Card Number">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="card_number" placeholder="Card Number" value="4567 1234 8901 2345"> 
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="payment_method_expiration_date">
                             <label for="expiration_date">Expiration Date</label>
-                            <input type="date" name="expiration_date" id="expiration_date" required>
+                            <div class="input-wrapper">
+                                <input class="input" type="date" name="expiration_date" value="2025-06-30"> 
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field">
+                        <div class="field" id="payment_method_name_on_card">
                             <label for="name_card">Name on the Card</label>
-                            <input type="text" name="name_card" id="name_card" required placeholder="Name on the Card">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="name_card" placeholder="Name on the Card" value="JANE SMITH">
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="payment_method_cv_code">
                             <label for="cv_code">Card Verification Code</label>
-                            <input type="text" name="cv_code" id="cv_code" required placeholder="Card Verification Code">
+                            <div class="input-wrapper">
+                                <input class="input" type="text" name="cv_code" placeholder="Card Verification Code" value="321"> 
+                                <div class="tooltip">
+                                    <span class="tooltip-message">This is a tool tip.</span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <button type="submit">Submit</button>
         </form>
 
         <!-- Summary -->
-        <section class="summary">
+        <section class="summary" id="cart-summary">
             <!-- Header -->
             <header>
                 <h2 class="title">Order Summary</h2>
@@ -248,11 +417,11 @@
             <!-- Delivery -->
             <div class="delivery">
                 <div class="group">
-                    <h3 class="section-title">Delivery Info</h3>
+                    <h3 id="deliveryOptions" class="section-title">Delivery Info</h3>
                     <span class="order-number">#OR-3421</span>
                 </div>
-                <ul class="delivery-tabs" role="tablist">
-                    <li class="tab" role="tab" aria-selected="true">Standard</li>
+                <ul id="delivery-tabs" class="delivery-tabs" role="tablist" aria-labelledby="deliveryOptions">
+                    <li class="tab" role="tab" aria-selected="true" selected>Standard</li>
                     <li class="tab" role="tab" aria-selected="false">Express</li>
                     <li class="tab" role="tab" aria-selected="false">Overnight</li>
                 </ul>

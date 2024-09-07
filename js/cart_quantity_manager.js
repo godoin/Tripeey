@@ -9,6 +9,7 @@
  *
  * TODO: there are some side-effects but there are trade-offs over purity vs readability/performance.
  * TODO: Proper error handling such as missing DOM elements when querying.
+ * TODO: Resolve the quantity must reflect the new value on increment or decrement.
  */
 
 /**

@@ -54,7 +54,7 @@
     <div class="content">
 
         <section class="cart-items" id="cart-container">
-            <div class="message" id="empty-cart">
+            <div class="message products" id="empty-cart">
                 <span class="text info">No products found. Start Shopping!</span>
             </div>
         </section>

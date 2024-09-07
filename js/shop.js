@@ -181,6 +181,112 @@ function setupClickFavorite(buttonClass) {
   );
 }
 
+/**
+ * Renders a product to the DOM.
+ */
+async function renderShopProductDataToDOM(product) {
+  const cardsContainer = document.getElementById("shop-cards");
+
+  const newShopProductItem = document.createElement("article");
+  newShopProductItem.classList.add("card", "item");
+
+  const html = `
+    <div class="image-container">
+        <img src="${product.imageUrl}" class="model_img" alt="${
+    product.imageAlt
+  }">
+        <div class="top-position">
+            <span class="button badge-02">New</span>
+            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites" data-id="#">
+                <i class="${
+                  product.isFavorite === "true" ? "fa-solid" : "fa-regular"
+                } fa-heart"></i>
+            </button>
+        </div>
+    </div>
+    <div class="description">
+        <h3>${product.title}</h3>
+        <div class="details">
+            <div class="price-group">
+                <span class="title">Price</span>
+                <span class="price">${product.price}</span>
+            </div>
+            <a href="product-page.html" class="button primary" aria-label="Buy ${
+              product.title
+            }">
+                <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
+            </a>
+        </div>
+    </div>
+  `;
+
+  newShopProductItem.innerHTML = html;
+  cardsContainer.append(newShopProductItem);
+}
+
+/**
+ * Fetch HTTP get request from the server.
+ */
+async function fetchShopProductsData() {
+  const json_data = "/OnlineStore/assets/json/shop_data.json";
+
+  try {
+    const response = await fetch(json_data);
+
+    if (!response.ok) {
+      throw new Error(`HTTP Response Status: ${response.message}`);
+    }
+
+    const shopProductsData = await response.json();
+    return shopProductsData;
+  } catch {
+    console.error(error.message);
+  }
+}
+
+/**
+ * Setup for initial loading of shop product data to the shop.
+ */
+function setupRenderShopProductData() {
+  const cardContainer = document.getElementById("shop-cards");
+  if (cardContainer) {
+    fetchShopProductsData()
+      .then((shopProductsData) => {
+        if (shopProductsData && shopProductsData.length > 0) {
+          shopProductsData.forEach((product) => {
+            renderShopProductDataToDOM(product);
+          });
+          hideEmptyShopMessage();
+        } else {
+          showEmptyShopMessage();
+        }
+      })
+      .catch((error) => {
+        console.error(error.message);
+        showEmptyShopMessage();
+      });
+  } else {
+    console.error();
+  }
+}
+
+/**
+ * Show message to tell user no products found in products page.
+ */
+function showEmptyShopMessage() {
+  const cartMessage = document.getElementById("empty-shop");
+  cartMessage?.classList.add("active");
+}
+
+/**
+ * Hides message to tell user no products found in products page.
+ */
+function hideEmptyShopMessage() {
+  const cartMessage = document.getElementById("empty-shop");
+  cartMessage?.classList.remove("active");
+}
+
 setupClickFavorite(".like");
 setupDestroyBtnHandler("filter-btn", ".filters");
 displayFilteredData("test-btn");
+setupRenderShopProductData();

@@ -1,0 +1,53 @@
+[
+    {
+        "id": "1",
+        "sellerId": "1",
+        "sellerName": "John",
+        "category": "T-Shirt",
+        "style": "Vintage",
+        "sizes": ["S", "M", "L", "XL", "XXL"],
+        "colors": ["Black", "Orange", "White", "Red", "Green", "Blue"],
+        "imageUrl": "assets/images/items/shirt_one.png",
+        "imageAlt": "Midnight Wanderer 705",
+        "title": "Midnight Wanderer 705",
+        "price": "PHP339.99",
+        "status": "In Stock",
+        "quantity": "1",
+        "isFavorite": false,
+        "Date Created": "09/06/2024"
+    },
+    {
+        "id": "2",
+        "sellerId": "2",
+        "sellerName": "May",
+        "category": "T-Shirt",
+        "style": "Vintage",
+        "sizes": ["XS", "S", "M", "L", "XL"],
+        "colors": ["Cyan", "Black", "Orange", "White", "Red"],
+        "imageUrl": "assets/images/items/shirt_two.png",
+        "imageAlt": "Los Angeles 70",
+        "title": "Los Angeles 70",
+        "price": "PHP 899.50",
+        "status": "In Stock",
+        "quantity": "1",
+        "isFavorite": false,
+        "Date Created": "09/06/2024"
+    },
+    {
+        "id": "3",
+        "sellerId": "1",
+        "sellerName": "John",
+        "category": "T-Shirt",
+        "style": "Vintage",
+        "sizes": ["XS", "S", "M", "L", "XL"],
+        "colors": ["Cyan", "Black", "Orange", "White", "Red"],
+        "imageUrl": "assets/images/items/shirt_three.png",
+        "imageAlt": "Los Angeles 705",   
+        "title": "Los Angeles 705",
+        "price": "PHP 899.50",
+        "status": "In Stock",
+        "quantity": "1",
+        "isFavorite": false,
+        "Date Created": "09/06/2024"
+    }
+]

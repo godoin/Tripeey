@@ -137,6 +137,13 @@ button:hover,
 }
 
 /* Forms */
+form .fields,
+form .fields .group,
+form .fields .field,
+form .fields .field .input-wrapper {
+  overflow: visible;
+}
+
 form .fields {
   display: flex;
   flex-direction: column;
@@ -151,13 +158,103 @@ form .fields .group {
 }
 
 form .fields .field {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: start;
   text-align: start;
   gap: 0.4em;
+}
+
+form .fields .field .input-wrapper {
   position: relative;
+  display: flex;
+}
+
+form .fields .field .input-wrapper input {
+  flex: 1;
+}
+
+form .fields .field.error .input-wrapper label {
+  color: var(--red-500);
+}
+
+form .fields .field.error .input-wrapper input {
+  border: 1px solid var(--red-500);
+}
+
+form .fields .field.success .input-wrapper label {
+  color: var(--green-500);
+}
+
+form .fields .field.success .input-wrapper input {
+  border: 1px solid var(--green-500);
+}
+
+form .fields .field.success .input-wrapper .tooltip .fa-solid {
+  color: var(--green-500);
+}
+
+form .fields .field.success .input-wrapper .tooltip .tooltip-message {
+  display: none;
+}
+
+form .fields .field.success .input-wrapper .tooltip:hover {
+  transform: translateY(0);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  right: 0.6em;
+  bottom: 0;
+  transform: translateY(-75%);
+  display: none;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  gap: 1em;
+  cursor: pointer;
+}
+
+.tooltip.active {
+  display: flex;
+}
+
+.tooltip:hover {
+  transform: translateY(-20%);
+}
+
+.tooltip > .fa-circle-exclamation {
+  padding-right: 0.4em;
+  color: var(--red-500);
+}
+
+.tooltip:hover .tooltip-message {
+  display: flex;
+  transform: translateY(0);
+}
+
+.tooltip .tooltip-message {
+  display: none;
+  position: relative;
+  font-size: 0.9rem;
+  padding: 0.4em 0.8em;
+  border-radius: 0.6em;
+  background-color: var(--red-500);
+  text-align: center;
+  color: var(--zinc-200);
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.tooltip .tooltip-message:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0.6em;
+  transform: translateY(100%);
+  border: 8px solid;
+  border-color: var(--red-500) transparent transparent transparent;
 }
 
 form .fields .field #password-btn {
@@ -207,7 +304,6 @@ form .fields .field input {
   border: 1px solid var(--zinc-200);
   transition: all 0.3s ease;
   border-radius: 0.6em;
-  width: 100%;
 }
 
 form .fields .field input:focus {
@@ -604,6 +700,11 @@ label {
 .message.main.active,
 .message.active {
   display: flex;
+}
+
+.message.products {
+  display: none;
+  text-align: left;
 }
 
 .message.main {

@@ -251,83 +251,12 @@
             </div>
         </header>
 
-        <!-- main Shopping Cards -->
+        <!-- Main Shopping Cards -->
         <div class="content-items">
-            <ul class="cards">
-
-                <article class="card item">
-                    <div class="image-container">
-                        <img src="assets/images/items/shirt_one.png" class="model_img" alt="midnight Wanderer 705">
-                        <div class="top-position">
-                            <span class="button badge-02">New</span>
-                            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites" data-id="#">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <h3>midnight Wanderer 705</h3>
-                        <div class="details">
-                            <div class="price-group">
-                                <span class="title">Price</span>
-                                <span class="price">PHP 1199.99</span>
-                            </div>
-                            <a href="product-page.html" class="button primary" aria-label="Buy midnight Wanderer 705">
-                                <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card item">
-                    <div class="image-container">
-                        <img src="assets/images/items/shirt_two.png" class="model_img" alt="midnight Wanderer 705">
-                        <div class="top-position">
-                            <span class="button badge-02">New</span>
-                            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <h3>Los Angeles CA 705</h3>
-                        <div class="details">
-                            <div class="price-group">
-                                <span class="title">Price</span>
-                                <span class="price">PHP 1199.99</span>
-                            </div>
-                            <a href="product-page.html" class="button primary" aria-label="Buy Los Angeles CA 705">
-                                <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card item">
-                    <div class="image-container">
-                        <img src="assets/images/items/shirt_three.png" class="model_img" alt="Seamless Stussy Shirt">
-                        <div class="top-position">
-                            <span class="button badge-02">New</span>
-                            <button id="favorite-btn"  class="icon like" aria-label="Add to Favorites" data-id="#">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <h3>Seamless Stussy Shirt</h3>
-                        <div class="details">
-                            <div class="price-group">
-                                <span class="title">Price</span>
-                                <span class="price">PHP 1199.99</span>
-                            </div>
-                            <a href="product-page.html" class="button primary" aria-label="Buy Seamless Stussy Shirt">
-                                <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-
+            <ul class="cards" id="shop-cards">
+                <div class="message products" id="empty-shop">
+                    <span class="text info">No products found. Start Shopping!</span>
+                </div>
             </ul>
         </div>
 

@@ -131,6 +131,8 @@ function setupRenderUserCartProducts() {
         console.error(`Error: ${error}.`);
         showEmptyCartMessage();
       });
+  } else {
+    console.error();
   }
 }
 
