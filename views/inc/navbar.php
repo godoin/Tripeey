@@ -13,7 +13,7 @@
             <li class="nav-item">
                 <a href="shop.php">Shop</a>
             </li>
-            <li class="nav-items">
+            <li class="nav-item">
                 <a href="faqs.php">FAQs</a>
             </li>
             <li class="nav-item">

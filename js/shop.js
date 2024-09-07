@@ -62,7 +62,6 @@ function checkFilterButton(name) {
 function displayFilteredData(buttonId) {
   const button = document.getElementById(buttonId);
   const select = document.getElementById("sort-by");
-  const selectedOption = select?.value;
 
   button?.addEventListener("click", () => {
     let filters = gatherFilteredData();
@@ -74,10 +73,84 @@ function displayFilteredData(buttonId) {
           setupNewFilterButton(filterName, "filter-list");
       });
     }
-    console.log(`sort: ${selectedOption}`);
+
+    return filters;
   });
 
   setupDestroyBtnHandler("filter-btn", ".filters");
+}
+
+async function getShopData() {
+  const jsonUrl = "/OnlineStore/assets/json/shop_data.json";
+
+  try {
+    const response = await fetch(jsonUrl);
+
+    if (!response.ok) {
+      throw new Error(`HTTP Response Status: ${response.status}`);
+    }
+
+    const jsonData = await response.json();
+    return jsonData;
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    return false;
+  }
+}
+
+function setupAppliedFilteredDataToDOM() {
+  displayFilteredData(".test-btn").then((filters) => {
+    getShopData.then((data) => {
+      const filteredData = data.filter((product) => {
+        console.log(`requested filters: ${filters}`);
+        console.log(`product: ${product}`);
+        console.log(`data: ${filteredData}`);
+      });
+    });
+  });
+}
+
+/**
+ * Renders a product to the DOM.
+ */
+function renderShopProductDataToDOM(product) {
+  const cardsContainer = document.getElementById("shop-cards");
+
+  const newShopProductItem = document.createElement("article");
+  newShopProductItem.classList.add("card", "item");
+
+  const html = `
+    <div class="image-container">
+        <img src="${product.imageUrl}" class="model_img" alt="${
+    product.imageAlt
+  }">
+        <div class="top-position">
+            <span class="button badge-02">New</span>
+            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites" data-id="#">
+                <i class="${
+                  product.isFavorite === "true" ? "fa-solid" : "fa-regular"
+                } fa-heart"></i>
+            </button>
+        </div>
+    </div>
+    <div class="description">
+        <h3>${product.title}</h3>
+        <div class="details">
+            <div class="price-group">
+                <span class="title">Price</span>
+                <span class="price">${product.price}</span>
+            </div>
+            <a href="product-page.html" class="button primary" aria-label="Buy ${
+              product.title
+            }">
+                <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
+            </a>
+        </div>
+    </div>
+  `;
+
+  newShopProductItem.innerHTML = html;
+  cardsContainer.append(newShopProductItem);
 }
 
 /**
@@ -179,49 +252,6 @@ function setupClickFavorite(buttonClass) {
       clickFavorite(button);
     })
   );
-}
-
-/**
- * Renders a product to the DOM.
- */
-async function renderShopProductDataToDOM(product) {
-  const cardsContainer = document.getElementById("shop-cards");
-
-  const newShopProductItem = document.createElement("article");
-  newShopProductItem.classList.add("card", "item");
-
-  const html = `
-    <div class="image-container">
-        <img src="${product.imageUrl}" class="model_img" alt="${
-    product.imageAlt
-  }">
-        <div class="top-position">
-            <span class="button badge-02">New</span>
-            <button id="favorite-btn" class="icon like" aria-label="Add to Favorites" data-id="#">
-                <i class="${
-                  product.isFavorite === "true" ? "fa-solid" : "fa-regular"
-                } fa-heart"></i>
-            </button>
-        </div>
-    </div>
-    <div class="description">
-        <h3>${product.title}</h3>
-        <div class="details">
-            <div class="price-group">
-                <span class="title">Price</span>
-                <span class="price">${product.price}</span>
-            </div>
-            <a href="product-page.html" class="button primary" aria-label="Buy ${
-              product.title
-            }">
-                <img src="assets/images/icons/shopping-cart-02.svg" class="cart" alt="Buy">
-            </a>
-        </div>
-    </div>
-  `;
-
-  newShopProductItem.innerHTML = html;
-  cardsContainer.append(newShopProductItem);
 }
 
 /**

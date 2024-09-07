@@ -6,13 +6,13 @@
             <div class="filter-group">
                 <h3 id="categoriesFilter">Categories</h3> 
                 <ul role="radiogroup" aria-labelledby="categoriesFilter" class="group" id="categories">
-                    <li class="category-option">
+                    <li class="category-option active">
                         <label for="all">All</label>
-                        <input type="radio" name="category" value="All" aria-checked="true">
+                        <input type="radio" name="category" value="All" aria-checked="true" checked="true">
                     </li>
                     <li class="category-option">
                         <label for="t-shirts">T-shirt</label>
-                        <input type="radio" name="category" value="T-shirts" aria-checked="false">
+                        <input type="radio" name="category" value="T-Shirts" aria-checked="false">
                     </li>
                     <li class="category-option">
                         <label for="hoodies">Hoodies</label>
@@ -224,10 +224,10 @@
             <div class="applied-filters">
 
                 <ul class="filters" id="filter-list">
-                    <li id="filter-btn" class="button tertiary" role="button" aria-label="All filter" aria-pressed="false">
+                    <!-- <li id="filter-btn" class="button tertiary" role="button" aria-label="All filter" aria-pressed="false">
                         <span class="filter-text">All</span>
                         <span class="filter-remove">&times;</span>
-                    </li>
+                    </li> -->
                     <!-- <li class="button tertiary" role="button" aria-label="Business filter" aria-pressed="false">
                         <span class="filter-text">Business</span>
                         <span class="filter-remove">&times;</span>

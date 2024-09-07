@@ -196,6 +196,7 @@ form .fields .field.success .input-wrapper .tooltip .fa-solid {
 
 form .fields .field.success .input-wrapper .tooltip .tooltip-message {
   display: none;
+  z-index: -1;
 }
 
 form .fields .field.success .input-wrapper .tooltip:hover {
@@ -695,6 +696,7 @@ label {
 .message {
   display: none;
   min-width: 100%;
+  overflow: hidden;
 }
 
 .message.main.active,

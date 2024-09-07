@@ -214,7 +214,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .cart-container .content .cart-items .actions {
     flex-direction: row;
     justify-content: space-between;
@@ -472,35 +472,68 @@
 
 /* Billing Information */
 @media (min-width: 375px) {
-  .cart-containter .content form {
+  .cart-containter .billing-content form {
     flex: 1;
   }
 
-  .cart-container .content form .fields .group .field,
-  .cart-container .content form .fields .full_name .field {
+  .cart-container .billing-content form .fields .group .field,
+  .cart-container .billing-content form .fields .full_name .field {
     flex: 1;
   }
 
-  .cart-container .content form .fields .group .field.radio {
+  .cart-container .billing-content form .fields .group .field.radio {
     flex: none;
-  }
-
-  .cart-container .content form .fields .full_name > .field:last-child {
-    max-width: 5em;
   }
 }
 
 @media (min-width: 728px) {
-  .cart-container .content form.billing {
+  .cart-container .billing-content {
+    flex-direction: column;
+  }
+
+  /* .cart-container .billing-content .summary {
+    padding: 1.8em 1.2em;
+    align-self: start;
+    max-height: auto;
+    min-width: none;
+  } */
+
+  .cart-container .billing-content form.billing {
     flex: 1;
   }
 }
 
 @media (min-width: 1024px) {
-  .cart-container .content form .fields .full_name,
-  .cart-container .content form .fields .group {
+  .cart-container .billing-content {
+    flex-direction: row;
+  }
+
+  /* .cart-container .billing-content .summary {
+    padding: 1.8em 1.2em;
+    align-self: start;
+    max-height: auto;
+    min-width: none;
+  } */
+
+  .cart-container .billing-content form .fields .full_name,
+  .cart-container .billing-content form .fields .group {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cart-container .billing-content form .fields .group {
+    flex-wrap: nowrap;
+  }
+
+  /* .cart-container .billing-content form .fields .group,
+  .cart-container .billing-content form .fields .field,
+  .cart-container .billing-content form .fields .field .input-wrapper {
+    overflow: auto;
+  } */
+
+  .cart-container .billing-content form .fields .full_name .field:last-child {
+    max-width: 8em;
   }
 }
 

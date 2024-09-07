@@ -51,7 +51,7 @@
     </nav>
 
     <!-- Content -->
-    <div class="content">
+    <div class="content billing-content">
 
         <form class="billing" method="post" id="billing-form">
 
@@ -64,17 +64,16 @@
                         <div class="field" id="billing_first_name">
                             <label for="billing_first_name">First Name</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_first_name" placeholder="First Name" value="John"> 
+                                <input class="input" type="text" name="billing_first_name" placeholder="First Name"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
-
                                 </div>
                             </div>
                         </div>
                         <div class="field" id="billing_last_name">
                             <label for="billing_last_name">Last Name</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_last_name" placeholder="Last Name" value="Doe">
+                                <input class="input" type="text" name="billing_last_name" placeholder="Last Name">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -84,7 +83,7 @@
                         <div class="field" id="billing_middle_initial">
                             <label for="billing_middle_initial">M.I.</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_middle_initial" placeholder="M.I." value="A"> 
+                                <input class="input" type="text" name="billing_middle_initial" placeholder="M.I."> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -96,7 +95,7 @@
                         <div class="field" id="billing_email">
                             <label for="billing_email">Email Address</label>
                             <div class="input-wrapper">
-                                <input class="input" type="email" name="billing_email" placeholder="Email Address" value="john.doe@example.com">
+                                <input class="input" type="email" name="billing_email" placeholder="Email Address">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -106,7 +105,7 @@
                         <div class="field" id="billing_phone_number">
                             <label for="billing_phone">Phone Number</label>
                             <div class="input-wrapper">
-                                <input class="input" type="tel" name="billing_phone" placeholder="Phone Number" value="+63 9123456789">
+                                <input class="input" type="tel" name="billing_phone_number" placeholder="Phone Number">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -118,7 +117,7 @@
                         <div class="field" id="billing_street_address">
                             <label for="billing_street_address">Street Address</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_street_address" placeholder="Street Address" value="123 Main St">
+                                <input class="input" type="text" name="billing_street_address" placeholder="Street Address">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -128,7 +127,7 @@
                         <div class="field" id="billing_city">
                             <label for="billing_city">City</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_city" placeholder="City" value="Quezon City">
+                                <input class="input" type="text" name="billing_city" placeholder="City">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -140,7 +139,7 @@
                         <div class="field" id="billing_state">
                             <label for="billing_state">State</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_state" placeholder="State" value="Metro Manila">
+                                <input class="input" type="text" name="billing_state" placeholder="State">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -150,7 +149,7 @@
                         <div class="field" id="billing_province">
                             <label for="billing_province">Province</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_province" placeholder="Province" value="Pampanga">
+                                <input class="input" type="text" name="billing_province" placeholder="Province">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -160,7 +159,7 @@
                         <div class="field" id="billing_region">
                             <label for="billing_region">Region</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_region" placeholder="Region" value="Region I">
+                                <input class="input" type="text" name="billing_region" placeholder="Region">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -172,7 +171,7 @@
                         <div class="field" id="billing_zip_code">
                             <label for="billing_zip_code">Zip Code</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_zip_code" placeholder="Zip Code" value="1100">
+                                <input class="input" type="text" name="billing_zip_code" placeholder="Zip Code">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -182,7 +181,7 @@
                         <div class="field country" id="billing_country">
                             <label for="billing_country">Country</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="billing_country" placeholder="Country" value="Philippines">
+                                <input class="input" type="text" name="billing_country" placeholder="Country">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -203,17 +202,16 @@
                         <div class="field" id="shipping_first_name">
                             <label for="shipping_first_name">First Name</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_first_name" placeholder="First Name" value="John">
+                                <input class="input" type="text" name="shipping_first_name" placeholder="First Name">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
-
                                 </div>
                             </div>
                         </div>
                         <div class="field" id="shipping_last_name">
                             <label for="shipping_last_name">Last Name</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_last_name" placeholder="Last Name" value="Doe">
+                                <input class="input" type="text" name="shipping_last_name" placeholder="Last Name">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -223,7 +221,7 @@
                         <div class="field" id="shipping_middle_initial">
                             <label for="shipping_middle_initial">M.I.</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_middle_initial" placeholder="M.I." value="A">
+                                <input class="input" type="text" name="shipping_middle_initial" placeholder="M.I.">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -235,7 +233,7 @@
                         <div class="field" id="shipping_email">
                             <label for="shipping_email">Email Address</label>
                             <div class="input-wrapper">
-                                <input class="input" type="email" name="shipping_email" placeholder="Email Address" value="johndoe@example.com">
+                                <input class="input" type="email" name="shipping_email" placeholder="Email Address">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -245,7 +243,7 @@
                         <div class="field" id="shipping_phone_number">
                             <label for="shipping_phone">Phone Number</label>
                             <div class="input-wrapper">
-                                <input class="input" type="tel" name="shipping_phone" placeholder="Phone Number" value="+1234567890">
+                                <input class="input" type="tel" name="shipping_phone_number" placeholder="Phone Number">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -257,7 +255,7 @@
                         <div class="field" id="shipping_street_address">
                             <label for="shipping_street_address">Street Address</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_street_address" placeholder="Street Address" value="123 Main St">
+                                <input class="input" type="text" name="shipping_street_address" placeholder="Street Address">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -267,7 +265,7 @@
                         <div class="field" id="shipping_city">
                             <label for="shipping_city">City</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_city" placeholder="City" value="New York">
+                                <input class="input" type="text" name="shipping_city" placeholder="City">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -279,7 +277,7 @@
                         <div class="field" id="shipping_state">
                             <label for="shipping_state">State</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_state" placeholder="State" value="NY">
+                                <input class="input" type="text" name="shipping_state" placeholder="State">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -289,7 +287,7 @@
                         <div class="field" id="shipping_province">
                             <label for="shipping_province">Province</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_province" placeholder="Province" value="Manhattan">
+                                <input class="input" type="text" name="shipping_province" placeholder="Province">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -299,7 +297,7 @@
                         <div class="field" id="shipping_region">
                             <label for="shipping_region">Region</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_region" placeholder="Region" value="Northeast">
+                                <input class="input" type="text" name="shipping_region" placeholder="Region">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -311,7 +309,7 @@
                         <div class="field" id="shipping_zip_code">
                             <label for="shipping_zip_code">Zip Code</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_zip_code" placeholder="Zip Code" value="10001">
+                                <input class="input" type="text" name="shipping_zip_code" placeholder="Zip Code">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -321,7 +319,7 @@
                         <div class="field country" id="shipping_country">
                             <label for="shipping_country">Country</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="shipping_country" placeholder="Country" value="USA">
+                                <input class="input" type="text" name="shipping_country" placeholder="Country">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -361,7 +359,7 @@
                         <div class="field" id="payment_method_card_number">
                             <label for="card_number">Card Number</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="card_number" placeholder="Card Number" value="4567 1234 8901 2345"> 
+                                <input class="input" type="text" name="card_number" placeholder="Card Number"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -371,7 +369,7 @@
                         <div class="field" id="payment_method_expiration_date">
                             <label for="expiration_date">Expiration Date</label>
                             <div class="input-wrapper">
-                                <input class="input" type="date" name="expiration_date" value="2025-06-30"> 
+                                <input class="input" type="date" name="expiration_date"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -383,7 +381,7 @@
                         <div class="field" id="payment_method_name_on_card">
                             <label for="name_card">Name on the Card</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="name_card" placeholder="Name on the Card" value="JANE SMITH">
+                                <input class="input" type="text" name="name_card" placeholder="Name on the Card">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -393,10 +391,9 @@
                         <div class="field" id="payment_method_cv_code">
                             <label for="cv_code">Card Verification Code</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="cv_code" placeholder="Card Verification Code" value="321"> 
+                                <input class="input" type="text" name="cv_code" placeholder="Card Verification Code"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
-
                                 </div>
                             </div>
                         </div>

@@ -13,10 +13,12 @@
 const NOT_EMPTY = "NOT_EMPTY";
 const MAX_LENGTH = "MAX_LENGTH";
 const VALID_EMAIL = "VALID_EMAIL";
+const NOT_EXIST = "NOT_EXIST";
 
 function print_debug(statement, ...values) {
   console.log(`DEBUG ~ ${statement}:`, values);
 }
+
 /**
  * Generic validation flags for evaluating user inputs.
  */
@@ -63,7 +65,6 @@ function validateLoginUser(userEmail, userPassword) {
       message: "Password is required.",
     });
   }
-  // TODO: Create API endpoint call to check user exists.
 
   if (errors.length > 0) {
     errors.forEach((error) =>
@@ -81,60 +82,67 @@ function validateLoginUser(userEmail, userPassword) {
   };
 }
 
+function handleStateToTooltipDefaultToDOM(elementId) {
+  const inputContainer = document.getElementById(elementId);
+  const tooltip = inputContainer.querySelector(".tooltip");
+
+  inputContainer?.classList.remove("success", "error");
+  tooltip?.classList.remove("active");
+}
+
 function handleStateToTooltipErrorToDOM(elementId, message) {
   const inputContainer = document.getElementById(elementId);
+  const tooltip = inputContainer.querySelector(".tooltip");
+  const spanMessage = inputContainer?.querySelector(".tooltip-message");
+  const tooltipIcon = tooltip.querySelector("i");
 
   if (!inputContainer) {
     console.error(`Error: Element with ID ${elementId} is not found.`);
+  }
+
+  if (tooltipIcon) {
+    return;
+  }
+
+  if (elementId === "payment_method_card") {
+    return;
   }
 
   inputContainer.classList.remove("success", "error");
   inputContainer.classList.add("error");
-
-  const tooltip = inputContainer.querySelector(".tooltip");
+  spanMessage.textContent = message;
   tooltip?.classList.toggle("active");
 
-  const spanMessage = inputContainer?.querySelector(".tooltip-message");
-  spanMessage.textContent = message;
-
-  const tooltipIconExists = tooltip.querySelector(".fa-solid");
-  if (tooltipIconExists) tooltipIconExists.remove();
-
-  if (
-    !tooltipIconExists &&
-    inputContainer.id !== "payment_method_expiration_date"
-  ) {
-    const tooltipIcon = document.createElement("i");
-    tooltip.classList.add("active");
-    tooltipIcon.classList.add("fa-solid", "fa-circle-exclamation");
-    tooltip.appendChild(tooltipIcon);
-  }
+  const newTooltipIcon = document.createElement("i");
+  tooltip.classList.add("active");
+  newTooltipIcon.classList.add("fa-solid", "fa-circle-exclamation");
+  tooltip.appendChild(newTooltipIcon);
 }
 
 function handleStateToTooltipSuccessToDOM(elementId) {
   const inputContainer = document.getElementById(elementId);
-  console.log;
+  const tooltip = inputContainer.querySelector(".tooltip");
+  const tooltipIcon = tooltip.querySelector("i");
 
   if (!inputContainer) {
     console.error(`Error: Element with ID ${elementId} is not found.`);
   }
 
+  if (tooltipIcon) {
+    return;
+  }
+
+  if (elementId === "payment_method_card") {
+    return;
+  }
+
   inputContainer.classList.remove("success", "error");
   inputContainer.classList.add("success");
+  tooltip.classList.add("active");
 
-  const tooltip = inputContainer.querySelector(".tooltip");
-  const tooltipIconExists = tooltip.querySelector(".fa-solid");
-  if (tooltipIconExists) tooltipIconExists.remove();
-
-  if (
-    !tooltipIconExists &&
-    inputContainer.id !== "payment_method_expiration_date"
-  ) {
-    const tooltipIcon = document.createElement("i");
-    tooltip.classList.add("active");
-    tooltipIcon.classList.add("fa-solid", "fa-circle-check");
-    tooltip.appendChild(tooltipIcon);
-  }
+  const newTooltipIcon = document.createElement("i");
+  newTooltipIcon.classList.add("fa-solid", "fa-circle-check");
+  tooltip.appendChild(newTooltipIcon);
 }
 
 /**
@@ -247,29 +255,57 @@ function handleStateErrorToDOM(displayId, message) {
  * Gets the value of an input element by id.
  */
 function getUserInputById(id) {
-  return document.getElementById(id).value;
+  return document.getElementById(id);
 }
 
 function getUserInputByName(name) {
-  return document.querySelector(`input[name="${name}"]`).value;
+  return document.querySelector(`input[name="${name}"]`);
 }
 
-/**a
+/**
  * Handles the login form submission.
  */
-function loginHandler(event) {
+async function loginHandler(event) {
   event.preventDefault();
 
+  const jsonUrl = "/OnlineStore/assets/json/user.json";
   const enteredEmail = getUserInputById("email");
-  const enteredPassword = getUserInputById("password");
+  const enteredPassword = getUserInputById("password-input");
 
   // print_debug("Check", enteredEmail, enteredPassword);
 
-  const validationResult = validateLoginUser(enteredEmail, enteredPassword);
+  const validationResult = validateLoginUser(
+    enteredEmail.value,
+    enteredPassword.value
+  );
 
   if (validationResult.success) {
     try {
-      console.log(validationResult.data);
+      const response = await fetch(jsonUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP Response Status: ${response.status}`);
+      }
+
+      const jsonData = await response.json();
+
+      let userFound = false;
+
+      jsonData.forEach((user) => {
+        if (
+          user.email === enteredEmail.value &&
+          user.password === enteredPassword.value
+        ) {
+          console.log(
+            `Success: Validation succeeded for ${enteredEmail.value}`
+          );
+          userFound = true;
+          return;
+        }
+      });
+
+      if (!userFound) {
+        console.error("Error: Invalid email or password.");
+      }
     } catch (err) {
       console.log(err);
     }
@@ -288,7 +324,7 @@ function getBillingData() {
     "billing_middle_initial"
   );
   const enteredBillingEmail = getUserInputByName("billing_email");
-  const enteredBillingPhoneNumber = getUserInputByName("billing_phone");
+  const enteredBillingPhoneNumber = getUserInputByName("billing_phone_number");
   const enteredBillingStreetAddress = getUserInputByName(
     "billing_street_address"
   );
@@ -300,18 +336,18 @@ function getBillingData() {
   const enteredBillingCountry = getUserInputByName("billing_country");
 
   return {
-    first_name: enteredBillingFirstName,
-    last_name: enteredBillingLastName,
-    middle_initial: enteredBillingMiddleInitial,
-    email: enteredBillingEmail,
-    phone_number: enteredBillingPhoneNumber,
-    street_address: enteredBillingStreetAddress,
-    city: enteredBillingCity,
-    state: enteredBillingState,
-    province: enteredBillingProvince,
-    region: enteredBillingRegion,
-    zip_code: enteredBillingZipCode,
-    country: enteredBillingCountry,
+    first_name: enteredBillingFirstName.value,
+    last_name: enteredBillingLastName.value,
+    middle_initial: enteredBillingMiddleInitial.value,
+    email: enteredBillingEmail.value,
+    phone_number: enteredBillingPhoneNumber.value,
+    street_address: enteredBillingStreetAddress.value,
+    city: enteredBillingCity.value,
+    state: enteredBillingState.value,
+    province: enteredBillingProvince.value,
+    region: enteredBillingRegion.value,
+    zip_code: enteredBillingZipCode.value,
+    country: enteredBillingCountry.value,
   };
 }
 
@@ -325,7 +361,9 @@ function getShippingData() {
     "shipping_middle_initial"
   );
   const shippingBillingEmail = getUserInputByName("shipping_email");
-  const shippingBillingPhoneNumber = getUserInputByName("shipping_phone");
+  const shippingBillingPhoneNumber = getUserInputByName(
+    "shipping_phone_number"
+  );
   const shippingBillingStreetAddress = getUserInputByName(
     "shipping_street_address"
   );
@@ -337,18 +375,18 @@ function getShippingData() {
   const shippingBillingCountry = getUserInputByName("shipping_country");
 
   return {
-    first_name: shippingBillingFirstName,
-    last_name: shippingBillingLastName,
-    middle_initial: shippingBillingMiddleInitial,
-    email: shippingBillingEmail,
-    phone_number: shippingBillingPhoneNumber,
-    street_address: shippingBillingStreetAddress,
-    city: shippingBillingCity,
-    state: shippingBillingState,
-    province: shippingBillingProvince,
-    region: shippingBillingRegion,
-    zip_code: shippingBillingZipCode,
-    country: shippingBillingCountry,
+    first_name: shippingBillingFirstName.value,
+    last_name: shippingBillingLastName.value,
+    middle_initial: shippingBillingMiddleInitial.value,
+    email: shippingBillingEmail.value,
+    phone_number: shippingBillingPhoneNumber.value,
+    street_address: shippingBillingStreetAddress.value,
+    city: shippingBillingCity.value,
+    state: shippingBillingState.value,
+    province: shippingBillingProvince.value,
+    region: shippingBillingRegion.value,
+    zip_code: shippingBillingZipCode.value,
+    country: shippingBillingCountry.value,
   };
 }
 
@@ -359,18 +397,18 @@ function getPaymentMethodData() {
   const radioPaymentGroup = document.getElementById("payment_method_card");
   const selectedPaymentMethod = radioPaymentGroup.querySelector(
     '[name="payment_method"]:checked'
-  ).value;
+  );
   const enteredExpirationDate = getUserInputByName("expiration_date");
   const enteredCardNumber = getUserInputByName("card_number");
   const enteredNameCard = getUserInputByName("name_card");
   const enteredCVCode = getUserInputByName("cv_code");
 
   return {
-    card: selectedPaymentMethod,
-    card_number: enteredCardNumber,
-    expiration_date: enteredExpirationDate,
-    name_on_card: enteredNameCard,
-    cv_code: enteredCVCode,
+    card: selectedPaymentMethod.value,
+    card_number: enteredCardNumber.value,
+    expiration_date: enteredExpirationDate.value,
+    name_on_card: enteredNameCard.value,
+    cv_code: enteredCVCode.value,
   };
 }
 
@@ -404,6 +442,42 @@ function shippingHandler(event) {
 }
 
 /**
+ * Validate immediately on user input not empty.
+ */
+function setupInputElementOnChange(elementIds) {
+  elementIds.forEach((element) => {
+    const inputElement = document.querySelector(`input[name="${element}"]`);
+    inputElement?.addEventListener("change", () => {
+      let inputValue = inputElement.value;
+      let inputElementId = inputElement.name;
+
+      // console.log(`element: ${inputElement}`);
+      // console.log(`value: ${inputValue}`);
+      // console.log(`id: ${inputElementId}`);
+
+      if (!validate(inputValue, NOT_EMPTY)) {
+        handleStateToTooltipErrorToDOM(
+          inputElementId,
+          `${element} is required.`
+        );
+      } else {
+        handleStateToTooltipSuccessToDOM(inputElementId);
+      }
+    });
+  });
+}
+
+function setupInputStateToDefaultOnChange(elementIds) {
+  elementIds.forEach((element) => {
+    const inputElement = document.querySelector(`input[name="${element}"]`);
+    inputElement?.addEventListener("change", () => {
+      let inputElementId = inputElement.name;
+      handleStateToTooltipDefaultToDOM(inputElementId);
+    });
+  });
+}
+
+/**
  * Set up for handling forms.
  */
 function connectForm(formId, onSubmitHandler) {
@@ -411,5 +485,38 @@ function connectForm(formId, onSubmitHandler) {
   form?.addEventListener("submit", onSubmitHandler);
 }
 
+const allBillingIds = [
+  "billing_first_name",
+  "billing_last_name",
+  "billing_middle_initial",
+  "billing_email",
+  "billing_phone_number",
+  "billing_street_address",
+  "billing_city",
+  "billing_state",
+  "billing_province",
+  "billing_region",
+  "billing_zip_code",
+  "billing_country",
+  "shipping_first_name",
+  "shipping_last_name",
+  "shipping_middle_initial",
+  "shipping_email",
+  "shipping_phone_number",
+  "shipping_street_address",
+  "shipping_city",
+  "shipping_state",
+  "shipping_province",
+  "shipping_region",
+  "shipping_zip_code",
+  "shipping_country",
+  "payment_method_card",
+  "payment_method_card_number",
+  "payment_method_expiration_date",
+  "payment_method_cv_code",
+];
+
+// setupInputElementOnChange(allBillingIds);
+setupInputStateToDefaultOnChange(allBillingIds);
 connectForm("login-form", loginHandler);
 connectForm("billing-form", shippingHandler);
