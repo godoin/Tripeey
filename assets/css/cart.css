@@ -325,7 +325,14 @@
     padding: 1.8em 1.2em;
     align-self: start;
     max-height: auto;
-    min-width: 18em;
+    min-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .summary {
+    min-width: auto;
+    max-width: 20em;
   }
 }
 

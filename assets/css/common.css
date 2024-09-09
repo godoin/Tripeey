@@ -258,18 +258,6 @@ form .fields .field.success .input-wrapper .tooltip:hover {
   border-color: var(--red-500) transparent transparent transparent;
 }
 
-form .fields .field #password-btn {
-  position: absolute;
-  right: 0.6em;
-  top: 50%;
-  transform: translateY(-20%);
-  cursor: pointer;
-}
-
-form .fields .field #password-btn:hover {
-  background-color: transparent;
-}
-
 form .fields .field.checkbox,
 form .fields .field.radio {
   flex-direction: row;
@@ -300,11 +288,19 @@ form .fields .field input:focus ~ .placeholder-text {
 }
 
 form .fields .field input {
+  width: 100%;
+  flex: 1;
   padding: 0.6em;
   outline: none;
   border: 1px solid var(--zinc-200);
   transition: all 0.3s ease;
   border-radius: 0.6em;
+}
+
+form .fields .field input[type="checkbox"],
+form .fields .field input[type="radio"] {
+  flex: none;
+  width: auto;
 }
 
 form .fields .field input:focus {

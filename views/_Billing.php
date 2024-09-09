@@ -327,9 +327,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="field checkbox" id="same_address">
-                        <input class="input" type="checkbox">
-                        <label for="same_address">Billing address is the same as the shipping address.</label>
+                    <div class="field checkbox" id="shipping_same_address">
+                        <input class="input" name="shipping_same_address" type="checkbox">
+                        <label for="shipping_same_address">Billing address is the same as the shipping address.</label>
                     </div>
                 </div>
             </div>
@@ -359,17 +359,16 @@
                         <div class="field" id="payment_method_card_number">
                             <label for="card_number">Card Number</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="card_number" placeholder="Card Number"> 
+                                <input class="input" type="text" name="payment_method_card_number" placeholder="Card Number"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
-
                                 </div>
                             </div>
                         </div>
                         <div class="field" id="payment_method_expiration_date">
                             <label for="expiration_date">Expiration Date</label>
                             <div class="input-wrapper">
-                                <input class="input" type="date" name="expiration_date"> 
+                                <input class="input" type="date" name="payment_method_expiration_date"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -378,10 +377,10 @@
                         </div>
                     </div>
                     <div class="group">
-                        <div class="field" id="payment_method_name_on_card">
+                        <div class="field" id="payment_method_name_card">
                             <label for="name_card">Name on the Card</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="name_card" placeholder="Name on the Card">
+                                <input class="input" type="text" name="payment_method_name_card" placeholder="Name on the Card">
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
 
@@ -391,7 +390,7 @@
                         <div class="field" id="payment_method_cv_code">
                             <label for="cv_code">Card Verification Code</label>
                             <div class="input-wrapper">
-                                <input class="input" type="text" name="cv_code" placeholder="Card Verification Code"> 
+                                <input class="input" type="text" name="payment_method_cv_code" placeholder="Card Verification Code"> 
                                 <div class="tooltip">
                                     <span class="tooltip-message">This is a tool tip.</span>
                                 </div>

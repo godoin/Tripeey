@@ -51,10 +51,15 @@ include_once 'core/functions.php';
   <script src="js/cart_quantity_manager.js" type="text/javascript"></script>
   <script src="js/product_quantity_manager.js" type="text/javascript"></script>
   <script src="js/tab_toggle.js" type="text/javascript"></script>
-  <script src="js/form.js" type="text/javascript"></script>
   <script src="js/stepper.js" type="text/javascript"></script>
   <script src="js/shop.js" type="text/javascript"></script>
-  <!-- <script src="js/utils.js" type="module"></script> -->
+  <script src="js/forms/form.js" type="module"></script>
+  <script src="js/forms/formValidation.js" type="module"></script>
+  <script src="js/forms/domUtils.js" type="module"></script>
+  <script src="js/forms/apiUtils.js" type="module"></script>
+  <script src="js/forms/formFieldIds.js" type="module"></script>
+  <script src="js/utils.js" type="module"></script>
+</body>
 </body>
 
 </html>

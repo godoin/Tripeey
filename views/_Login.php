@@ -22,10 +22,12 @@
             </div>
             <div class="field">
                 <label for="password" class="">Password*</label>
-                <input type="password" name="password" id="password-input" placeholder="e.g., tester123">
-                <span class="ghost" id="password-btn">
-                    <img src="assets/images/icons/eye.svg" id="password-icon" alt="Show Password">
-                </span>
+                <div class="input_wrapper">
+                    <input type="password" name="password" id="password-input" placeholder="e.g., tester123">
+                    <span class="ghost" id="password-btn">
+                        <img src="assets/images/icons/eye.svg" id="password-icon" alt="Show Password">
+                    </span>
+                </div>
                 <div class="message" id="error-pass">
                     <span class="text error"></span>
                 </div>

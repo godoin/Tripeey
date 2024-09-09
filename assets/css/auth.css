@@ -69,6 +69,30 @@
   font-size: 0.9rem;
 }
 
+.login-container form .fields .field {
+  position: relative;
+}
+
+.login-container form .fields .input-wrapper {
+  display: flex;
+}
+
+.login-container form .fields .field .input-wrapper input {
+  flex: 1;
+}
+
+.login-container form .fields .field #password-btn {
+  position: absolute;
+  right: 0.6em;
+  top: 50%;
+  transform: translateY(-20%);
+  cursor: pointer;
+}
+
+.login-container form .fields .field #password-btn:hover {
+  background-color: transparent;
+}
+
 /* Image Container */
 .login-container .image-container {
   min-height: 100vh;

@@ -268,6 +268,7 @@ async function fetchShopProductsData() {
     }
 
     const shopProductsData = await response.json();
+
     return shopProductsData;
   } catch {
     console.error(error.message);
