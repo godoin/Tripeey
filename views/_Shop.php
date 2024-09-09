@@ -7,28 +7,28 @@
                 <h3 id="categoriesFilter">Categories</h3> 
                 <ul role="radiogroup" aria-labelledby="categoriesFilter" class="group" id="categories">
                     <li class="category-option active">
-                        <label for="all">All</label>
-                        <input type="radio" name="category" value="All" aria-checked="true" checked="true">
+                        <label for="All">All</label>
+                        <input type="radio" name="category" value="All" aria-checked="true" checked>
                     </li>
                     <li class="category-option">
-                        <label for="t-shirts">T-shirt</label>
-                        <input type="radio" name="category" value="T-Shirts" aria-checked="false">
+                        <label for="T-Shirts">T-Shirts</label>
+                        <input type="radio" name="category" value="T-Shirts" aria-checked="false" checked="false">
                     </li>
                     <li class="category-option">
-                        <label for="hoodies">Hoodies</label>
-                        <input type="radio" name="category" value="Hoodies" aria-checked="false">
+                        <label for="Hoodies">Hoodies</label>
+                        <input type="radio" name="category" value="Hoodies" aria-checked="false" checked="false">
                     </li>
                     <li class="category-option">
-                        <label for="sweatshirts">Sweatshirts</label>
-                        <input type="radio" name="category" value="Sweatshirts" aria-checked="false">
+                        <label for="Sweatshirts">Sweatshirts</label>
+                        <input type="radio" name="category" value="Sweatshirts" aria-checked="false" checked="false">
                     </li>
                     <li class="category-option">
-                        <label for="polo-shirts">Polo Shirts</label>
-                        <input type="radio" name="category" value="Polo Shirts" aria-checked="false">
+                        <label for="Polo Shirts">Polo Shirts</label>
+                        <input type="radio" name="category" value="Polo Shirts" aria-checked="false" checked="false">
                     </li>
                     <li class="category-option">
-                        <label for="long-sleeves">Long-Sleeves</label>
-                        <input type="radio" name="category" value="Long Sleeves" aria-checked="false">
+                        <label for="Long Sleeves">Long-Sleeves</label>
+                        <input type="radio" name="category" value="Long Sleeves" aria-checked="false" checked="false">
                     </li>
                 </ul>
             </div>
@@ -168,19 +168,19 @@
                     <h3 id="pricesFilter">Price Range</h3>
                     <ul role="group" aria-labelledby="pricesFilter" class="group" id="price-range">
                         <li class="filter-option">
-                            <input type="checkbox" name="price" value="Below 500" aria-checked="false">
+                            <input type="checkbox" name="price" value="below-500" aria-checked="false">
                             <label for="below-500">Below ₱500</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="price" value="500 to 1000" aria-checked="false">
+                            <input type="checkbox" name="price" value="500-1000" aria-checked="false">
                             <label for="500-1000">₱500 - ₱1000</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="price" value="1000 to 2000" aria-checked="false">
+                            <input type="checkbox" name="price" value="1000-2000" aria-checked="false">
                             <label for="1000-2000">₱1000 - ₱2000</label>
                         </li>
                         <li class="filter-option">
-                            <input type="checkbox" name="price" value="2000 above" aria-checked="false">
+                            <input type="checkbox" name="price" value="2000-plus" aria-checked="false">
                             <label for="2000-plus">₱2000+</label>
                         </li>
                     </ul>

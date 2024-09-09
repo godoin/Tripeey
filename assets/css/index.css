@@ -95,8 +95,8 @@
 
 .products nav .categories {
   display: flex;
-  justify-content: space-between;
-  row-gap: 0.5em;
+  justify-content: flex-start;
+  gap: 0.5em;
   flex-wrap: wrap;
   -webkit-overflow-scrolling: touch;
 }
@@ -131,6 +131,12 @@
     display: flex;
     justify-content: flex-end;
     max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .products nav .categories {
+    justify-content: space-between;
   }
 }
 

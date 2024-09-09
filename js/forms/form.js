@@ -35,7 +35,7 @@ import {
 /**
  * Handles the login form submission.
  */
-export function loginHandler(event) {
+function loginHandler(event) {
   console.log(`Login handler is running...`);
   event.preventDefault();
 
@@ -47,14 +47,12 @@ export function loginHandler(event) {
     enteredPassword.value
   );
 
-  let validationAsyncResult;
+  // let validationAsyncResult;
 
-  if (validationSyncResult.success) {
-    validationAsyncResult = validateLoginUserAsync(
-      enteredEmail.value,
-      enteredPassword.value
-    );
-  }
+  const validationAsyncResult = validateLoginUserAsync(
+    enteredEmail.value,
+    enteredPassword.value
+  );
 
   if (validationSyncResult.success && validationAsyncResult.success) {
     console.log(`Success: Validation is succesful.`);
