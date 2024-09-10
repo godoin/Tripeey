@@ -23,7 +23,7 @@ function parsePrice(priceElement) {
 /**
  * Increments current product price and quantity.
  */
-function incrementProdQtyHandler(qtyInput, baseElement, basePrice) {
+function handleIncrementProductQuantity(qtyInput, baseElement, basePrice) {
   const currentQty = parseInt(qtyInput.value);
   const newValue = currentQty + 1;
   if (newValue > 10) return false;
@@ -50,7 +50,7 @@ function incrementProdQtyHandler(qtyInput, baseElement, basePrice) {
 /**
  * Decreases current product price and quantity.
  */
-function decrementProdQtyHandler(qtyInput, baseElement, basePrice) {
+function handleDecrementProductQuantity(qtyInput, baseElement, basePrice) {
   const currentQty = parseInt(qtyInput.value);
   if (currentQty <= 0) return false;
 
@@ -115,22 +115,9 @@ function updateNewProdQtyStateToDOM(state) {
 }
 
 /**
- * Attach appropriate quantity change handler to button.
- */
-function attachProdQtyChangeHandler(
-  eventHandler,
-  input,
-  baseElement,
-  basePrice
-) {
-  const updatedState = eventHandler(input, baseElement, basePrice);
-  updateNewProdQtyStateToDOM(updatedState);
-}
-
-/**
  * Sets up the event listener for a quantity button.
  */
-function setupProdQtyEventChange(buttonId, inputId, clickHandler, event) {
+function setupProdQtyEventChange(buttonId, inputId, clickHandler) {
   const button = document.getElementById(buttonId);
   const input = document.getElementById(inputId);
 
@@ -145,21 +132,21 @@ function setupProdQtyEventChange(buttonId, inputId, clickHandler, event) {
   );
 
   button?.addEventListener("click", () => {
-    clickHandler(event, input, baseElement, basePrice);
+    const updatedState = clickHandler(input, baseElement, basePrice);
+    updateNewProdQtyStateToDOM(updatedState);
   });
 }
 
-// Events fired.
-setupProdQtyEventChange(
-  "qty-add",
-  "qty-input",
-  attachProdQtyChangeHandler,
-  incrementProdQtyHandler
-);
-
-setupProdQtyEventChange(
-  "qty-subtract",
-  "qty-input",
-  attachProdQtyChangeHandler,
-  decrementProdQtyHandler
-);
+export function setupProdQtyEventListeners() {
+  console.log(`Product quantity event listeners are running...`);
+  setupProdQtyEventChange(
+    "qty-add",
+    "qty-input",
+    handleIncrementProductQuantity
+  );
+  setupProdQtyEventChange(
+    "qty-subtract",
+    "qty-input",
+    handleDecrementProductQuantity
+  );
+}

@@ -20,7 +20,7 @@ import {
   filterDataBySizes,
   filterDataByStyles,
   filterDataByPrices,
-} from "./filters.js";
+} from "../shop/filters.js";
 
 import {
   renderShopProductDataToDOM,

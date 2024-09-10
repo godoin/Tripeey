@@ -9,7 +9,7 @@
  */
 export function handleStateToTooltipDefaultToDOM(elementId) {
   const inputContainer = document.getElementById(elementId);
-  const tooltip = inputContainer.querySelector(".tooltip");
+  const tooltip = inputContainer?.querySelector(".tooltip");
 
   tooltip?.classList.remove("active");
   inputContainer.classList.remove("success", "error");
@@ -20,8 +20,8 @@ export function handleStateToTooltipDefaultToDOM(elementId) {
  */
 export function handleStateToTooltipErrorToDOM(elementId, message) {
   const inputContainer = document.getElementById(elementId);
-  const tooltip = inputContainer.querySelector(".tooltip");
-  const spanMessage = inputContainer.querySelector(".tooltip-message");
+  const tooltip = inputContainer?.querySelector(".tooltip");
+  const spanMessage = inputContainer?.querySelector(".tooltip-message");
   const tooltipIcon = tooltip?.querySelector("i");
 
   if (!inputContainer) {
@@ -49,7 +49,7 @@ export function handleStateToTooltipErrorToDOM(elementId, message) {
  */
 export function handleStateToTooltipSuccessToDOM(elementId) {
   const inputContainer = document.getElementById(elementId);
-  const tooltip = inputContainer.querySelector(".tooltip");
+  const tooltip = inputContainer?.querySelector(".tooltip");
   const tooltipIcon = tooltip?.querySelector("i");
 
   if (!inputContainer) {

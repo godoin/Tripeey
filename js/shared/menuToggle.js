@@ -42,20 +42,14 @@ function updateMenuStateToDom(state) {
 /**
  * Method for handling for toggling menu and updating dom state.
  */
-function attachMenuToggleHandler(menuIcon, navItems) {
+export function handleMenuToggle() {
+  const menuIcon = document.getElementById("menu-icon");
+  const navItems = document.getElementById("nav-items");
+
+  if (!menuIcon || !navItems) {
+    console.error(`Error menu icon or navigation items not found...`);
+  }
+
   const updateState = toggleMenu(menuIcon, navItems);
   updateMenuStateToDom(updateState);
 }
-
-/**
- * Setup add event listener to menu button for mobile navigation.
- */
-function setupToggleMenu(menuBtnId, menuIconId, navItemsId, toggleHandler) {
-  const menuBtn = document.getElementById(menuBtnId);
-  const menuIcon = document.getElementById(menuIconId);
-  const navItems = document.getElementById(navItemsId);
-
-  menuBtn?.addEventListener("click", () => toggleHandler(menuIcon, navItems));
-}
-
-setupToggleMenu("menu-btn", "menu-icon", "nav-items", attachMenuToggleHandler);

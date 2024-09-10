@@ -5,13 +5,7 @@
  * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
-function print_debug(statement, ...values) {
-  console.log(`DEBUG ~ ${statement}:`, values);
-}
-
-function console_error(flag, statement, ...values) {
-  if (!flag) console.error(`DEBUG ~ ${statement} ${values}`);
-}
+import { attachMultipleClickHandlerWithParent } from "./eventHandlers.js";
 
 /**
  * Checks if the tab is set to true otherwise false.
@@ -58,38 +52,29 @@ function selectSingleTab(tab, tabList) {
 }
 
 /**
- * Attach tab selection to an event.
- */
-function attachTabSelectHandler(tab, tabListRole, tabHandler) {
-  const tabList = tab.closest(tabListRole);
-
-  tab.addEventListener("click", () => {
-    tabHandler(tab, tabList);
-  });
-}
-
-/**
  * Setup to allow tab selection.
  */
-function setupTabSelection(tabListId, tabListRole, clickHandler, tabHandler) {
-  const tabList = document.getElementById(tabListId);
-  const tabs = tabList?.querySelectorAll('[role="tab"]');
+// function setupTabSelection(tabListId, tabHandler) {
+//   const tabList = document.getElementById(tabListId);
+//   const tabs = tabList?.querySelectorAll('[role="tab"]');
 
-  tabs?.forEach((tab) => {
-    clickHandler(tab, tabListRole, tabHandler);
-  });
+//   tabs?.forEach((tab) => {
+//     tab.addEventListener("click", () => {
+//       tabHandler(tab, tabList);
+//     });
+//   });
+// }
+
+export function setupTabToggleEventListeners() {
+  console.log(`Tab toggle event listeners are running...`);
+  attachMultipleClickHandlerWithParent(
+    "delivery-tabs",
+    '[role="tab"]',
+    selectSingleTab
+  );
+  attachMultipleClickHandlerWithParent(
+    "product-tabs",
+    '[role="tab"]',
+    selectTabWithPanel
+  );
 }
-
-setupTabSelection(
-  "delivery-tabs",
-  '[role="tablist"]',
-  attachTabSelectHandler,
-  selectSingleTab
-);
-
-setupTabSelection(
-  "product-tabs",
-  '[role="tablist"]',
-  attachTabSelectHandler,
-  selectTabWithPanel
-);

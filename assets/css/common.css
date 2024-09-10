@@ -67,7 +67,7 @@ button:hover,
 }
 
 .icon:hover {
-  background-color: var(--zinc-100);
+  background-color: transparent;
 }
 
 .outline {
@@ -536,7 +536,7 @@ label {
 .card .description {
   display: flex;
   flex-direction: column;
-
+  text-align: left;
   gap: 0.5em;
   overflow: hidden;
 }

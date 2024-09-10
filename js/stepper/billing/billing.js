@@ -9,60 +9,25 @@
  * TODO: Proper error handling such as missing DOM elements when querying.
  * TODO: Create POST API for all the form handlers.
  */
-import { getUserInputById } from "../utils.js";
 
-import {
-  NOT_EMPTY,
-  validate,
-  validateLoginUserSync,
-  validateBilling,
-  validateLoginUserAsync,
-} from "./formValidation.js";
+import { NOT_EMPTY, validate } from "../../shared/formUtils.js";
+
+import { validateBilling } from ".././formValidation.js";
 
 import {
   handleStateToTooltipDefaultToDOM,
   handleStateToTooltipErrorToDOM,
   handleStateToTooltipSuccessToDOM,
-} from "./domUtils.js";
+} from "../../shared/domUtils.js";
 
 import {
   getBillingData,
   getShippingData,
   getPaymentMethodData,
-  getAllCheckoutNames,
-} from "./formFieldIds.js";
-
-/**
- * Handles the login form submission.
- */
-function loginHandler(event) {
-  console.log(`Login handler is running...`);
-  event.preventDefault();
-
-  const enteredEmail = getUserInputById("email");
-  const enteredPassword = getUserInputById("password-input");
-
-  const validationSyncResult = validateLoginUserSync(
-    enteredEmail.value,
-    enteredPassword.value
-  );
-
-  // let validationAsyncResult;
-
-  const validationAsyncResult = validateLoginUserAsync(
-    enteredEmail.value,
-    enteredPassword.value
-  );
-
-  if (validationSyncResult.success && validationAsyncResult.success) {
-    console.log(`Success: Validation is succesful.`);
-    window.location.href = "/OnlineStore";
-  } else {
-    console.error(
-      `Error on one or more validation (sync): ${validationSyncResult.error} && (async): ${validationAsyncResult.error}`
-    );
-  }
-}
+  getBillingNames,
+  getShippingNames,
+  getPaymentMethodsNames,
+} from "../stepperUtils.js";
 
 /**
  * Handles the billing form submission.
@@ -86,13 +51,14 @@ function billingHandler(event) {
       console.log(validationResult.data);
     } catch (error) {
       console.error(error.message);
-    } finally {
-      setupInputStateToDefaultOnChange(getAllCheckoutNames());
     }
   } else {
     console.log(validationResult.error);
-    setupInputStateToDefaultOnChange(getAllCheckoutNames());
   }
+
+  setupInputStateToDefaultOnChange(getBillingNames());
+  setupInputStateToDefaultOnChange(getShippingNames());
+  setupInputStateToDefaultOnChange(getPaymentMethodsNames());
 }
 
 /**
@@ -132,6 +98,10 @@ function setupValidateInputElementOnChange(elementIds) {
 function setupInputStateToDefaultOnChange(elementIds) {
   console.log(`Setup input state to default is running...`);
 
+  if (!elementIds) {
+    console.error(`Error the element IDS are missing.`);
+  }
+
   Object.keys(elementIds).forEach((key) => {
     console.log(`Object Defaults: ${elementIds[key]} : ${key}`);
     const inputElement = document.querySelector(
@@ -147,13 +117,12 @@ function setupInputStateToDefaultOnChange(elementIds) {
 /**
  * Set up for handling forms.
  */
-function setupForm(formId, onSubmitHandler) {
-  console.log(`Setup form is running.`);
+function setupBillingForm(formId, onSubmitHandler) {
+  console.log(`Billing Form is running.`);
 
   const form = document.getElementById(formId);
   form?.addEventListener("submit", onSubmitHandler);
 }
 
 // setupValidateInputElementOnChange(getAllCheckoutNames());
-setupForm("login-form", loginHandler);
-setupForm("billing-form", billingHandler);
+setupBillingForm("billing-form", billingHandler);

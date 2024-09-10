@@ -13,7 +13,10 @@
  * TODO: Switch the action of applying filters from button to any click selection of filters.
  */
 
-import { fetchJSONData } from "../forms/apiUtils.js";
+import { fetchJSONData } from "../shared/apiUtils.js";
+import { attachMultipleClickHandler } from "../shared/eventHandlers.js";
+import { handleFavoriteToggle } from "../product/favorite.js";
+
 import {
   filterDataByCategory,
   filterDataByColors,
@@ -26,7 +29,7 @@ import {
   renderShopProductDataToDOM,
   showEmptyShopMessage,
   hideEmptyShopMessage,
-} from "./domUtils.js";
+} from "./shopUtils.js";
 
 function gatherFilteredData() {
   const categories = Array.from(
@@ -78,13 +81,16 @@ function setupAppliedFilteredDataToDOM(buttonId) {
             filterDataByCategory(product, getRequestedFilters.categories) &&
             filterDataByStyles(product, getRequestedFilters.styles) &&
             filterDataByColors(product, getRequestedFilters.colors) &&
-            // filterDataBySizes(product, getRequestedFilters.sizes) &&
-            filterDataByPrices(product, getRequestedFilters.prices)
+            filterDataBySizes(product, getRequestedFilters.sizes)
+            // filterDataByPrices(product, getRequestedFilters.prices)
           );
         });
         cardContainer.innerHTML = "";
         console.log(`Filtered Products: ${productsToDisplay}`);
         productsToDisplay.forEach(renderShopProductDataToDOM);
+
+        console.log(`Reattached favorite click handler to product items...`);
+        attachMultipleClickHandler(".like", handleFavoriteToggle);
       });
     } catch (error) {
       console.error(`Error fetching data: ${error}`);
@@ -159,6 +165,9 @@ async function setupRenderShopProductData() {
       }
     } catch (error) {
       console.error(`Error fetching data: ${error}`);
+    } finally {
+      console.log(`Attached favorite click handler to product items...`);
+      attachMultipleClickHandler(".like", handleFavoriteToggle);
     }
   } else {
     console.error();
@@ -166,6 +175,5 @@ async function setupRenderShopProductData() {
 }
 
 setupDestroyBtnHandler("filter-btn", ".filters");
-// displayFilteredData("test-btn");
 setupAppliedFilteredDataToDOM("test-btn");
 setupRenderShopProductData();

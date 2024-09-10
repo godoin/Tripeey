@@ -7,10 +7,11 @@
  * - Handles multiple product items with quantity controls.
  * - Prevents decrementing below a minimum quantity (usually 1).
  *
- * TODO: there are some side-effects but there are trade-offs over purity vs readability/performance.
  * TODO: Proper error handling such as missing DOM elements when querying.
  * TODO: Resolve the quantity must reflect the new value on increment or decrement.
  */
+
+import { attachMultipleClickHandler } from "../../shared/eventHandlers.js";
 
 /**
  * Parse the value of an element from string to integer
@@ -22,8 +23,9 @@ function parseIntElementValue(element) {
 /**
  * Handles the increment button click event.
  */
-function incrementQtyHandler(input) {
+function incrementCartQty(input) {
   const currentFieldValue = parseIntElementValue(input);
+
   if (currentFieldValue > 9) return false;
   const newValue = currentFieldValue + 1;
 
@@ -36,7 +38,7 @@ function incrementQtyHandler(input) {
 /**
  * Handles the decrement button click event.
  */
-function decrementQtyHandler(input) {
+function decrementCartQty(input) {
   const currentFieldValue = parseIntElementValue(input);
   if (currentFieldValue <= 1) return null;
   const newValue = input.value - 1;
@@ -57,23 +59,33 @@ function updateNewCartQtyStateToDOM(state) {
 /**
  * Attaches a click event handler to a quantity button.
  */
-function attachQtyChangeHandler(button, eventHandler) {
-  button.addEventListener("click", (event) => {
-    const container = event.target.closest(".qty-container");
-    const input = container.querySelector(".qty-field");
-    const updatedState = eventHandler(input);
+export function handleCartIncrementQtyToggle(input) {
+  const updatedState = incrementCartQty(input);
 
-    if (updatedState) updateNewCartQtyStateToDOM(updatedState);
-  });
+  if (updatedState) updateNewCartQtyStateToDOM(updatedState);
+}
+
+/**
+ * Attaches a click event handler to a quantity button.
+ */
+export function handleCartDecrementQtyToggle(input) {
+  const updatedState = decrementCartQty(input);
+
+  if (updatedState) updateNewCartQtyStateToDOM(updatedState);
 }
 
 /**
  * Sets up quantity change event listeners for a group of buttons.
  */
-function setupQtyChangeEvent(buttons, clickHandler, event) {
-  const qtyBtns = document.querySelectorAll(buttons);
-  qtyBtns.forEach((button) => clickHandler(button, event));
+// function setupQtyChangeEvent(buttons, clickHandler, event) {
+//   const qtyBtns = document.querySelectorAll(buttons);
+//   qtyBtns.forEach((button) => {button.addEventListener});
+// }
+export function setupCartQuantityToggleEventListeners() {
+  console.log(`Cart quantity toggle event listeners are running...`);
+  attachMultipleClickHandler(".qty-plus", handleCartIncrementQtyToggle);
+  attachMultipleClickHandler(".qty-minus", handleCartDecrementQtyToggle);
 }
 
-setupQtyChangeEvent(".qty-plus", attachQtyChangeHandler, incrementQtyHandler);
-setupQtyChangeEvent(".qty-minus", attachQtyChangeHandler, decrementQtyHandler);
+// setupQtyChangeEvent(".qty-plus", attachQtyChangeHandler, incrementCartQty);
+// setupQtyChangeEvent(".qty-minus", attachQtyChangeHandler, decrementCartQty);

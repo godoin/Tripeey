@@ -70,6 +70,15 @@
   .cart-container .content {
     flex-direction: row;
   }
+  .cart-container .content.cart {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart-container .content.cart {
+    flex-direction: row;
+  }
 }
 
 /* Cart Items */

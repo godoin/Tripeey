@@ -39,29 +39,46 @@ include_once 'core/functions.php';
   </div>
 
   <!-- JS Link -->
-  <script src="js/index.js" type="text/javascript"></script>
-  <script src="js/menu_toggle.js" type="text/javascript"></script>
-  <script src="js/password_toggle.js" type="text/javascript"></script>
-  <script src="js/radio_checkbox_toggle.js" type="text/javascript"></script>
-  <script src="js/cart_quantity_manager.js" type="text/javascript"></script>
-  <script src="js/product_quantity_manager.js" type="text/javascript"></script>
-  <script src="js/tab_toggle.js" type="text/javascript"></script>
-  <script src="js/stepper.js" type="text/javascript"></script>
+  <script src="js/index.js" type="module"></script>
   <script src="js/utils.js" type="module"></script>
+  
+  <!-- Product Scripts -->
+  <script src="js/product/favorite.js" type="module"></script>
+  <script src="js/product/productQuantityManager.js" type="module"></script>
+  <script src="js/product/radioCheckboxToggle.js" type="module"></script>
+  
+  <!-- Auth Scripts -->
+  <script src="js/auth/auth.js" type="module"></script>
+  <script src="js/auth/formValidation.js" type="module"></script>
+  <script src="js/auth/passwordToggle.js" type="module"></script>
 
   <!-- Shop Scripts -->
   <script src="js/shop/shop.js" type="module"></script>
-  <script src="js/shop/domUtils.js" type="module"></script>
-  <script src="js/shop/favorite.js" type="module"></script>
   <script src="js/shop/filters.js" type="module"></script>
   <script src="js/shop/shopUtils.js" type="module"></script>
+  
+  <!-- Shared Scripts -->
+  <script src="js/shared/apiUtils.js" type="module"></script>
+  <script src="js/shared/domUtils.js" type="module"></script>
+  <script src="js/shared/eventHandlers.js" type="module"></script>
+  <script src="js/shared/formUtils.js" type="module"></script>
+  <script src="js/shared/tabToggle.js" type="module"></script>
+  <script src="js/shared/menuToggle.js" type="module"></script>
 
-  <!-- Form Scripts -->
-  <script src="js/forms/form.js" type="module"></script>
-  <script src="js/forms/formValidation.js" type="module"></script>
-  <script src="js/forms/domUtils.js" type="module"></script>
-  <script src="js/forms/apiUtils.js" type="module"></script>
-  <script src="js/forms/formFieldIds.js" type="module"></script>
+  <!-- Stepper Scripts -->
+  <script src="js/stepper/stepper.js" type="module"></script>
+  <script src="js/stepper/formValidation.js" type="module"></script>
+  <script src="js/stepper/stepperUtils.js" type="module"></script>
+
+  <!-- Cart Scripts -->
+  <script src="js/stepper/cart/cart.js" type="module"></script>
+  <script src="js/stepper/cart/cartQuantityManager.js" type="module"></script>
+  
+  <!-- Billing Scripts -->
+  <script src="js/stepper/billing/billing.js" type="module"></script>
+
+  <!-- Checkout Scripts -->
+  <script src="js/stepper/checkout/checkout.js" type="module"></script>
 </body>
 
 </html>

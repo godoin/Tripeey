@@ -47,7 +47,6 @@ export function filterDataByColors(product, selectedColors) {
  * Filters product items according to selected sizes.
  */
 export function filterDataBySizes(product, selectedSizes) {
-  debugger;
   if (selectedSizes.length > 0) {
     const hasMatchingSize = product.sizes.some((size) =>
       selectedSizes.includes(size)

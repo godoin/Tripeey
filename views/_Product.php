@@ -243,12 +243,12 @@
 
             <article class="card item">
                 <div class="image-container">
-                    <img src="assets/images/items/shirt_one.png" class="model_img" alt="Midnight Wanderer 705">
+                    <img src="assets/images/items/product-07.png" class="model_img" alt="Midnight Wanderer 705">
                     <div class="top-position">
                         <span class="button badge-02">New</span>
-                        <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                        <!-- <button class="icon like" aria-label="Add to Favorites" data-id="#">
                             <i class="fa-regular fa-heart"></i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
                 <div class="description">
@@ -267,12 +267,12 @@
 
             <article class="card item">
                 <div class="image-container">
-                    <img src="assets/images/items/shirt_two.png" class="model_img" alt="Midnight Wanderer 705">
+                    <img src="assets/images/items/product-10.png" class="model_img" alt="Midnight Wanderer 705">
                     <div class="top-position">
                         <span class="button badge-02">New</span>
-                        <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                        <!-- <button class="icon like" aria-label="Add to Favorites" data-id="#">
                             <i class="fa-regular fa-heart"></i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
                 <div class="description">
@@ -291,12 +291,12 @@
 
             <article class="card item">
                 <div class="image-container">
-                    <img src="assets/images/items/shirt_three.png" class="model_img" alt="Seamless Stussy Shirt">
+                    <img src="assets/images/items/product-11.png" class="model_img" alt="Seamless Stussy Shirt">
                     <div class="top-position">
                         <span class="button badge-02">New</span>
-                        <button class="icon like" aria-label="Add to Favorites" data-id="#">
+                        <!-- <button class="icon like" aria-label="Add to Favorites" data-id="#">
                             <i class="fa-regular fa-heart"></i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
                 <div class="description">

@@ -4,6 +4,13 @@
  * Guides users through the checkout process (cart, billing, checkout).
  */
 
+import { hideEmptyCartMessage, showEmptyCartMessage } from "../stepperUtils.js";
+import {
+  handleCartQtyToggle,
+  incrementCartQty,
+  decrementCartQty,
+} from "../../stepper/cart/cartQuantityManager.js";
+
 /**
  * Renders a new product card to the shop.
  */
@@ -84,8 +91,8 @@ function renderProductCardToDOM(product) {
     const incrementButton = productCard.querySelector("#qty-plus");
 
     if (decrementButton && incrementButton) {
-      attachQtyChangeHandler(incrementButton, incrementQtyHandler);
-      attachQtyChangeHandler(decrementButton, decrementQtyHandler);
+      handleCartQtyToggle(incrementButton, incrementCartQty);
+      handleCartQtyToggle(decrementButton, decrementCartQty);
     }
   }
 }
@@ -134,26 +141,6 @@ function setupRenderUserCartProducts() {
   } else {
     console.error();
   }
-}
-
-/**
- * Show message to tell user no products found in cart page.
- */
-function showEmptyCartMessage() {
-  const cartMessage = document.getElementById("empty-cart");
-  const cartSummary = document.getElementById("cart-summary");
-  cartMessage?.classList.add("active");
-  cartSummary?.classList.remove("active");
-}
-
-/**
- * Hides message to tell user no products found in cart page.
- */
-function hideEmptyCartMessage() {
-  const cartMessage = document.getElementById("empty-cart");
-  const cartSummary = document.getElementById("cart-summary");
-  cartMessage?.classList.remove("active");
-  cartSummary?.classList.add("active");
 }
 
 setupRenderUserCartProducts();

@@ -6,22 +6,13 @@
  * TODO: Handle the rest of the other click events to update the aria.
  */
 
+import { attachMultipleClickHandler } from "../shared/eventHandlers.js";
+
 /**
  * Checks if the selected item is active.
  */
 function hasActiveClass(element) {
   return element.classList.contains("active");
-}
-
-/**
- * Toggles the value 'active' state of the selected element based on its asociated checkbox.
- */
-function toggledCheckboxOption(option) {
-  const checkbox = option.querySelector('input[type="checkbox"]');
-  const currentCheckboxState = hasActiveClass(checkbox);
-  const newState = !currentCheckboxState;
-
-  updateCheckboxOptionStateToDOM(option, newState, checkbox);
 }
 
 /**
@@ -57,24 +48,20 @@ function toggledRadioOption(option) {
   updateRadioOptionStateToDOM(option, radio, "true");
 }
 
-function attachOptionToggleHandler(option, toggleOption) {
-  option.addEventListener("click", () => {
-    toggleOption(option);
-  });
-}
-
 /**
- * Set up add event listener for multiple toggling.
+ * Toggles the value 'active' state of the selected element based on its asociated checkbox.
  */
-function setupToggleOptions(optionsSelector, toggledOption) {
-  const options = document.querySelectorAll(optionsSelector);
+function toggledCheckboxOption(option) {
+  const checkbox = option.querySelector('input[type="checkbox"]');
+  const currentCheckboxState = hasActiveClass(checkbox);
+  const newState = !currentCheckboxState;
 
-  options?.forEach((option) =>
-    attachOptionToggleHandler(option, toggledOption)
-  );
+  updateCheckboxOptionStateToDOM(option, newState, checkbox);
 }
 
-// Events fired.
-setupToggleOptions(".category-option", toggledRadioOption);
-setupToggleOptions(".color-option", toggledCheckboxOption);
-setupToggleOptions(".size-option", toggledCheckboxOption);
+export function setupToggleOptionsEventListeners() {
+  console.log(`Toggle options event listeners are running...`);
+  attachMultipleClickHandler(".category-option", toggledRadioOption);
+  attachMultipleClickHandler(".color-option", toggledCheckboxOption);
+  attachMultipleClickHandler(".size-option", toggledCheckboxOption);
+}

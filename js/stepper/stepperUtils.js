@@ -142,3 +142,23 @@ export function getAllCheckoutNames() {
 
   return allNames;
 }
+
+/**
+ * Show message to tell user no products found in cart page.
+ */
+export function showEmptyCartMessage() {
+  const cartMessage = document.getElementById("empty-cart");
+  const cartSummary = document.getElementById("cart-summary");
+  cartMessage?.classList.add("active");
+  cartSummary?.classList.remove("active");
+}
+
+/**
+ * Hides message to tell user no products found in cart page.
+ */
+export function hideEmptyCartMessage() {
+  const cartMessage = document.getElementById("empty-cart");
+  const cartSummary = document.getElementById("cart-summary");
+  cartMessage?.classList.remove("active");
+  cartSummary?.classList.add("active");
+}

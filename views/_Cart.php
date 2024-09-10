@@ -51,7 +51,7 @@
     </nav>
 
     <!-- Content -->
-    <div class="content">
+    <div class="content cart">
 
         <section class="cart-items" id="cart-container">
             <div class="message products" id="empty-cart">
