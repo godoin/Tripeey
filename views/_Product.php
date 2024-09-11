@@ -1,6 +1,6 @@
 <main class="product-container">
 
-    <section class="product-item">
+    <form id="product-item" class="product-item" method="post">
         <!-- Image Display -->
         <div class="image-display">
             <ul class="sub-images">
@@ -29,19 +29,19 @@
             <header>
                 <div class="header-group">
                     <div class="details">
-                        <h1>Sunset Polo Shirt</h1>
-                        <span class="created-by">By XYZ Company</span>
+                        <h1 id="product-title">Sunset Polo Shirt</h1>
+                        <span id="created-by" class="created-by">By XYZ Company</span>
                     </div>
     
                     <div class="review-rating">
                         <div class="rating">
-                            <span class="number">5.0</span>
+                            <span id="rating" class="number">5.0</span>
                             <i class="fa-solid fa-star"></i>
                         </div>
-                        <span class="review-num">187 Reviews</span>
+                        <span id="review-num" class="review-num">187 Reviews</span>
                     </div>
                 </div>
-
+            </header>
                 <div class="product-descriptions">
                     <!-- Profiles -->
                     <ul class="profiles">
@@ -65,13 +65,13 @@
                     </ul>
 
                     <!-- Price -->
-                    <div class="price-group">
+                    <div class="price-group" id="price-group">
                         <div class="left">
-                            <span class="original-price" id="original-price">PHP 399.99</span>
+                            <input class="original-price" id="original-price" name="original-price" value="PHP 399.99"/>
                             <span class="discount">Discount available at 15%</span>
                         </div>
                         <div class="right">
-                            <span class="new-price" id="discount-price">PHP 339.99</span>
+                            <input class="new-price" id="discount-price" name="new-price" value="PHP 339.99"/>
                             <span class="discount">Applied Discount</span>
                         </div>
                     </div>
@@ -79,63 +79,72 @@
                     <!-- Colors -->
                     <div class="filter-group">
                         <h2>Color</h2>
-                        <ul class="group color">
+                        <div class="message" id="error-colors">
+                            <span class="text error">This is a text error.</span>
+                        </div>
+                        <ul class="group color" id="colors">
                             <li class="color-option" style="background-color: #ffffff;">
                                 <label for="color-white"></label>
-                                <input type="checkbox" id="color-white" name="color" value="white">
+                                <input type="checkbox" id="color-white" name="color" value="White" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #000000;">
                                 <label for="color-black"></label>
-                                <input type="checkbox" id="color-black" name="color" value="black">
+                                <input type="checkbox" id="color-black" name="color" value="Black" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ff0000;">
                                 <label for="color-red"></label>
-                                <input type="checkbox" id="color-red" name="color" value="red">
+                                <input type="checkbox" id="color-red" name="color" value="Red" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #00ff00;">
                                 <label for="color-green"></label>
-                                <input type="checkbox" id="color-green" name="color" value="green">
+                                <input type="checkbox" id="color-green" name="color" value="Green" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #0000ff;">
                                 <label for="color-blue"></label>
-                                <input type="checkbox" id="color-blue" name="color" value="blue">
+                                <input type="checkbox" id="color-blue" name="color" value="Blue" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ffff00;">
                                 <label for="color-yellow"></label>
-                                <input type="checkbox" id="color-yellow" name="color" value="yellow">
+                                <input type="checkbox" id="color-yellow" name="color" value="Yellow" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ff00ff;">
                                 <label for="color-magenta"></label>
-                                <input type="checkbox" id="color-magenta" name="color" value="magenta">
+                                <input type="checkbox" id="color-magenta" name="color" value="
+                                Magenta" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #00ffff;">
                                 <label for="color-cyan"></label>
-                                <input type="checkbox" id="color-cyan" name="color" value="cyan">
+                                <input type="checkbox" id="color-cyan" name="color" value="
+                                Cyan" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #800080;">
                                 <label for="color-purple"></label>
-                                <input type="checkbox" id="color-purple" name="color" value="purple">
+                                <input type="checkbox" id="color-purple" name="color" value="
+                                Purple" aria-checked="false">
                             </li>
 
                             <li class="color-option" style="background-color: #ffa500;">
                                 <label for="color-orange"></label>
-                                <input type="checkbox" id="color-orange" name="color" value="orange">
+                                <input type="checkbox" id="color-orange" name="color" value="
+                                Orange" aria-checked="false">
                             </li>
                         </ul>
-
                     </div>
                     
                     <!-- Sizes -->
                     <div class="filter-group">
                         <h2 id="sizesFilter">Sizes</h2>
+                        <div class="message" id="error-sizes">
+                            <span class="text error">This is a text error.</span>
+                        </div>
                         <ul role="group" aria-labelledby="sizesFilter" class="group size" id="sizes">
                             <li class="size-option">
                                 <label for="xxs">XXS</label>
@@ -173,7 +182,7 @@
                         <div class="actions-top">
 
                             <!-- Quantity Selector -->
-                            <div class="qty-container">
+                            <div class="qty-container" id="qty-container">
                                 <label for="qty-input" class="qty-title">QTY</label>
                                 <div class="qty-counter">
                                     <input type="number" id="qty-input" class="qty-field" value="1" min="1" aria-label="Quantity input" readonly>
@@ -201,10 +210,9 @@
                     </div>
 
                 </div>
-            </header>
         </div>
 
-    </section>
+    </form>
 
     <!-- Product Details -->
     <section class="product-details">
@@ -239,6 +247,9 @@
 
     <!-- Related Products -->
     <section class="related-products">
+        <header>
+            <h2>Related Products</h2>
+        </header>
         <ul class="cards">
 
             <article class="card item">

@@ -36,6 +36,8 @@ include_once 'core/functions.php';
     <?php include('views/inc/Navbar.php') ?>
     
     <?php include($contentView) ?>
+
+    <?php include('views/inc/Modals.php') ?>
   </div>
 
   <!-- JS Link -->
@@ -69,16 +71,7 @@ include_once 'core/functions.php';
   <script src="js/stepper/stepper.js" type="module"></script>
   <script src="js/stepper/formValidation.js" type="module"></script>
   <script src="js/stepper/stepperUtils.js" type="module"></script>
-
-  <!-- Cart Scripts -->
-  <script src="js/stepper/cart/cart.js" type="module"></script>
-  <script src="js/stepper/cart/cartQuantityManager.js" type="module"></script>
-  
-  <!-- Billing Scripts -->
-  <script src="js/stepper/billing/billing.js" type="module"></script>
-
-  <!-- Checkout Scripts -->
-  <script src="js/stepper/checkout/checkout.js" type="module"></script>
+  <script src="js/stepper/cartQuantityManager.js" type="module"></script>
 </body>
 
 </html>

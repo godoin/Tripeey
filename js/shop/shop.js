@@ -8,7 +8,6 @@
  * - Allows removing of the applied filters on the shop.
  *
  * TODO: Create the FETCH API for handling the client-side request to server.
- * TODO: Handle events where after getting the new products through FETCH API, properly reattach the click events needed.
  * TODO: Proper error handling such as missing DOM elements when querying.
  * TODO: Switch the action of applying filters from button to any click selection of filters.
  */
@@ -16,6 +15,7 @@
 import { fetchJSONData } from "../shared/apiUtils.js";
 import { attachMultipleClickHandler } from "../shared/eventHandlers.js";
 import { handleFavoriteToggle } from "../product/favorite.js";
+import { doesFilterButtonExist } from "./shopUtils.js";
 
 import {
   filterDataByCategory,
@@ -27,6 +27,7 @@ import {
 
 import {
   renderShopProductDataToDOM,
+  createAndRenderButtonToDOM,
   showEmptyShopMessage,
   hideEmptyShopMessage,
 } from "./shopUtils.js";
@@ -72,8 +73,13 @@ function setupAppliedFilteredDataToDOM(buttonId) {
         const getShopData = await fetchJSONData(jsonUrl);
         const getRequestedFilters = gatherFilteredData();
 
-        Object.keys(getRequestedFilters).forEach((filter) => {
-          console.log(`Requested: ${filter} : ${getRequestedFilters[filter]}`);
+        Object.keys(getRequestedFilters).forEach((key) => {
+          if (
+            !doesFilterButtonExist(getRequestedFilters[key]) &&
+            getRequestedFilters[key].length > 0
+          ) {
+            setupNewFilterButton(getRequestedFilters[key], "filter-list");
+          }
         });
 
         const productsToDisplay = getShopData.filter((product) => {

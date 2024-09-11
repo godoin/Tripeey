@@ -1,0 +1,9 @@
+[
+    {
+        "payment_method": "cod",
+        "card_number": "1234-5678-9012-3456", 
+        "expiration_date": "2024-12-31",
+        "name_on_card": "John Doe",
+        "cv_code": "123"
+    }
+]

@@ -8,7 +8,7 @@
                 <ul role="radiogroup" aria-labelledby="categoriesFilter" class="group" id="categories">
                     <li class="category-option active">
                         <label for="All">All</label>
-                        <input type="radio" name="category" value="All" aria-checked="true" checked>
+                        <input type="radio" name="category" value="All" aria-checked="true" checked="true">
                     </li>
                     <li class="category-option">
                         <label for="T-Shirts">T-Shirts</label>

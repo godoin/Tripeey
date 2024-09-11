@@ -4,6 +4,8 @@
  * It is usually message boxes, tooltip, toast or sonner pop ups.
  */
 
+import { attachClickHandlerWithParentById } from "./eventHandlers.js";
+
 /**
  * Default state of input fields, tooltip (usually not shown).
  */
@@ -84,4 +86,33 @@ export function handleStateErrorToDOM(displayId, message) {
   setTimeout(() => {
     displayElement.classList.remove("active");
   }, 10000);
+}
+
+export function handleToastSuccessToDOM(displayId, message) {
+  const displayElement = document.getElementById(displayId);
+  const textElement = displayElement.querySelector(".toast-message");
+
+  textElement.textContent = message;
+  displayElement.classList.add("active");
+
+  setTimeout(() => {
+    displayElement.classList.remove("active");
+  }, 10000);
+}
+
+function handleCloseButton(button, parent) {
+  const buttonId = button.id;
+  const doesHaveButtonClose = parent.querySelector(`#${buttonId}`);
+
+  if (!doesHaveButtonClose) {
+    console.error(
+      `The parent container does not have the targeted button with ID '${buttonId}'.`
+    );
+  }
+
+  parent.classList.remove("active");
+}
+export function setupDOMEventListeners() {
+  console.log(`DOM event listeners are running...`);
+  attachClickHandlerWithParentById("close-btn", "toast", handleCloseButton);
 }

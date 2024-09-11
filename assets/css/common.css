@@ -67,6 +67,10 @@ button:hover,
 }
 
 .icon:hover {
+  background-color: var(--zinc-100);
+}
+
+.icon.like:hover {
   background-color: transparent;
 }
 
@@ -295,6 +299,10 @@ form .fields .field input {
   border: 1px solid var(--zinc-200);
   transition: all 0.3s ease;
   border-radius: 0.6em;
+}
+
+form .fields .field input:disabled {
+  background-color: var(--zinc-50);
 }
 
 form .fields .field input[type="checkbox"],
@@ -563,11 +571,13 @@ label {
 
 .card .description h3 {
   font-size: 1.2rem;
+  overflow: hidden;
 }
 
 .card .description p {
   font-size: 1.2rem;
   font-weight: 600;
+  overflow: hidden;
 }
 
 .card .redirect {
@@ -769,4 +779,47 @@ label {
 
 .message .text.success {
   color: var(--success-text);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: -10em;
+  right: 1em;
+  min-width: 18em;
+  padding: 1em;
+  border-radius: 0.6em;
+  background-color: var(--zinc-50);
+  border: 1px solid var(--zinc-300);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.8s ease;
+  gap: 0.4em;
+}
+
+.toast.active {
+  bottom: 1em;
+}
+
+.toast .group {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+}
+
+.toast .toast-message {
+  display: flex;
+  color: var(--zinc-900);
+  font-size: 0.9rem;
+}
+
+.toast .fa-circle-check {
+  color: var(--success-text);
+  font-size: 1.2em;
+}
+
+.toast .fa-xmark {
+  color: var(--zinc-400);
 }

@@ -28,6 +28,7 @@ export function validateBilling(billingData, shippingData, paymentMethodData) {
         elementId: `${key}`,
         message: `${key} is required.`,
       });
+      console.log(`Passed`);
     } else {
       handleStateToTooltipSuccessToDOM(`${key}`);
     }
@@ -39,6 +40,7 @@ export function validateBilling(billingData, shippingData, paymentMethodData) {
         elementId: `${key}`,
         message: `${key} is required.`,
       });
+      console.log(`Passed`);
     } else {
       handleStateToTooltipSuccessToDOM(`${key}`);
     }
@@ -51,6 +53,7 @@ export function validateBilling(billingData, shippingData, paymentMethodData) {
           elementId: `${key}`,
           message: `${key} is required.`,
         });
+        console.log(`Passed`);
       }
     } else {
       if (key !== "card") {
@@ -63,21 +66,29 @@ export function validateBilling(billingData, shippingData, paymentMethodData) {
     billingErrors.forEach((error) => {
       handleStateToTooltipErrorToDOM(error.elementId, error.message);
     });
+    console.log(`Passed`);
   }
 
   if (shippingErrors.length > 0) {
     shippingErrors.forEach((error) => {
       handleStateToTooltipErrorToDOM(error.elementId, error.message);
     });
+    console.log(`Passed`);
   }
 
   if (paymentMethodErrors.length > 0) {
     paymentMethodErrors.forEach((error) => {
       handleStateToTooltipErrorToDOM(error.elementId, error.message);
     });
+    console.log(`Passed`);
   }
 
-  if (billingErrors || shippingErrors || paymentMethodErrors) {
+  if (
+    billingErrors.length > 0 ||
+    shippingErrors.length > 0 ||
+    paymentMethodErrors.length > 0
+  ) {
+    console.log(`Passed`);
     return false;
   }
 

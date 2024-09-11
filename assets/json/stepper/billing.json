@@ -1,0 +1,16 @@
+[
+    {
+        "id": "B-01",
+        "first_name": "John",
+        "last_name": "Doe",
+        "middle_initial": "A.",
+        "email": "johndoe@example.com",
+        "phone_number": "123-456-7890",
+        "street_address": "Anyown",
+        "state": "CA",
+        "province": "Ontario",
+        "region": "North America",
+        "zip_code": "12345",
+        "country": "USA"
+    }
+]

@@ -15,6 +15,22 @@ export function attachClickHandler(selector, handlerFunction) {
   });
 }
 
+export function attachClickHandlerWithParentById(
+  selectorId,
+  parentId,
+  handlerFunction
+) {
+  const element = document.getElementById(selectorId);
+  const parent = document.getElementById(parentId);
+
+  if (!element || !parent) {
+    console.error(`Error the element and parent do not exist...`);
+    return null;
+  }
+
+  element.addEventListener("click", handlerFunction(element, parent));
+}
+
 /**
  * Attaches a click event handle to the element ID.
  */

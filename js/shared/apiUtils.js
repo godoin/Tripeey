@@ -13,14 +13,11 @@ import { isEmpty } from "../utils.js";
  * Sends a GET request to a given URL with an ID provided.
  */
 export async function fetchData(url, data) {
-  if (isEmpty(url)) {
-    console.error("Error: the url is empty.");
+  if (!url || !data) {
+    console.error("Error the url or data is empty.");
     return;
   }
-  if (isEmpty(data)) {
-    console.error("Error: the data is empty.");
-    return;
-  }
+
   const fullUrl = `${url}/${data}`;
 
   try {
@@ -41,8 +38,8 @@ export async function fetchData(url, data) {
  * Fetches JSON data from a given URL.
  */
 export async function fetchJSONData(jsonUrl) {
-  if (isEmpty(jsonUrl)) {
-    console.error("Error: The json url is empty.");
+  if (!jsonUrl) {
+    console.error("Error the json url is empty.");
     return;
   }
 
@@ -65,12 +62,8 @@ export async function fetchJSONData(jsonUrl) {
  * Sends a POST request to a given URL with the provided data.
  */
 export async function postData(url, data) {
-  if (isEmpty(url)) {
-    console.error("Error: the url is empty.");
-    return;
-  }
-  if (isEmpty(data)) {
-    console.error("Error: the data is empty.");
+  if (!url || !data) {
+    console.error("Error the url or data is empty.");
     return;
   }
 

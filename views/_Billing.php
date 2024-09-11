@@ -1,4 +1,4 @@
-<main class="cart-container">
+<main class="cart-container" id="stepper">
     <!-- Stepper -->
     <nav class="stepper" aria-label="Checkout Steps">
         <ul class="steps">
@@ -51,9 +51,9 @@
     </nav>
 
     <!-- Content -->
-    <div class="content billing-content">
+    <form class="content billing-content" id="billing-form" method="post">
 
-        <form class="billing" method="post" id="billing-form">
+        <section class="form">
 
             <div class="billing-information">
                 <header>
@@ -399,9 +399,7 @@
                     </div>
                 </div>
             </div>
-
-            <button type="submit">Submit</button>
-        </form>
+        </section>
 
         <!-- Summary -->
         <section class="summary" id="cart-summary">
@@ -411,10 +409,10 @@
             </header>
             
             <!-- Delivery -->
-            <div class="delivery">
+            <div class="delivery" id="delivery-summary">
                 <div class="group">
                     <h3 id="deliveryOptions" class="section-title">Delivery Info</h3>
-                    <span class="order-number">#OR-3421</span>
+                    <span id="or-number" class="order-number">#OR-3421</span>
                 </div>
                 <ul id="delivery-tabs" class="delivery-tabs" role="tablist" aria-labelledby="deliveryOptions">
                     <li class="tab" role="tab" aria-selected="true" selected>Standard</li>
@@ -425,23 +423,23 @@
                 <ul class="data-column delivery-details">
                     <li class="row">
                         <h4 class="detail-title">Est. Date</h4>
-                        <span class="detail-data">01/01/2028</span>
+                        <span id="est-date" class="detail-data">01/01/2028</span>
                     </li>
                     <li class="row">
                         <h4 class="detail-title">Est. Time</h4>
-                        <span class="detail-data">7:00 PM</span>
+                        <span id="est-time" class="detail-data">7:00 PM</span>
                     </li>
                 </ul>
             </div>
             
             <!-- Products -->
-            <div class="products-summary">
+            <div class="products-summary" id="products-summary">
                 <div class="group">
                     <h3 class="section-title">Products</h3>
-                    <span class="product-total">PHP 1,769.25</span>
+                    <span id="product-total" class="product-total">PHP 1,769.25</span>
                 </div>
                 <!-- Data Column -->
-                <ul class="data-column product-list">
+                <ul class="data-column product-list" id="products-summary-list">
                     <li class="row">
                         <h4 class="product-name">T-Shirt</h4>
                         <span class="product-quantity">2</span>
@@ -458,13 +456,13 @@
             </div>
             
             <!-- Subtotal -->
-            <div class="subtotal-summary">
+            <div class="subtotal-summary" id="subtotal-summary">
                 <div class="group">
                     <h3 class="section-title">Subtotal</h3>
-                    <span class="subtotal-price">PHP 1,769.25</span>
+                    <span id="subtotal-price" class="subtotal-price">PHP 1,769.25</span>
                 </div>
                 <!-- Data Column -->
-                <ul class="data-column subtotal-list">
+                <ul class="data-column subtotal-list" id="subtotal-list-summary">
                     <li class="row">
                         <h4 class="name">Discount</h4>
                         <span class="price">PHP 0.00</span>
@@ -481,19 +479,19 @@
             </div>
             
             <!-- Total -->
-            <div class="total-summary">
+            <div class="total-summary" id="total-summary">
                 <div class="group">
                     <h3 class="section-title">Total</h3>
-                    <span class="total-price">PHP 1,646.05</span>
+                    <span class="total-price" id="total-price">PHP 1,646.05</span>
                 </div>
             </div>
 
             <!-- Actions -->
             <div class="actions">
-                <button class="primary">Proceed to Billing</button>
-                <button class="outline">Continue Later</button>
+                <button type="submit" class="primary">Proceed to Checkout</button>
+                <button type="button"  class="outline">Continue Later</button>
             </div>
         </section>
 
-    </div>
+    </form>
 </main>

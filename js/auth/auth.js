@@ -25,7 +25,7 @@ import { handlePasswordToggle } from "./passwordToggle.js";
 /**
  * Handles the login form submission.
  */
-async function loginHandler(event) {
+async function handleLogin(event) {
   event.preventDefault();
 
   const enteredEmail = getUserInputById("email");
@@ -53,12 +53,12 @@ async function loginHandler(event) {
     console.log(`Success: Validation is succesful.`);
     window.location.href = "/OnlineStore";
   } else {
-    console.error(`Error on one or more validation.`);
+    console.log(`Error on one or more validation.`);
   }
 }
 
 export function setupAuthEventListeners() {
   console.log(`Auth event listeners running...`);
-  attachSubmitHandler("login-form", loginHandler);
+  attachSubmitHandler("login-form", handleLogin);
   attachClickHandlerById("password-btn", handlePasswordToggle);
 }

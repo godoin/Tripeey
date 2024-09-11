@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "sellerId": "S-01",
+        "sellerName": "XYZ Company",
+        "category": "Polo Shirts",
+        "styles": "Casual",
+        "sizes": ["XXS", "XS", "S", "M", "L", "XXL"],
+        "colors": ["White", "Black", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "Purple", "Orange"],
+        "imageUrl": "assets/images/items/product-01.png",
+        "imageAlt": "Sunset Polo Shirt",
+        "title": "Sunset Polo Shirt",
+        "price": "399.99",
+        "discount": "15",
+        "status": "In Stock",
+        "quantity": "1",
+        "isFavorite": false,
+        "dateCreated": "09/06/2024"
+    }
+]

@@ -6,7 +6,7 @@
 /**
  * Check if the filter button already exists.
  */
-function doesFilterbuttonExist(name) {
+export function doesFilterButtonExist(name) {
   const filterList = document.getElementById("filter-list");
   const filterTextSpans = filterList.querySelectorAll(".filter-text");
 
@@ -119,7 +119,7 @@ export function displayFilteredData(buttonId) {
     for (let key in filters) {
       console.log(`${key}: ${filters[key]}`);
       filters[key].forEach((filterName) => {
-        if (!doesFilterbuttonExist(filterName))
+        if (!doesFilterButtonExist(filterName))
           setupNewFilterButton(filterName, "filter-list");
       });
     }

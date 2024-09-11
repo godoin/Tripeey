@@ -93,10 +93,10 @@ function getBasePriceElementById(original, discounted) {
  */
 function getBasePriceValueByElement(originalElement, discountedElement) {
   const baseDiscountedPrice = parseFloat(
-    discountedElement?.innerHTML.replace("PHP ", "")
+    discountedElement?.value.replace("PHP ", "")
   );
   const baseOriginalPrice = parseFloat(
-    originalElement?.innerHTML.replace("PHP ", "")
+    originalElement?.value.replace("PHP ", "")
   );
 
   return {
@@ -110,8 +110,8 @@ function getBasePriceValueByElement(originalElement, discountedElement) {
  */
 function updateNewProdQtyStateToDOM(state) {
   state.input.value = state.newValue;
-  state.originalPriceElement.textContent = `${PHP} ${state.updatedOriginalPrice}`;
-  state.discountedPriceElement.textContent = `${PHP} ${state.updatedDiscountedPrice}`;
+  state.originalPriceElement.value = `${PHP} ${state.updatedOriginalPrice}`;
+  state.discountedPriceElement.value = `${PHP} ${state.updatedDiscountedPrice}`;
 }
 
 /**

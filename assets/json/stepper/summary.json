@@ -1,0 +1,35 @@
+[
+    {
+        "order_number": "#OR-3421",
+        "billing_number": "B-01",
+        "shipping_number": "S-01",
+        "payment_method_number": "PM-01",
+        "delivery_info": {
+            "type": "Standard",
+            "estimated_date": "01/01/2028",
+            "estimated_time": "7:00 PM"
+        },
+        "products_total": "PHP 1,646.05",
+        "products": [
+            {
+                "name": "T-Shirt",
+                "quantity": 2
+            },
+            {
+                "name": "Long-sleeves",
+                "quantity": 1
+            },
+            {
+                "name": "Polo Shirt",
+                "quantity": 2
+            }
+        ],
+        "subtotal": {
+            "Discount": "PHP 0.00",
+            "Delivery": "PHP 0.00",
+            "Tax": "PHP 123.90"
+        },
+        "sub_total": "PHP 1,646.05",
+        "total": "PHP 1,769.25"
+    }
+]
