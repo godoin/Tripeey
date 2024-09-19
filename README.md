@@ -44,4 +44,4 @@ This is a typical e-commerce store with the followng features:
 
 ## License
 
-This project has no license.
+This project is under the MIT License.
