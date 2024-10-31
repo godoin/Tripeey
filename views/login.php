@@ -1,3 +1,5 @@
+<?php require('partials/HtmlHeader.php') ?> 
+
 <main class="login-container">
     
     <!-- Login Form -->
@@ -46,3 +48,5 @@
         <img src="assets/images/Tripeey.jpg" alt="Tripeey Templates" class="img-show">
     </section>
 </main>
+
+<?php require('partials/HtmlFooter.php') ?>

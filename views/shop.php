@@ -1,3 +1,6 @@
+<?php require('partials/HtmlHeader.php') ?> 
+<?php require('partials/Navbar.php')?>
+
 <main class="shop-container">
 
     <aside>
@@ -263,3 +266,6 @@
     </div>
     
 </main>
+
+<?php require('partials/PageFooter.php'); ?>
+<?php require('partials/HtmlFooter.php') ?>

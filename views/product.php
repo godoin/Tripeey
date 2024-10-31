@@ -1,3 +1,6 @@
+<?php require('partials/HtmlHeader.php') ?> 
+<?php require('partials/Navbar.php')?>
+
 <main class="product-container">
 
     <form id="product-item" class="product-item" method="post">
@@ -328,3 +331,6 @@
     </section>
 
 </main>
+
+<?php require('partials/PageFooter.php'); ?>
+<?php require('partials/HtmlFooter.php') ?>

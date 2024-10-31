@@ -1,3 +1,6 @@
+<?php require('partials/HtmlHeader.php') ?> 
+<?php require('partials/Navbar.php')?>
+
 <main class="landing-container">
     <!-- Hero Section -->
     <section class="hero">
@@ -249,3 +252,6 @@
     </section>
 
 </main>
+
+<?php require('partials/PageFooter.php'); ?>
+<?php require('partials/HtmlFooter.php') ?>

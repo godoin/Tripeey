@@ -1,3 +1,6 @@
+<?php require('partials/HtmlHeader.php') ?> 
+<?php require('partials/Navbar.php')?>
+
 <main class="cart-container" id="stepper">
     <!-- Stepper -->
     <nav class="stepper" aria-label="Checkout Steps">
@@ -495,3 +498,6 @@
 
     </form>
 </main>
+
+<?php require('partials/PageFooter.php'); ?>
+<?php require('partials/HtmlFooter.php') ?>

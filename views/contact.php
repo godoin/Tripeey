@@ -1,3 +1,6 @@
+<?php require('partials/HtmlHeader.php') ?> 
+<?php require('partials/Navbar.php')?>
+
 <main>
 
     <section class="contact-container">
@@ -67,3 +70,6 @@
     </section>
 
 </main>
+
+<?php require('partials/PageFooter.php'); ?>
+<?php require('partials/HtmlFooter.php') ?>
