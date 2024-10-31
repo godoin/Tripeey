@@ -116,7 +116,7 @@ const handleCloseButton = (button, parent) => {
 const setupDOMEventListeners = () => {
   // console.log(`DOM event listeners are running...`);
 
-  attachEventHandlerWithParentById("close-btn", "click", toast, handleCloseButton);
+  attachEventHandlerWithParentById("close-btn", "click", "toast", handleCloseButton);
 }
 
 export {

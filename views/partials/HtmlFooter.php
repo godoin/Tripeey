@@ -3,7 +3,6 @@
 
   <!-- JS Link -->
   <script src="assets/js/index.js" type="module"></script>
-  <script src="assets/js/utils.js" type="module"></script>
   
   <!-- Product Scripts -->
   <script src="assets/js/product/favorite.js" type="module"></script>
@@ -21,7 +20,7 @@
   <script src="assets/js/shop/shopUtils.js" type="module"></script>
   
   <!-- Shared Scripts -->
-  <script src="assets/js/shared/apiUtils.js" type="module"></script>
+  <script src="assets/js/shared/loading.js" type="module"></script>
   <script src="assets/js/shared/domUtils.js" type="module"></script>
   <script src="assets/js/shared/eventHandlers.js" type="module"></script>
   <script src="assets/js/shared/formUtils.js" type="module"></script>

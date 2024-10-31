@@ -11,7 +11,6 @@ import { setupShopEventListeners } from "./shop/shop.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   setupAuthEventListeners();
-  setupSharedEventListeners();
   setupToggleOptionsEventListeners();
   setupStepperEventListeners();
   setupTabToggleEventListeners();

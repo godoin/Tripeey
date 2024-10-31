@@ -4,8 +4,6 @@
  * The forms are usually (billing, shipping and checkout).
  */
 
-import { getUserInputById, getUserInputByName } from "../utils.js";
-
 import {
   handleCartQtyToggle,
   decrementCartQty,
@@ -87,7 +85,7 @@ const getBillingData = () => {
   const billingData = {};
 
   Object.keys(billingNames).forEach((key) => {
-    const inputElement = getUserInputByName(billingNames[key]);
+    const inputElement = document.querySelector(`input[name="${billingNames[key]}"]`);
     billingData[billingNames[key]] = inputElement ? inputElement.value : "";
   });
 
@@ -102,7 +100,7 @@ const getShippingData = () => {
   const shippingData = {};
 
   Object.keys(shippingNames).forEach((key) => {
-    const inputElement = getUserInputByName(shippingNames[key]);
+    const inputElement = document.querySelector(`input[name="${shippingNames[key]}"]`);
     shippingData[shippingNames[key]] = inputElement ? inputElement.value : "";
   });
 
@@ -118,13 +116,13 @@ const getPaymentMethodData = () => {
 
   Object.keys(paymentMethodNames).forEach((key) => {
     if (paymentMethodNames[key] === "payment_method_card") {
-      const radioPaymentGroup = getUserInputById("payment_method_card");
+      const radioPaymentGroup = document.getElementById(`payment_method_card`);
       const selectedPaymentMethod = radioPaymentGroup.querySelector(
         '[name="payment_method"]:checked'
       );
       paymentMethodData[paymentMethodNames[key]] = selectedPaymentMethod.value;
     } else {
-      const inputElement = getUserInputByName(paymentMethodNames[key]);
+      const inputElement = document.querySelector(`input[name="${paymentMethodNames[key]}"]`);
       paymentMethodData[paymentMethodNames[key]] = inputElement
         ? inputElement.value
         : "";

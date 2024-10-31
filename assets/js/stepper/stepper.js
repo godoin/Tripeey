@@ -24,8 +24,7 @@ import {
   getPaymentMethodsNames,
 } from "./stepperUtils.js";
 
-import { attachEventHandlerById, attachSubmitHandler } from "../shared/eventHandlers.js";
-import { fetchJSONData } from "../shared/apiUtils.js";
+import { attachEventHandlerById } from "../shared/eventHandlers.js";
 
 const handleCartForm = (e) => {
   e.preventDefault();
@@ -89,7 +88,13 @@ const setupBilingStepperData = async () => {
 
   if (stepperContainer) {
     try {
-      const summaryData = await fetchJSONData(summaryJson);
+      const res = await fetch(jsonUrl);
+      
+      if (!res.ok) {
+        console.error(`HTTP Error Response Status: ${res.status}`);
+      }
+  
+      const summaryData = res.json();
 
       if (summaryData && summaryData.length > 0) {
         renderSummmaryData(summaryData[0]);

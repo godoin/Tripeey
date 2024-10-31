@@ -24,12 +24,7 @@ const attachEventHandlerWithParentById = (
   const element = document.getElementById(selectorId);
   const parent = document.getElementById(parentId);
 
-  if (!element || !parent) {
-    console.error(`Error the element and parent do not exist...`);
-    return null;
-  }
-
-  element.addEventListener(eventType, handlerFunction(element, parent));
+  element?.addEventListener(eventType, handlerFunction(element, parent));
 }
 
 const attachMultipleEventHandlerBySelectorAll = (

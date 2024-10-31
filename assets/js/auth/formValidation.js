@@ -5,7 +5,6 @@
  * TODO: Handle validation for input on change like for emails and telephones.
  */
 
-import { fetchJSONData } from "../shared/apiUtils.js";
 import { handleStateErrorToDOM } from "../shared/domUtils.js";
 
 import {
@@ -72,7 +71,13 @@ const validateLoginUserAsync = async (userEmail, userPassword) => {
   const errors = [];
 
   try {
-    const userData = await fetchJSONData(jsonUrl);
+    const res = await fetch(jsonUrl);
+    
+    if (!res.ok) {
+      console.error(`HTTP Error Response Status: ${res.status}`);
+    }
+
+    const userData = res.json();
 
     const isValidUser = userData.find(
       (user) => user.email === userEmail && user.password === userPassword

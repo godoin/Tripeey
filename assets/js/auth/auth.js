@@ -8,13 +8,9 @@
  */
 
 import {
-  attachClickHandler,
-  attachClickHandlerById,
   attachEventHandlerById,
-  attachSubmitHandler,
 } from "../shared/eventHandlers.js";
 
-import { getUserInputById } from "../utils.js";
 
 import {
   validateLoginUserAsync,
@@ -29,8 +25,8 @@ import { handlePasswordToggle } from "./passwordToggle.js";
 async function handleLogin(event) {
   event.preventDefault();
 
-  const enteredEmail = getUserInputById("email");
-  const enteredPassword = getUserInputById("password-input");
+  const enteredEmail = document.getElementById(`email`);
+  const enteredPassword = document.getElementById(`password-input`);
 
   let validationSyncResult;
   let validationAsyncResult;

@@ -5,7 +5,7 @@
  * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
-import { attachMultipleClickHandlerWithParent, attachMultipleEventHandlerWithParent } from "./eventHandlers.js";
+import { attachMultipleEventHandlerWithParent } from "./eventHandlers.js";
 
 /**
  * Update the new state to tab and the associated panel.

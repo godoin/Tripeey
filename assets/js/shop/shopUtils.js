@@ -133,6 +133,7 @@ const displayFilteredData = (buttonId) => {
 export {
   doesFilterButtonExist,
   showEmptyShopMessage,
+  hideEmptyShopMessage,
   createAndRenderButtonToDOM,
   renderShopProductDataToDOM,
   displayFilteredData

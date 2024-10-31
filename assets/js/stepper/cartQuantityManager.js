@@ -74,4 +74,9 @@ const setupCartQuantityToggleEventListeners = () => {
   setupQtyChangeEvent(".qty-minus", handleCartQtyToggle, decrementCartQty);
 }
 
-export { setupCartQuantityToggleEventListeners };
+export { 
+  setupCartQuantityToggleEventListeners,
+  handleCartQtyToggle,
+  incrementCartQty,
+  decrementCartQty
+};

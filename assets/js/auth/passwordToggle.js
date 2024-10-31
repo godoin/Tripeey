@@ -1,7 +1,6 @@
-import {
-  attachClickHandler,
-  attachClickHandlerById,
-} from "../shared/eventHandlers.js";
+/**
+ * passwordToggle.js
+ */
 
 /**
  * Switches password type on toggle.

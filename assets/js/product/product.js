@@ -2,7 +2,6 @@
  * product.js
  */
 
-import { fetchJSONData } from "../shared/apiUtils.js";
 import {
   handleStateErrorToDOM,
   handleToastSuccessToDOM,
@@ -15,7 +14,11 @@ const loadProductData = async () => {
   const jsonUrl = "/OnlineStore/assets/json/product_data.json";
 
   try {
-    const productData = await fetchJSONData(jsonUrl);
+    const res = await fetch(jsonUrl);
+    if (!res.ok) {
+      console.error(`HTTP Error Response Status: ${res.status}`);
+    }
+    const productData = await res.json();
 
     if (productData) {
       // Generate data

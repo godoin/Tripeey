@@ -12,8 +12,6 @@
  * TODO: Switch the action of applying filters from button to any click selection of filters.
  */
 
-import { fetchJSONData } from "../shared/apiUtils.js";
-import { attachMultipleClickHandler } from "../shared/eventHandlers.js";
 import { handleFavoriteToggle } from "../product/favorite.js";
 import { doesFilterButtonExist } from "./shopUtils.js";
 
@@ -31,6 +29,7 @@ import {
   showEmptyShopMessage,
   hideEmptyShopMessage,
 } from "./shopUtils.js";
+import { attachMultipleEventHandler } from "../shared/eventHandlers.js";
 
 const gatherFilteredData = () => {
   const categories = Array.from(
@@ -70,7 +69,13 @@ const setupAppliedFilteredDataToDOM = (buttonId) => {
   if (cardContainer) {
     try {
       appliedFilterButton.addEventListener("click", async () => {
-        const getShopData = await fetchJSONData(jsonUrl);
+        const res = await fetch(jsonUrl);
+        
+        if (!res.ok) {
+          console.error(`HTTP Error Response Status: ${res.status}`);
+        }
+    
+        const getShopData = res.json();
         const getRequestedFilters = gatherFilteredData();
 
         Object.keys(getRequestedFilters).forEach((key) => {
@@ -172,8 +177,7 @@ const setupRenderShopProductData = async () => {
     } catch (error) {
       console.error(`Error fetching data: ${error}`);
     } finally {
-      console.log(`Attached favorite click handler to product items...`);
-      attachMultipleClickHandler(".like", handleFavoriteToggle);
+      attachMultipleEventHandler(".like", "click", handleFavoriteToggle)
     }
   } else {
     console.error();

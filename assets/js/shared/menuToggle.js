@@ -8,7 +8,7 @@
  * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
-import { attachEventHandlerById } from "./eventHandlers";
+import { attachEventHandlerById } from "./eventHandlers.js";
 
 /**
  * Get new menu icon based on src from menu to x-close.
