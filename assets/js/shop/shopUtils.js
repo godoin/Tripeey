@@ -6,7 +6,7 @@
 /**
  * Check if the filter button already exists.
  */
-export function doesFilterButtonExist(name) {
+const doesFilterButtonExist = (name) => {
   const filterList = document.getElementById("filter-list");
   const filterTextSpans = filterList.querySelectorAll(".filter-text");
 
@@ -22,7 +22,7 @@ export function doesFilterButtonExist(name) {
 /**
  * Show message to tell user no products found in products page.
  */
-export function showEmptyShopMessage() {
+const showEmptyShopMessage = () => {
   const cartMessage = document.getElementById("empty-shop");
   cartMessage?.classList.add("active");
 }
@@ -30,7 +30,7 @@ export function showEmptyShopMessage() {
 /**
  * Hides message to tell user no products found in products page.
  */
-export function hideEmptyShopMessage() {
+const hideEmptyShopMessage = () => {
   const cartMessage = document.getElementById("empty-shop");
   cartMessage?.classList.remove("active");
 }
@@ -38,7 +38,7 @@ export function hideEmptyShopMessage() {
 /**
  * Create a new filter button for the shop.
  */
-export function createAndRenderButtonToDOM(filterName) {
+const createAndRenderButtonToDOM = (filterName) => {
   const newFilterButton = document.createElement("li");
   newFilterButton.classList.add("button");
   newFilterButton.classList.add("tertiary");
@@ -64,7 +64,7 @@ export function createAndRenderButtonToDOM(filterName) {
 /**
  * Renders a product to the DOM.
  */
-export function renderShopProductDataToDOM(product) {
+const renderShopProductDataToDOM = (product) => {
   const cardsContainer = document.getElementById("shop-cards");
 
   const newShopProductItem = document.createElement("article");
@@ -107,9 +107,9 @@ export function renderShopProductDataToDOM(product) {
 }
 
 /**
- * Displays all the selected filters that the user chose.
+ * Displays all the selected filters that the user chose. 
  */
-export function displayFilteredData(buttonId) {
+const displayFilteredData = (buttonId) => {
   const button = document.getElementById(buttonId);
   const select = document.getElementById("sort-by");
 
@@ -129,3 +129,11 @@ export function displayFilteredData(buttonId) {
 
   setupDestroyBtnHandler("filter-btn", ".filters");
 }
+
+export {
+  doesFilterButtonExist,
+  showEmptyShopMessage,
+  createAndRenderButtonToDOM,
+  renderShopProductDataToDOM,
+  displayFilteredData
+};

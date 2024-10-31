@@ -1,25 +1,26 @@
 /**
- * Event Handles Module
- * This modules centralizes all common event handling logic for the shop.
+ * Event Handlers
  */
 
-/**
- * Attaches click event handler to the elements given a matching selector.
- */
 
-export function attachClickHandler(selector, handlerFunction) {
-  document.addEventListener("click", (event) => {
-    if (event.target.matches(selector)) {
-      handlerFunction(event);
-    }
+const attachEventHandlerById = (
+  elementId,
+  eventType,
+  handlerFunction,
+  ...args
+) => {
+  const element = document.getElementById(elementId);
+  element?.addEventListener(eventType, (event) => {
+    handlerFunction(event, ...args);
   });
-}
+};
 
-export function attachClickHandlerWithParentById(
+const attachEventHandlerWithParentById = (
   selectorId,
+  eventType,
   parentId,
   handlerFunction
-) {
+) => {
   const element = document.getElementById(selectorId);
   const parent = document.getElementById(parentId);
 
@@ -28,64 +29,62 @@ export function attachClickHandlerWithParentById(
     return null;
   }
 
-  element.addEventListener("click", handlerFunction(element, parent));
+  element.addEventListener(eventType, handlerFunction(element, parent));
 }
 
-/**
- * Attaches a click event handle to the element ID.
- */
-export function attachClickHandlerById(elementId, handlerFunction) {
-  const element = document.getElementById(elementId);
+const attachMultipleEventHandlerBySelectorAll = (
+  elementId,
+  eventType,
+  handlerFunction,
+  ...args
+) => {
+  const allElements = document.querySelectorAll(elementId);
+  allElements?.forEach((element) => {
+    element?.addEventListener(eventType, (e) => {
+      handlerFunction(e, element, ...args);
+    });
+  });
+};
 
-  element?.addEventListener("click", handlerFunction);
-}
-
-export function attachClickHandlerByClassName(elementClass, handlerFunction) {
-  const element = document.getElementsByClassName(elementClass);
-
-  element?.addEventListener("click", handlerFunction);
-}
-
-export function attachMultipleClickHandler(selector, handlerFunction) {
+const attachMultipleEventHandler = (selector, eventType, handlerFunction) => {
   const allSelectors = document.querySelectorAll(selector);
 
   allSelectors?.forEach((selector) => {
-    selector.addEventListener("click", () => {
+    selector.addEventListener(eventType, () => {
       handlerFunction(selector);
     });
   });
-}
+};
 
-export function attachMultipleClickHandlerWithParent(
+const attachMultipleEventHandlerWithParent = (
   selector,
+  eventType,
   role,
   handlerFunction
-) {
+) => {
   const parent = document.getElementById(selector);
   const elements = parent?.querySelectorAll(role);
 
   elements?.forEach((element) => {
-    element.addEventListener("click", () => {
+    element.addEventListener(eventType, () => {
       handlerFunction(element, parent);
     });
   });
-}
-
-/**
- * Attaches change event handler to the elements given a matching selector.
- */
-export function attachChangeHandler(selector, handlerFunction) {
-  document.addEventListener("change", (event) => {
-    if (event.target.matches(selector)) {
-      handlerFunction(event);
-    }
-  });
-}
+};
 
 /**
  * Attaches a submit event handler (usually a form) given a id.
  */
-export function attachSubmitHandler(formId, handlerFunction) {
+const attachSubmitHandler = (formId, handlerFunction) => {
   const form = document.getElementById(formId);
   form?.addEventListener("submit", handlerFunction);
-}
+};
+
+export {
+  attachEventHandlerById,
+  attachEventHandlerWithParentById,
+  attachMultipleEventHandler,
+  attachMultipleEventHandlerWithParent,
+  attachMultipleEventHandlerBySelectorAll,
+  attachSubmitHandler,
+};

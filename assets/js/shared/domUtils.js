@@ -4,12 +4,12 @@
  * It is usually message boxes, tooltip, toast or sonner pop ups.
  */
 
-import { attachClickHandlerWithParentById } from "./eventHandlers.js";
+import { attachEventHandlerWithParentById } from "./eventHandlers.js";
 
 /**
  * Default state of input fields, tooltip (usually not shown).
  */
-export function handleStateToTooltipDefaultToDOM(elementId) {
+const handleStateToTooltipDefaultToDOM = (elementId) => {
   const inputContainer = document.getElementById(elementId);
   const tooltip = inputContainer?.querySelector(".tooltip");
 
@@ -20,7 +20,7 @@ export function handleStateToTooltipDefaultToDOM(elementId) {
 /**
  * Error state of input field, shows a tooltip indicating error.
  */
-export function handleStateToTooltipErrorToDOM(elementId, message) {
+const handleStateToTooltipErrorToDOM = (elementId, message) => {
   const inputContainer = document.getElementById(elementId);
   const tooltip = inputContainer?.querySelector(".tooltip");
   const spanMessage = inputContainer?.querySelector(".tooltip-message");
@@ -49,7 +49,7 @@ export function handleStateToTooltipErrorToDOM(elementId, message) {
 /**
  * Success state of input fields, usually shows checked.
  */
-export function handleStateToTooltipSuccessToDOM(elementId) {
+const handleStateToTooltipSuccessToDOM = (elementId) => {
   const inputContainer = document.getElementById(elementId);
   const tooltip = inputContainer?.querySelector(".tooltip");
   const tooltipIcon = tooltip?.querySelector("i");
@@ -76,7 +76,7 @@ export function handleStateToTooltipSuccessToDOM(elementId) {
 /**
  * Update an single error element to the DOM.
  */
-export function handleStateErrorToDOM(displayId, message) {
+const handleStateErrorToDOM = (displayId, message) => {
   const displayElement = document.getElementById(displayId);
   const textElement = displayElement.querySelector(".text");
 
@@ -88,7 +88,7 @@ export function handleStateErrorToDOM(displayId, message) {
   }, 10000);
 }
 
-export function handleToastSuccessToDOM(displayId, message) {
+const handleToastSuccessToDOM = (displayId, message) => {
   const displayElement = document.getElementById(displayId);
   const textElement = displayElement.querySelector(".toast-message");
 
@@ -100,7 +100,7 @@ export function handleToastSuccessToDOM(displayId, message) {
   }, 10000);
 }
 
-function handleCloseButton(button, parent) {
+const handleCloseButton = (button, parent) => {
   const buttonId = button.id;
   const doesHaveButtonClose = parent.querySelector(`#${buttonId}`);
 
@@ -112,7 +112,19 @@ function handleCloseButton(button, parent) {
 
   parent.classList.remove("active");
 }
-export function setupDOMEventListeners() {
-  console.log(`DOM event listeners are running...`);
-  attachClickHandlerWithParentById("close-btn", "toast", handleCloseButton);
+
+const setupDOMEventListeners = () => {
+  // console.log(`DOM event listeners are running...`);
+
+  attachEventHandlerWithParentById("close-btn", "click", toast, handleCloseButton);
 }
+
+export {
+  setupDOMEventListeners,
+  handleStateToTooltipDefaultToDOM,
+  handleStateToTooltipErrorToDOM,
+  handleStateToTooltipSuccessToDOM,
+  handleStateErrorToDOM,
+  handleToastSuccessToDOM,
+  handleCloseButton
+};

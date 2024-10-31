@@ -7,7 +7,7 @@ export const NOT_EXIST = "NOT_EXIST";
 /**
  * Generic validation flags for evaluating user inputs.
  */
-export function validate(value, flag, validatorValue) {
+const validate = (value, flag, validatorValue) => {
   if (value === undefined || value === null) {
     console.error(`Error: the values are undefined or null.`);
     return;
@@ -24,3 +24,5 @@ export function validate(value, flag, validatorValue) {
     return regex.test(value);
   }
 }
+
+export { validate };

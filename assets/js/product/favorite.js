@@ -1,14 +1,18 @@
 /**
+ * favorite.js
+ */
+
+/**
  * Switches between fontawesome's solid and regular icons.
  */
-function switchFavoriteIcon(icon) {
+const switchFavoriteIcon = (icon) => {
   return icon.classList.contains("fa-regular") ? "fa-solid" : "fa-regular";
 }
 
 /**
  * Handles the event change when clicking favorite button.
  */
-export function handleFavoriteToggle(button) {
+const handleFavoriteToggle = (button) => {
   const icon = button.querySelector(".fa-heart");
   const newIcon = switchFavoriteIcon(icon);
 
@@ -19,7 +23,7 @@ export function handleFavoriteToggle(button) {
 /**
  * Setup the click listener to all product items with a favorite button.
  */
-export function attachClickFavorite(buttonId) {
+const attachClickFavorite = (buttonId) => {
   const button = document.getElementById(buttonId);
 
   button?.addEventListener("click", () => {
@@ -27,18 +31,20 @@ export function attachClickFavorite(buttonId) {
   });
 }
 
-// export function setupFavoriteButtonClicks() {
-//   const cardsContainer = document.getElementById("shop-cards");
+const setupFavoriteButtonClicks = () => {
+  const cardsContainer = document.getElementById("shop-cards");
 
-//   if (!cardsContainer) {
-//     console.error("Error: the shop cards container is not found.");
-//   }
+  cardsContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("like")) {
+      const productId = e.target.id;
+      console.log(`Product Id: ${productId}`);
+      handleFavoriteToggle(productId);
+    }
+  });
+}
 
-//   cardsContainer.addEventListener("click", (event) => {
-//     if (event.target.classList.contains("like")) {
-//       const productId = event.target.id;
-//       console.log(`Product Id: ${productId}`);
-//       handleFavoriteToggle(productId);
-//     }
-//   });
-// }
+export { 
+  handleFavoriteToggle, 
+  attachClickFavorite, 
+  setupFavoriteButtonClicks 
+};

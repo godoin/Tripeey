@@ -8,10 +8,12 @@
  * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
+import { attachEventHandlerById } from "./eventHandlers";
+
 /**
  * Get new menu icon based on src from menu to x-close.
  */
-function switchMenuIconSrc(currentSrc) {
+const switchMenuIconSrc = (currentSrc) => {
   return currentSrc.includes("menu.svg")
     ? "assets/images/icons/x-close.svg"
     : "assets/images/icons/menu.svg";
@@ -20,7 +22,7 @@ function switchMenuIconSrc(currentSrc) {
 /**
  * Toggles visibility of navigations and the menu button icon.
  */
-function toggleMenu(menuIcon, navItems) {
+const toggleMenu = (menuIcon, navItems) => {
   const newSrc = switchMenuIconSrc(menuIcon.src);
   menuIcon.src = newSrc;
 
@@ -34,7 +36,7 @@ function toggleMenu(menuIcon, navItems) {
 /**
  * Updates the menu state to DOM show navigation items on mobile.
  */
-function updateMenuStateToDom(state) {
+const updateMenuStateToDom = (state) => {
   state.navigation.classList.toggle("active");
   state.icon = state.src;
 }
@@ -42,7 +44,7 @@ function updateMenuStateToDom(state) {
 /**
  * Method for handling for toggling menu and updating dom state.
  */
-export function handleMenuToggle() {
+const handleMenuToggle = () => {
   const menuIcon = document.getElementById("menu-icon");
   const navItems = document.getElementById("nav-items");
 
@@ -53,3 +55,12 @@ export function handleMenuToggle() {
   const updateState = toggleMenu(menuIcon, navItems);
   updateMenuStateToDom(updateState);
 }
+
+
+const setupMenuToggleEventListeners = () => {
+  // console.log(`Running menu toggling...`);
+
+  attachEventHandlerById("menu-btn", "click", handleMenuToggle);
+}
+
+export { setupMenuToggleEventListeners };

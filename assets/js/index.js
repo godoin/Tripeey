@@ -4,9 +4,10 @@ import { setupProdQtyEventListeners } from "./product/productQuantityManager.js"
 import { setupToggleOptionsEventListeners } from "./product/radioCheckboxToggle.js";
 import { setupDOMEventListeners } from "./shared/domUtils.js";
 import { setupStepperEventListeners } from "./stepper/stepper.js";
-import { attachClickHandlerById } from "./shared/eventHandlers.js";
-import { handleMenuToggle } from "./shared/menuToggle.js";
+import { setupMenuToggleEventListeners } from "./shared/menuToggle.js";
 import { setupTabToggleEventListeners } from "./shared/tabToggle.js";
+import { setupLoading } from "./shared/loading.js";
+import { setupShopEventListeners } from "./shop/shop.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   setupAuthEventListeners();
@@ -15,26 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
   setupStepperEventListeners();
   setupTabToggleEventListeners();
   setupProdQtyEventListeners();
+  setupMenuToggleEventListeners();
   setupProductEventListeners();
   setupDOMEventListeners();
+  setupShopEventListeners();
 
   window.addEventListener("load", function () {
-    setTimeout(hideLoader, 1000);
+    setupLoading();
   });
 });
-
-function hideLoader() {
-  const loading = document.getElementById("loader");
-  const content = document.getElementById("content");
-  if (loading && content) {
-    loading.style.display = "none";
-    content.style.display = "block";
-  } else {
-    console.error("Error: 'loader' or 'content' element not found.");
-  }
-}
-
-function setupSharedEventListeners() {
-  console.log(`Shared event listeners running.`);
-  attachClickHandlerById("menu-btn", handleMenuToggle);
-}

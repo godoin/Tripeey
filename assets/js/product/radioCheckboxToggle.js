@@ -6,19 +6,19 @@
  * TODO: Handle the rest of the other click events to update the aria.
  */
 
-import { attachMultipleClickHandler } from "../shared/eventHandlers.js";
+import { attachMultipleEventHandler } from "../shared/eventHandlers.js";
 
 /**
  * Checks if the selected item is active.
  */
-function hasActiveClass(element) {
+const hasActiveClass = (element) => {
   return element.classList.contains("active");
 }
 
 /**
  * Update the selected checkbox to DOM.
  */
-function updateCheckboxOptionStateToDOM(option, newState, checkbox) {
+const updateCheckboxOptionStateToDOM = (option, newState, checkbox) => {
   option.classList.toggle("active");
   checkbox.setAttribute("checked", newState);
   checkbox.setAttribute("aria-checked", newState);
@@ -27,7 +27,7 @@ function updateCheckboxOptionStateToDOM(option, newState, checkbox) {
 /**
  * Update the new state selected radio button to DOM.
  */
-function updateRadioOptionStateToDOM(option, radio, newState) {
+const updateRadioOptionStateToDOM = (option, radio, newState) => {
   option.classList.toggle("active", newState === "true");
   radio.checked = newState === "true";
   radio.setAttribute("aria-checked", newState);
@@ -36,7 +36,7 @@ function updateRadioOptionStateToDOM(option, radio, newState) {
 /**
  * Handles the click event of a radio button.
  */
-function toggledRadioOption(option) {
+const toggledRadioOption = (option) => {
   const radio = option.querySelector('input[type="radio"]');
   const radioOptions = document.querySelectorAll(".category-option");
 
@@ -51,7 +51,7 @@ function toggledRadioOption(option) {
 /**
  * Toggles the value 'active' state of the selected element based on its asociated checkbox.
  */
-function toggledCheckboxOption(option) {
+const toggledCheckboxOption = (option) => {
   const checkbox = option.querySelector('input[type="checkbox"]');
   const currentCheckboxState = hasActiveClass(checkbox);
   const newState = !currentCheckboxState;
@@ -59,9 +59,12 @@ function toggledCheckboxOption(option) {
   updateCheckboxOptionStateToDOM(option, newState, checkbox);
 }
 
-export function setupToggleOptionsEventListeners() {
-  console.log(`Toggle options event listeners are running...`);
-  attachMultipleClickHandler(".category-option", toggledRadioOption);
-  attachMultipleClickHandler(".color-option", toggledCheckboxOption);
-  attachMultipleClickHandler(".size-option", toggledCheckboxOption);
+const setupToggleOptionsEventListeners = () => {
+  // console.log(`Toggle options event listeners are running...`);
+
+  attachMultipleEventHandler(".category-option", "click", toggledRadioOption);
+  attachMultipleEventHandler(".color-option", "click", toggledCheckboxOption);
+  attachMultipleEventHandler(".size-option", "click", toggledCheckboxOption);
 }
+
+export { setupToggleOptionsEventListeners };

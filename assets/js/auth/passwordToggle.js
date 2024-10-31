@@ -6,14 +6,14 @@ import {
 /**
  * Switches password type on toggle.
  */
-function switchPasswordType(currentType) {
+const switchPasswordType = (currentType) => {
   return currentType.type === "password" ? "text" : "password";
 }
 
 /**
  * Switches password icon src based on type on toggle.
  */
-function switchPasswordIcon(currentType) {
+const switchPasswordIcon = (currentType) => {
   return currentType === "password"
     ? "assets/images/icons/eye-off.svg"
     : "assets/images/icons/eye.svg";
@@ -22,12 +22,12 @@ function switchPasswordIcon(currentType) {
 /**
  * Update password states.
  */
-function updatePasswordStateToDOM(
+const updatePasswordStateToDOM = (
   passwordIcon,
   passwordInput,
   newType,
   newSrc
-) {
+) => {
   passwordIcon.src = newSrc;
   passwordInput.type = newType;
 }
@@ -35,7 +35,7 @@ function updatePasswordStateToDOM(
 /**
  * Handle password reveal on toggle.
  */
-export function handlePasswordToggle() {
+const handlePasswordToggle = () => {
   const passwordIcon = document.getElementById("password-icon");
   const passwordInput = document.getElementById("password-input");
 
@@ -49,3 +49,5 @@ export function handlePasswordToggle() {
 
   updatePasswordStateToDOM(passwordIcon, passwordInput, newType, newSrc);
 }
+
+export { handlePasswordToggle };

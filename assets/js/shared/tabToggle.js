@@ -5,19 +5,12 @@
  * TODO: Proper error handling such as missing DOM elements when querying.
  */
 
-import { attachMultipleClickHandlerWithParent } from "./eventHandlers.js";
-
-/**
- * Checks if the tab is set to true otherwise false.
- */
-function isTabSelected(tab) {
-  return tab.getAttribute("aria-selected") === "true";
-}
+import { attachMultipleClickHandlerWithParent, attachMultipleEventHandlerWithParent } from "./eventHandlers.js";
 
 /**
  * Update the new state to tab and the associated panel.
  */
-function updateSelectedTabStateToDOM(tab, newPanelState, newTabState) {
+const updateSelectedTabStateToDOM = (tab, newPanelState, newTabState) => {
   tab.setAttribute("aria-selected", newTabState);
 
   const panelId = tab.getAttribute("aria-controls");
@@ -29,7 +22,7 @@ function updateSelectedTabStateToDOM(tab, newPanelState, newTabState) {
 /**
  * Event handler for selected tab.
  */
-function selectTabWithPanel(tab, tabList) {
+const selectTabWithPanel = (tab, tabList) => {
   const allTabs = tabList.querySelectorAll('[role="tab"]');
 
   allTabs.forEach((otherTab) => {
@@ -39,7 +32,7 @@ function selectTabWithPanel(tab, tabList) {
   updateSelectedTabStateToDOM(tab, "false", "true");
 }
 
-function selectSingleTab(tab, tabList) {
+const selectSingleTab = (tab, tabList) => {
   const allTabs = tabList.querySelectorAll('[role="tab"]');
 
   allTabs.forEach((otherTab) => {
@@ -54,27 +47,32 @@ function selectSingleTab(tab, tabList) {
 /**
  * Setup to allow tab selection.
  */
-// function setupTabSelection(tabListId, tabHandler) {
-//   const tabList = document.getElementById(tabListId);
-//   const tabs = tabList?.querySelectorAll('[role="tab"]');
+const setupTabSelection = (tabListId, tabHandler) => {
+  const tabList = document.getElementById(tabListId);
+  const tabs = tabList?.querySelectorAll('[role="tab"]');
 
-//   tabs?.forEach((tab) => {
-//     tab.addEventListener("click", () => {
-//       tabHandler(tab, tabList);
-//     });
-//   });
-// }
+  tabs?.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabHandler(tab, tabList);
+    });
+  });
+}
 
-export function setupTabToggleEventListeners() {
-  console.log(`Tab toggle event listeners are running...`);
-  attachMultipleClickHandlerWithParent(
+const setupTabToggleEventListeners = () => {
+  // console.log(`Tab toggle event listeners are running...`);
+
+  attachMultipleEventHandlerWithParent(
     "delivery-tabs",
+    "click",
     '[role="tab"]',
     selectSingleTab
   );
-  attachMultipleClickHandlerWithParent(
+  attachMultipleEventHandlerWithParent(
     "product-tabs",
+    "click",
     '[role="tab"]',
     selectTabWithPanel
   );
 }
+
+export { setupTabToggleEventListeners };

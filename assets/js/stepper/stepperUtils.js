@@ -18,7 +18,7 @@ import {
   handleStateToTooltipErrorToDOM,
 } from "../shared/domUtils.js";
 
-export const inputNames = [
+const inputNames = [
   "first_name",
   "last_name",
   "middle_initial",
@@ -33,7 +33,7 @@ export const inputNames = [
   "country",
 ];
 
-export const paymentMethodNames = [
+const paymentMethodNames = [
   "card",
   "expiration_date",
   "card_number",
@@ -44,7 +44,7 @@ export const paymentMethodNames = [
 /**
  * Gets all billing names associated to their input fields.
  */
-export function getBillingNames() {
+const getBillingNames = () => {
   const billingNames = {};
 
   inputNames.forEach((name) => {
@@ -56,7 +56,7 @@ export function getBillingNames() {
 /**
  * Gets all shipping names associated to their input fields.
  */
-export function getShippingNames() {
+const getShippingNames = () => {
   const shippingNames = {};
 
   inputNames.forEach((name) => {
@@ -69,7 +69,7 @@ export function getShippingNames() {
 /**
  * Gets all payment method names associated to their input fields.
  */
-export function getPaymentMethodsNames() {
+const getPaymentMethodsNames = () => {
   const paymentMethodData = {};
 
   paymentMethodNames.forEach((name) => {
@@ -82,7 +82,7 @@ export function getPaymentMethodsNames() {
 /**
  * Retrieves all user inputted billing value.
  */
-export function getBillingData() {
+const getBillingData = () => {
   const billingNames = getBillingNames();
   const billingData = {};
 
@@ -97,7 +97,7 @@ export function getBillingData() {
 /**
  * Retrieves all user inputted shipping value.
  */
-export function getShippingData() {
+const getShippingData = () => {
   const shippingNames = getShippingNames();
   const shippingData = {};
 
@@ -112,7 +112,7 @@ export function getShippingData() {
 /**
  * Retrieves all user inputted payment method value.
  */
-export function getPaymentMethodData() {
+const getPaymentMethodData = () => {
   const paymentMethodNames = getPaymentMethodsNames();
   const paymentMethodData = {};
 
@@ -137,7 +137,7 @@ export function getPaymentMethodData() {
 /**
  * Gets all the checkout ids (billing, shipping and payment method).
  */
-export function getAllCheckoutNames() {
+const getAllCheckoutNames = () => {
   const billingNames = getBillingNames();
   const shippingNames = getShippingNames();
   const paymentMethodNames = getPaymentMethodsNames();
@@ -156,7 +156,7 @@ export function getAllCheckoutNames() {
 /**
  * Show message to tell user no products found in cart page.
  */
-export function showEmptyCartMessage() {
+const showEmptyCartMessage = () => {
   const cartMessage = document.getElementById("empty-cart");
   const cartSummary = document.getElementById("cart-summary");
   cartMessage?.classList.add("active");
@@ -166,7 +166,7 @@ export function showEmptyCartMessage() {
 /**
  * Hides message to tell user no products found in cart page.
  */
-export function hideEmptyCartMessage() {
+const hideEmptyCartMessage = () => {
   const cartMessage = document.getElementById("empty-cart");
   const cartSummary = document.getElementById("cart-summary");
   cartMessage?.classList.remove("active");
@@ -176,7 +176,7 @@ export function hideEmptyCartMessage() {
 /**
  * Validate immediately on user input not empty.
  */
-function setupValidateInputElementOnChange(elementIds) {
+const setupValidateInputElementOnChange = (elementIds) => {
   console.log(`Setup input state to validation is running...`);
 
   Object.keys(elementIds).forEach((key) => {
@@ -207,7 +207,7 @@ function setupValidateInputElementOnChange(elementIds) {
 /**
  * Setup to handle when user inputs on change, updates back to defailt.
  */
-export function setupInputStateToDefaultOnChange(elementIds) {
+const setupInputStateToDefaultOnChange = (elementIds) => {
   console.log(`Setup input state to default is running...`);
 
   if (!elementIds) {
@@ -229,7 +229,7 @@ export function setupInputStateToDefaultOnChange(elementIds) {
 /**
  * Renders a new product card to the shop.
  */
-export function renderProductCardToDOM(product) {
+const renderProductCardToDOM = (product) => {
   const productContainer = document.getElementById("cart-container");
 
   const productCard = document.createElement("article");
@@ -312,7 +312,7 @@ export function renderProductCardToDOM(product) {
   }
 }
 
-export function renderSummmaryData(summary) {
+const renderSummmaryData = (summary) => {
   const summaryContainer = document.getElementById("cart-summary");
 
   console.table(summary);
@@ -416,7 +416,7 @@ export function renderSummmaryData(summary) {
   return { success: true };
 }
 
-export function renderShippingData(shipping) {
+const renderShippingData = (shipping) => {
   const firstNameElement = document.getElementById(`shipping_first_name`);
   const lastNameElement = document.getElementById(`shipping_last_name`);
   const middleInitialElement = document.getElementById(
@@ -452,7 +452,7 @@ export function renderShippingData(shipping) {
   };
 }
 
-export function renderPaymentData(payment) {
+const renderPaymentData = (payment) => {
   const radioPaymentGroup = document.getElementById(`payment_method`);
   const allRadios = radioPaymentGroup.querySelectorAll(`input[type="radio"]`);
 
@@ -482,3 +482,23 @@ export function renderPaymentData(payment) {
     success: true,
   };
 }
+
+export {
+  inputNames,
+  paymentMethodNames,
+  getBillingNames,
+  getShippingNames,
+  getPaymentMethodsNames,
+  getBillingData,
+  getShippingData,
+  getPaymentMethodData,
+  getAllCheckoutNames,
+  showEmptyCartMessage,
+  hideEmptyCartMessage,
+  setupValidateInputElementOnChange,
+  setupInputStateToDefaultOnChange,
+  renderProductCardToDOM,
+  renderSummmaryData,
+  renderShippingData,
+  renderPaymentData
+};

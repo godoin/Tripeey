@@ -14,16 +14,9 @@
 const PHP = "PHP";
 
 /**
- * Parse a price string to float.
- */
-function parsePrice(priceElement) {
-  const priceString = priceElement.textContent || priceElement.innerHTML;
-  return parseFloat(priceString.replace("PHP ", ""));
-}
-/**
  * Increments current product price and quantity.
  */
-function handleIncrementProductQuantity(qtyInput, baseElement, basePrice) {
+const handleIncrementProductQuantity = (qtyInput, baseElement, basePrice) => {
   const currentQty = parseInt(qtyInput.value);
   const newValue = currentQty + 1;
   if (newValue > 10) return false;
@@ -32,10 +25,6 @@ function handleIncrementProductQuantity(qtyInput, baseElement, basePrice) {
   const updatedDiscountedPrice = (basePrice.discountedPrice * newValue).toFixed(
     2
   );
-
-  // print_debug(`User increments product quantity`);
-  // print_debug(`Original Price PHP`, updatedOriginalPrice);
-  // print_debug(`Discounted Price PHP`, updatedDiscountedPrice);
 
   return {
     input: qtyInput,
@@ -50,7 +39,7 @@ function handleIncrementProductQuantity(qtyInput, baseElement, basePrice) {
 /**
  * Decreases current product price and quantity.
  */
-function handleDecrementProductQuantity(qtyInput, baseElement, basePrice) {
+const handleDecrementProductQuantity = (qtyInput, baseElement, basePrice) => {
   const currentQty = parseInt(qtyInput.value);
   if (currentQty <= 0) return false;
 
@@ -60,10 +49,6 @@ function handleDecrementProductQuantity(qtyInput, baseElement, basePrice) {
   const updatedDiscountedPrice = (basePrice.discountedPrice * newValue).toFixed(
     2
   );
-
-  // print_debug(`User decrements product quantity`);
-  // print_debug(`Original Price PHP`, updatedOriginalPrice);
-  // print_debug(`Discounted Price PHP`, updatedDiscountedPrice);
 
   return {
     input: qtyInput,
@@ -78,7 +63,7 @@ function handleDecrementProductQuantity(qtyInput, baseElement, basePrice) {
 /**
  * Gets the DOM elements that are displaying the original and discounted price.
  */
-function getBasePriceElementById(original, discounted) {
+const getBasePriceElementById = (original, discounted) => {
   const originalPrice = document.getElementById(original);
   const discountedPrice = document.getElementById(discounted);
 
@@ -91,7 +76,7 @@ function getBasePriceElementById(original, discounted) {
 /**
  * Gets the base prices values of the original and disounted price.
  */
-function getBasePriceValueByElement(originalElement, discountedElement) {
+const getBasePriceValueByElement = (originalElement, discountedElement) => {
   const baseDiscountedPrice = parseFloat(
     discountedElement?.value.replace("PHP ", "")
   );
@@ -108,7 +93,7 @@ function getBasePriceValueByElement(originalElement, discountedElement) {
 /**
  * Updates new product quantity and prices to DOM.
  */
-function updateNewProdQtyStateToDOM(state) {
+const updateNewProdQtyStateToDOM = (state) => {
   state.input.value = state.newValue;
   state.originalPriceElement.value = `${PHP} ${state.updatedOriginalPrice}`;
   state.discountedPriceElement.value = `${PHP} ${state.updatedDiscountedPrice}`;
@@ -117,7 +102,7 @@ function updateNewProdQtyStateToDOM(state) {
 /**
  * Sets up the event listener for a quantity button.
  */
-function setupProdQtyEventChange(buttonId, inputId, clickHandler) {
+const setupProdQtyEventChange = (buttonId, inputId, clickHandler) => {
   const button = document.getElementById(buttonId);
   const input = document.getElementById(inputId);
 
@@ -137,8 +122,9 @@ function setupProdQtyEventChange(buttonId, inputId, clickHandler) {
   });
 }
 
-export function setupProdQtyEventListeners() {
-  console.log(`Product quantity event listeners are running...`);
+const setupProdQtyEventListeners = () => {
+  // console.log(`Product quantity event listeners are running...`);
+  
   setupProdQtyEventChange(
     "qty-add",
     "qty-input",
@@ -150,3 +136,5 @@ export function setupProdQtyEventListeners() {
     handleDecrementProductQuantity
   );
 }
+
+export { setupProdQtyEventListeners };

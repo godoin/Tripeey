@@ -12,17 +12,10 @@
  */
 
 /**
- * Parse the value of an element from string to integer
- */
-function parseIntElementValue(element) {
-  return parseInt(element.value);
-}
-
-/**
  * Handles the increment button click event.
  */
-export function incrementCartQty(input) {
-  const currentFieldValue = parseIntElementValue(input);
+const incrementCartQty = (input) => {
+  const currentFieldValue = parseInt(input.value);
   if (currentFieldValue > 9) return false;
   const newValue = currentFieldValue + 1;
 
@@ -35,7 +28,7 @@ export function incrementCartQty(input) {
 /**
  * Handles the decrement button click event.
  */
-export function decrementCartQty(input) {
+const decrementCartQty = (input) => {
   const currentFieldValue = parseIntElementValue(input);
   if (currentFieldValue <= 1) return null;
   const newValue = input.value - 1;
@@ -49,14 +42,14 @@ export function decrementCartQty(input) {
 /**
  * Updates the quantity input field to the DOM with the new value.
  */
-function updateNewCartQtyStateToDOM(state) {
+const updateNewCartQtyStateToDOM = (state) => {
   state.inputElement.value = state.newValue;
 }
 
 /**
  * Attaches a click event handler to a quantity button.
  */
-export function handleCartQtyToggle(button, eventHandler) {
+const handleCartQtyToggle = (button, eventHandler) => {
   button.addEventListener("click", (event) => {
     const container = event.target.closest(".qty-container");
     const input = container.querySelector(".qty-field");
@@ -69,13 +62,16 @@ export function handleCartQtyToggle(button, eventHandler) {
 /**
  * Sets up quantity change event listeners for a group of buttons.
  */
-function setupQtyChangeEvent(buttons, clickHandler, event) {
+const setupQtyChangeEvent = (buttons, clickHandler, event) => {
   const qtyBtns = document.querySelectorAll(buttons);
   qtyBtns.forEach((button) => clickHandler(button, event));
 }
 
-export function setupCartQuantityToggleEventListeners() {
-  console.log(`Cart quantity toggle event listeners are running...`);
+const setupCartQuantityToggleEventListeners = () => {
+  // console.log(`Cart quantity toggle event listeners are running...`);
+
   setupQtyChangeEvent(".qty-plus", handleCartQtyToggle, incrementCartQty);
   setupQtyChangeEvent(".qty-minus", handleCartQtyToggle, decrementCartQty);
 }
+
+export { setupCartQuantityToggleEventListeners };

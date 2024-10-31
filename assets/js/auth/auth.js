@@ -10,6 +10,7 @@
 import {
   attachClickHandler,
   attachClickHandlerById,
+  attachEventHandlerById,
   attachSubmitHandler,
 } from "../shared/eventHandlers.js";
 
@@ -57,8 +58,11 @@ async function handleLogin(event) {
   }
 }
 
-export function setupAuthEventListeners() {
-  console.log(`Auth event listeners running...`);
-  attachSubmitHandler("login-form", handleLogin);
-  attachClickHandlerById("password-btn", handlePasswordToggle);
+const setupAuthEventListeners = () => {
+  // console.log(`Auth event listeners running...`);
+  
+  attachEventHandlerById("login-form", "submit", handleLogin);
+  attachEventHandlerById("password-btn", "click", handlePasswordToggle);
 }
+
+export { setupAuthEventListeners };

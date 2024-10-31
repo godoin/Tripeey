@@ -24,11 +24,11 @@ import {
   getPaymentMethodsNames,
 } from "./stepperUtils.js";
 
-import { attachSubmitHandler } from "../shared/eventHandlers.js";
+import { attachEventHandlerById, attachSubmitHandler } from "../shared/eventHandlers.js";
 import { fetchJSONData } from "../shared/apiUtils.js";
 
-function handleCartForm(event) {
-  event.preventDefault();
+const handleCartForm = (e) => {
+  e.preventDefault();
 
   const orNumber = document.getElementById("or-number").value;
 
@@ -45,15 +45,15 @@ function handleCartForm(event) {
   }
 }
 
-function handleCheckoutForm(event) {
-  event.preventDefault();
+const handleCheckoutForm = (e) => {
+  e.preventDefault();
 }
 
 /**
  * Handles the billing form submission.
  */
-function handleBillingForm(event) {
-  event.preventDefault();
+const handleBillingForm = (e) => {
+  e.preventDefault();
 
   const billingData = getBillingData();
   const shippingData = getShippingData();
@@ -83,7 +83,7 @@ function handleBillingForm(event) {
   setupInputStateToDefaultOnChange(getPaymentMethodsNames());
 }
 
-async function setupBilingStepperData() {
+const setupBilingStepperData = async () => {
   const stepperContainer = document.getElementById(`stepper`);
   const summaryJson = "/OnlineStore/assets/json/stepper/summary.json";
 
@@ -104,7 +104,7 @@ async function setupBilingStepperData() {
 /**
  * Setup render cart data during DOM loading.
  */
-async function setupCartStepperData() {
+const setupCartStepperData = async () => {
   const stepperContainer = document.getElementById(`stepper`);
   const cartJson = "/OnlineStore/assets/json/stepper/cart.json";
   const summaryJson = "/OnlineStore/assets/json/stepper/summary.json";
@@ -131,7 +131,7 @@ async function setupCartStepperData() {
   }
 }
 
-async function setupCheckoutData() {
+const setupCheckoutData = async () => {
   const stepperContainer = document.getElementById(`stepper`);
   const cartJson = "/OnlineStore/assets/json/stepper/cart.json";
   const shippingJson = "/OnlineStore/assets/json/stepper/shipping.json";
@@ -174,12 +174,17 @@ async function setupCheckoutData() {
   }
 }
 
-export function setupStepperEventListeners() {
+const setupStepperEventListeners = () => {
   console.log(`Stepper Event Listeners is running...`);
+
   setupCartStepperData();
   setupBilingStepperData();
   setupCheckoutData();
-  attachSubmitHandler("cart-form", handleCartForm);
-  attachSubmitHandler("billing-form", handleBillingForm);
-  attachSubmitHandler("checkout-form", handleCheckoutForm);
+
+
+  attachEventHandlerById("cart-form", "submit", handleCartForm);
+  attachEventHandlerById("billing-form", "submit", handleBillingForm);
+  attachEventHandlerById("checkout-form", "submit", handleCheckoutForm);
 }
+
+export { setupStepperEventListeners };

@@ -18,7 +18,7 @@ import {
 /**
  * Validation of user input for login form for synchronous operations.
  */
-export function validateLoginUserSync(userEmail, userPassword) {
+const validateLoginUserSync = (userEmail, userPassword) => {
   const errors = [];
 
   if (!validate(userEmail, NOT_EMPTY)) {
@@ -67,7 +67,7 @@ export function validateLoginUserSync(userEmail, userPassword) {
 /**
  * Validation of user input for login form for asynchronous operations.
  */
-export async function validateLoginUserAsync(userEmail, userPassword) {
+const validateLoginUserAsync = async (userEmail, userPassword) => {
   const jsonUrl = "/OnlineStore/assets/json/user.json";
   const errors = [];
 
@@ -99,3 +99,5 @@ export async function validateLoginUserAsync(userEmail, userPassword) {
     console.error(`Error fetching user data: ${error}`);
   }
 }
+
+export { validateLoginUserAsync, validateLoginUserSync };

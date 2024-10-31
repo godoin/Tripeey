@@ -32,7 +32,7 @@ import {
   hideEmptyShopMessage,
 } from "./shopUtils.js";
 
-function gatherFilteredData() {
+const gatherFilteredData = () => {
   const categories = Array.from(
     document.querySelectorAll('input[name="category"]:checked')
   ).map((radio) => radio.value);
@@ -62,7 +62,7 @@ function gatherFilteredData() {
   };
 }
 
-function setupAppliedFilteredDataToDOM(buttonId) {
+const setupAppliedFilteredDataToDOM = (buttonId) => {
   const jsonUrl = "/OnlineStore/assets/json/shop_data.json";
   const cardContainer = document.getElementById("shop-cards");
   const appliedFilterButton = document.getElementById(buttonId);
@@ -109,7 +109,7 @@ function setupAppliedFilteredDataToDOM(buttonId) {
 /**
  * Creates the new filter button to be appended to the filters-by.
  */
-function setupNewFilterButton(filterName, filterListID) {
+const setupNewFilterButton = (filterName, filterListID) => {
   const filtersList = document.getElementById(filterListID);
   const newFilter = createAndRenderButtonToDOM(filterName);
 
@@ -120,7 +120,7 @@ function setupNewFilterButton(filterName, filterListID) {
 /**
  * Attach new destroy filter everytime new sets of filter are created.
  */
-function attachDestroyFilterListener(newButton) {
+const attachDestroyFilterListener = (newButton) => {
   newButton.addEventListener("click", () => {
     destroyButton(newButton, ".filters");
   });
@@ -129,7 +129,7 @@ function attachDestroyFilterListener(newButton) {
 /**
  * Destroys a button that is encased by a ancestor node.
  */
-function destroyButton(button, parent) {
+const destroyButton = (button, parent) => {
   const container = button.closest(parent);
 
   if (!container) {
@@ -143,7 +143,7 @@ function destroyButton(button, parent) {
 /**
  * Setup to destroy a filter from the shop.
  */
-function setupDestroyBtnHandler(buttonId, parent) {
+const setupDestroyBtnHandler = (buttonId, parent) => {
   const button = document.getElementById(buttonId);
 
   button?.addEventListener("click", () => {
@@ -154,7 +154,7 @@ function setupDestroyBtnHandler(buttonId, parent) {
 /**
  * Setup for initial loading of shop product data to the shop.
  */
-async function setupRenderShopProductData() {
+const setupRenderShopProductData = async () => {
   const jsonUrl = "/OnlineStore/assets/json/shop_data.json";
   const cardContainer = document.getElementById("shop-cards");
   if (cardContainer) {
@@ -180,6 +180,12 @@ async function setupRenderShopProductData() {
   }
 }
 
-setupDestroyBtnHandler("filter-btn", ".filters");
-setupAppliedFilteredDataToDOM("test-btn");
-setupRenderShopProductData();
+const setupShopEventListeners = () => {
+  // console.log(`Running setup shop event listeners...`);
+  
+  setupDestroyBtnHandler("filter-btn", ".filters");
+  setupAppliedFilteredDataToDOM("test-btn");
+  setupRenderShopProductData();
+};
+
+export { setupShopEventListeners };

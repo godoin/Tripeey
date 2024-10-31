@@ -6,7 +6,7 @@
 /**
  * Filters product items according to selected category.
  */
-export function filterDataByCategory(product, selectedCategories) {
+const filterDataByCategory = (product, selectedCategories) => {
   if (
     selectedCategories.length > 0 &&
     !selectedCategories.includes("All") &&
@@ -20,7 +20,7 @@ export function filterDataByCategory(product, selectedCategories) {
 /**
  * Filters product items according to selected styles.
  */
-export function filterDataByStyles(product, selectedStyles) {
+const filterDataByStyles = (product, selectedStyles) => {
   if (selectedStyles.length > 0 && !selectedStyles.includes(product.style)) {
     return false;
   }
@@ -30,7 +30,7 @@ export function filterDataByStyles(product, selectedStyles) {
 /**
  * Filters product items according to selected colors.
  */
-export function filterDataByColors(product, selectedColors) {
+const filterDataByColors = (product, selectedColors) => {
   if (selectedColors.length > 0) {
     const hasMatchingColors = product.colors.some((color) =>
       selectedColors.includes(color)
@@ -46,7 +46,7 @@ export function filterDataByColors(product, selectedColors) {
 /**
  * Filters product items according to selected sizes.
  */
-export function filterDataBySizes(product, selectedSizes) {
+const filterDataBySizes = (product, selectedSizes) => {
   if (selectedSizes.length > 0) {
     const hasMatchingSize = product.sizes.some((size) =>
       selectedSizes.includes(size)
@@ -63,7 +63,7 @@ export function filterDataBySizes(product, selectedSizes) {
 /**
  * Filters product items according to selected price ranges.
  */
-export function filterDataByPrices(product, selectedPrices) {
+const filterDataByPrices = (product, selectedPrices) => {
   const productPrice = parseFloat(product.price);
   const isInPriceRange = selectedPrices.some((priceRange) => {
     if (priceRange === "below-500") {
@@ -83,3 +83,12 @@ export function filterDataByPrices(product, selectedPrices) {
   }
   return true;
 }
+
+
+export { 
+  filterDataByCategory,
+  filterDataByColors,
+  filterDataBySizes,
+  filterDataByPrices,
+  filterDataByStyles
+};

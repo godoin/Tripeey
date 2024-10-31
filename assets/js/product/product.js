@@ -1,13 +1,17 @@
+/**
+ * product.js
+ */
+
 import { fetchJSONData } from "../shared/apiUtils.js";
 import {
   handleStateErrorToDOM,
   handleToastSuccessToDOM,
 } from "../shared/domUtils.js";
-import { attachSubmitHandler } from "../shared/eventHandlers.js";
+import { attachEventHandlerById, attachSubmitHandler } from "../shared/eventHandlers.js";
 
-function generateProductItem(product) {}
+const generateProductItem = (product) => {}
 
-async function loadProductData() {
+const loadProductData = async () => {
   const jsonUrl = "/OnlineStore/assets/json/product_data.json";
 
   try {
@@ -24,7 +28,7 @@ async function loadProductData() {
   }
 }
 
-function getProductData(productContainer) {
+const getProductData = (productContainer) => {
   const errors = [];
 
   const productTitle =
@@ -110,8 +114,8 @@ function getProductData(productContainer) {
   };
 }
 
-function handleProductSubmit(event) {
-  event.preventDefault();
+const handleProductSubmit = (e) => {
+  e.preventDefault();
 
   const productContainer = document.getElementById("product-item");
 
@@ -130,7 +134,10 @@ function handleProductSubmit(event) {
   }
 }
 
-export function setupProductEventListeners() {
-  console.log(`Product item even listeners are running...`);
-  attachSubmitHandler("product-item", handleProductSubmit);
+const setupProductEventListeners = () => {
+  // console.log(`Product item even listeners are running...`);
+  
+  attachEventHandlerById("product-item", "submit", handleProductSubmit);
 }
+
+export { setupProductEventListeners };

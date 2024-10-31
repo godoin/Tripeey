@@ -15,7 +15,7 @@ import { NOT_EMPTY, validate } from "../shared/formUtils.js";
 /**
  * Validates all user inputted data: billing, shipping and payment method info.
  */
-export function validateBilling(billingData, shippingData, paymentMethodData) {
+const validateBilling = (billingData, shippingData, paymentMethodData) => {
   const billingErrors = [];
   const shippingErrors = [];
   const paymentMethodErrors = [];
@@ -99,3 +99,5 @@ export function validateBilling(billingData, shippingData, paymentMethodData) {
     paymentMethodData: paymentMethodData,
   };
 }
+
+export { validateBilling };
