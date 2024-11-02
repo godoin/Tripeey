@@ -1,27 +1,42 @@
 [
   {
     "id": 1,
-    "email": "test@test.com",
-    "password": "12345678"
+    "email": "john.doe@example.com",
+    "password": "12345678",
+    "username": "johndoe",
+    "first_name": "John",
+    "last_name": "Doe"
   },
   {
     "id": 2,
-    "email": "jane.doe@gmail.com",
-    "password": "securePassword456"
+    "email": "jane.doe@example.com",
+    "password": "securePassword456",
+    "username": "janedoe",
+    "first_name": "Jane",
+    "last_name": "Doe"
   },
   {
     "id": 3,
     "email": "bob.smith@yahoo.com",
-    "password": "myStrongPassword789"
+    "password": "myStrongPassword789",
+    "username": "bobsmith",
+    "first_name": "Bob",
+    "last_name": "Smith"
   },
   {
     "id": 4,
     "email": "alice.johnson@hotmail.com",
-    "password": "complexPass101"
+    "password": "complexPass101",
+    "username": "aliecjohnson",
+    "first_name": "Alice",
+    "last_name": "Johnson"
   },
   {
     "id": 5,
     "email": "david.brown@outlook.com",
-    "password": "unbreakableCode123"
+    "password": "unbreakableCode123",
+    "username": "davidbrown",
+    "first_name": "David",
+    "last_name": "Brown"
   }
 ]

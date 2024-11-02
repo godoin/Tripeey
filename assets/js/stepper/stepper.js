@@ -84,17 +84,17 @@ const handleBillingForm = (e) => {
 
 const setupBilingStepperData = async () => {
   const stepperContainer = document.getElementById(`stepper`);
-  const summaryJson = "/OnlineStore/assets/json/stepper/summary.json";
+  const summaryJson = "/assets/json/stepper/summary.json";
 
   if (stepperContainer) {
     try {
-      const res = await fetch(jsonUrl);
+      const res = await fetch(summaryJson);
       
       if (!res.ok) {
         console.error(`HTTP Error Response Status: ${res.status}`);
       }
   
-      const summaryData = res.json();
+      const summaryData = await res.json();
 
       if (summaryData && summaryData.length > 0) {
         renderSummmaryData(summaryData[0]);
@@ -111,13 +111,17 @@ const setupBilingStepperData = async () => {
  */
 const setupCartStepperData = async () => {
   const stepperContainer = document.getElementById(`stepper`);
-  const cartJson = "/OnlineStore/assets/json/stepper/cart.json";
-  const summaryJson = "/OnlineStore/assets/json/stepper/summary.json";
+  const cartJson = "/assets/json/stepper/cart.json";
+  const summaryJson = "/assets/json/stepper/summary.json";
 
   if (stepperContainer) {
     try {
-      const cartData = await fetchJSONData(cartJson);
-      const summaryData = await fetchJSONData(summaryJson);
+      const [cartData, summaryData ] = await Promise.all([
+        fetch(cartJson)
+          .then((res) => res.json()),
+        fetch(summaryJson)
+          .then((res) => res.json())
+      ]);
 
       if (cartData && cartData.length > 0) {
         cartData.forEach(renderProductCardToDOM);
@@ -138,22 +142,23 @@ const setupCartStepperData = async () => {
 
 const setupCheckoutData = async () => {
   const stepperContainer = document.getElementById(`stepper`);
-  const cartJson = "/OnlineStore/assets/json/stepper/cart.json";
-  const shippingJson = "/OnlineStore/assets/json/stepper/shipping.json";
-  const paymentJson = "/OnlineStore/assets/json/stepper/payment.json";
-  const summaryJson = "/OnlineStore/assets/json/stepper/summary.json";
+  const cartJson = "/assets/json/stepper/cart.json";
+  const shippingJson = "/assets/json/stepper/shipping.json";
+  const paymentJson = "/assets/json/stepper/payment.json";
+  const summaryJson = "/assets/json/stepper/summary.json";
 
   if (stepperContainer) {
     try {
-      const cartData = await fetchJSONData(cartJson);
-      const shippingData = await fetchJSONData(shippingJson);
-      const paymentData = await fetchJSONData(paymentJson);
-      const summaryData = await fetchJSONData(summaryJson);
-
-      // console.table(cartData);
-      // console.table(shippingData[0]);
-      // console.table(paymentData[0]);
-      // console.table(summaryData[0]);
+      const [cartData, shippingData, paymentData, summaryData] = await Promise.all([
+        fetch(cartJson)
+          .then((res) => res.json()),
+        fetch(shippingJson)
+          .then((res) => res.json()),
+        fetch(paymentJson)
+          .then((res) => res.json()),
+        fetch(summaryJson)
+          .then((res) => res.json()),
+      ]);
 
       if (cartData && cartData.length > 0) {
         cartData.forEach(renderProductCardToDOM);
@@ -180,7 +185,7 @@ const setupCheckoutData = async () => {
 }
 
 const setupStepperEventListeners = () => {
-  console.log(`Stepper Event Listeners is running...`);
+  // console.log(`Stepper Event Listeners is running...`);
 
   setupCartStepperData();
   setupBilingStepperData();

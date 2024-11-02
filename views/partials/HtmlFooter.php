@@ -26,6 +26,7 @@
   <script src="assets/js/shared/formUtils.js" type="module"></script>
   <script src="assets/js/shared/tabToggle.js" type="module"></script>
   <script src="assets/js/shared/menuToggle.js" type="module"></script>
+  <script src="assets/js/shared/prefetching.js" type="module"></script>
 
   <!-- Stepper Scripts -->
   <script src="assets/js/stepper/stepper.js" type="module"></script>

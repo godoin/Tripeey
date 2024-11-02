@@ -31,27 +31,29 @@ async function handleLogin(event) {
   let validationSyncResult;
   let validationAsyncResult;
 
-  validationSyncResult = validateLoginUserSync(
-    enteredEmail.value,
-    enteredPassword.value
-  );
-
-  if (validationSyncResult.success) {
-    validationAsyncResult = await validateLoginUserAsync(
+  try {
+    validationSyncResult = validateLoginUserSync(
       enteredEmail.value,
       enteredPassword.value
     );
+  
+    if (validationSyncResult.success) {
+      validationAsyncResult = await validateLoginUserAsync(
+        enteredEmail.value,
+        enteredPassword.value
+      );
+    }
+    
+    if (validationSyncResult.success && validationAsyncResult.success) {
+      // console.log(`Success: Validation is succesful.`);
+      sessionStorage.setItem("user", JSON.stringify(validationAsyncResult.data));
+
+      window.location.href = "/shop";
+    }
+  } catch (error) {
+    console.error(`Error fetching data: ${error}`);
   }
 
-  console.table(validationSyncResult.success);
-  console.table(validationAsyncResult.success);
-
-  if (validationSyncResult.success && validationAsyncResult.success) {
-    console.log(`Success: Validation is succesful.`);
-    window.location.href = "/OnlineStore";
-  } else {
-    console.log(`Error on one or more validation.`);
-  }
 }
 
 const setupAuthEventListeners = () => {

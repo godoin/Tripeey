@@ -67,7 +67,7 @@ const validateLoginUserSync = (userEmail, userPassword) => {
  * Validation of user input for login form for asynchronous operations.
  */
 const validateLoginUserAsync = async (userEmail, userPassword) => {
-  const jsonUrl = "/OnlineStore/assets/json/user.json";
+  const jsonUrl = "/assets/json/user.json";
   const errors = [];
 
   try {
@@ -77,7 +77,7 @@ const validateLoginUserAsync = async (userEmail, userPassword) => {
       console.error(`HTTP Error Response Status: ${res.status}`);
     }
 
-    const userData = res.json();
+    const userData = await res.json();
 
     const isValidUser = userData.find(
       (user) => user.email === userEmail && user.password === userPassword
@@ -99,7 +99,9 @@ const validateLoginUserAsync = async (userEmail, userPassword) => {
       return { error: `Async Validation Error: ${errors}` };
     }
 
-    return { success: true, data: isValidUser };
+    const user = Object.entries(isValidUser).map(([key, value]) => ({ key, value }));
+
+    return { success: true, data: user };
   } catch (error) {
     console.error(`Error fetching user data: ${error}`);
   }

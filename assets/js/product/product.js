@@ -11,7 +11,7 @@ import { attachEventHandlerById, attachSubmitHandler } from "../shared/eventHand
 const generateProductItem = (product) => {}
 
 const loadProductData = async () => {
-  const jsonUrl = "/OnlineStore/assets/json/product_data.json";
+  const jsonUrl = "/assets/json/product_data.json";
 
   try {
     const res = await fetch(jsonUrl);

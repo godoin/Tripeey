@@ -14,14 +14,7 @@
 
 import { handleFavoriteToggle } from "../product/favorite.js";
 import { doesFilterButtonExist } from "./shopUtils.js";
-
-import {
-  filterDataByCategory,
-  filterDataByColors,
-  filterDataBySizes,
-  filterDataByStyles,
-  filterDataByPrices,
-} from "./filters.js";
+import { attachMultipleEventHandler } from "../shared/eventHandlers.js";
 
 import {
   renderShopProductDataToDOM,
@@ -29,7 +22,6 @@ import {
   showEmptyShopMessage,
   hideEmptyShopMessage,
 } from "./shopUtils.js";
-import { attachMultipleEventHandler } from "../shared/eventHandlers.js";
 
 const gatherFilteredData = () => {
   const categories = Array.from(
@@ -62,7 +54,7 @@ const gatherFilteredData = () => {
 }
 
 const setupAppliedFilteredDataToDOM = (buttonId) => {
-  const jsonUrl = "/OnlineStore/assets/json/shop_data.json";
+  const jsonUrl = "/assets/json/shop_data.json";
   const cardContainer = document.getElementById("shop-cards");
   const appliedFilterButton = document.getElementById(buttonId);
 
@@ -75,39 +67,33 @@ const setupAppliedFilteredDataToDOM = (buttonId) => {
           console.error(`HTTP Error Response Status: ${res.status}`);
         }
     
-        const getShopData = res.json();
-        const getRequestedFilters = gatherFilteredData();
+        const shopData = await res.json();
+        const requestedFilters = gatherFilteredData();
 
-        Object.keys(getRequestedFilters).forEach((key) => {
-          if (
-            !doesFilterButtonExist(getRequestedFilters[key]) &&
-            getRequestedFilters[key].length > 0
-          ) {
-            setupNewFilterButton(getRequestedFilters[key], "filter-list");
-          }
-        });
+        if (requestedFilters.categories.length > 0) {
+          const filteredProducts = shopData
+            .filter((product) => product.category.includes(requestedFilters.categories))
+          
+        }
+        // const filteredProducts = shopData
+        //   .filter((product) => product.category.includes(requestedFilters.categories))
+        //   .filter((product) => product.styles.includes(requestedFilters.styles))
+        //   .filter((product) => product.colors.includes(requestedFilters.colors))
+        //   .filter((product) => product.sizes.includes(requestedFilters.sizes))
+        //   .filter((product) => product.prices.includes(requestedFilters.prizes));
 
-        const productsToDisplay = getShopData.filter((product) => {
-          return (
-            filterDataByCategory(product, getRequestedFilters.categories) &&
-            filterDataByStyles(product, getRequestedFilters.styles) &&
-            filterDataByColors(product, getRequestedFilters.colors) &&
-            filterDataBySizes(product, getRequestedFilters.sizes)
-            // filterDataByPrices(product, getRequestedFilters.prices)
-          );
-        });
-        cardContainer.innerHTML = "";
-        console.log(`Filtered Products: ${productsToDisplay}`);
-        productsToDisplay.forEach(renderShopProductDataToDOM);
+        console.table(Object.values(filteredProducts));
 
-        console.log(`Reattached favorite click handler to product items...`);
-        attachMultipleClickHandler(".like", handleFavoriteToggle);
+
+        cardContainer.innerHTML = ""; 
+        filteredProducts.forEach(renderShopProductDataToDOM);
+
       });
     } catch (error) {
       console.error(`Error fetching data: ${error}`);
+    } finally {
+      attachMultipleEventHandler(".like", "click", handleFavoriteToggle);
     }
-  } else {
-    console.error();
   }
 }
 
@@ -160,11 +146,18 @@ const setupDestroyBtnHandler = (buttonId, parent) => {
  * Setup for initial loading of shop product data to the shop.
  */
 const setupRenderShopProductData = async () => {
-  const jsonUrl = "/OnlineStore/assets/json/shop_data.json";
+  const jsonUrl = "/assets/json/shop_data.json";
   const cardContainer = document.getElementById("shop-cards");
+
   if (cardContainer) {
     try {
-      const shopProductsData = await fetchJSONData(jsonUrl);
+      const res = await fetch(jsonUrl);
+
+      if (!res.ok) {
+        console.error(`HTTP Response Status Error: ${res.status}`);
+      }
+
+      const shopProductsData = await res.json();
 
       if (shopProductsData && shopProductsData.length > 0) {
         shopProductsData.forEach((product) => {
@@ -174,13 +167,12 @@ const setupRenderShopProductData = async () => {
       } else {
         showEmptyShopMessage();
       }
+
     } catch (error) {
       console.error(`Error fetching data: ${error}`);
     } finally {
       attachMultipleEventHandler(".like", "click", handleFavoriteToggle)
     }
-  } else {
-    console.error();
   }
 }
 

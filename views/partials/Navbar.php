@@ -2,25 +2,25 @@
 
     <div class="left-content">
         <div class="logo-wrapper">
-            <a href="/OnlineStore" aria-label="Homepage">
+            <a href="/" aria-label="Homepage">
                 <img src="assets/images/logo-with-name.png" class="logo" alt="Tripeey">
             </a>
         </div>
         <ul id="nav-items">
             <li class="nav-item">
-                <a href="/OnlineStore">Home</a>
+                <a href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a href="shop.php">Shop</a>
+                <a href="/shop">Shop</a>
             </li>
             <li class="nav-item">
-                <a href="faqs.php">FAQs</a>
+                <a href="/faqs">FAQs</a>
             </li>
             <li class="nav-item">
-                <a href="contact.php">Contact</a>
+                <a href="/contact">Contact</a>
             </li>
             <li class="actions">
-                <a href="" class="button primary">Get Started</a>
+                <a href="/shop" class="button primary">Get Started</a>
             </li>
         </ul>
     </div>
@@ -36,8 +36,8 @@
             </li>
         </ul>
         
-        <a href="login.php" class="ghost login" aria-label="Log In">
-            <!-- <img src="assets/images/icons/user.svg" alt="User" width="20"> -->
+        <a href="login" class="ghost login" aria-label="Log In">
+            <img src="assets/images/icons/user.svg" alt="User" width="20">
             <span>LOG IN</span>
         </a>
 
