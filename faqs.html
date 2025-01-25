@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/tripeey-logo.svg" type="image/x-icon">
+  
+  <title>Tripeey | Your T-Shirt Store</title>
+  <meta name="description" content="Discover the latest styles and categories of t-shirts at Tripeey. Shop trendy, comfortable, and high-quality t-shirts for every occasion.">
+  <meta name="keywords" content="Tripeey, t-shirt store, online shopping, fashion, clothing, trendy t-shirts, comfortable t-shirts, shop t-shirts, stylish t-shirts">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Tripeey: Your Ultimate T-Shirt Store">
+  <meta property="og:description" content="Explore Tripeey's wide range of t-shirts designed for style and comfort. Shop now for the perfect fit!">
+  <meta property="og:image" content="assets/images/tripeey-og-image.png">
+  <meta property="og:url" content="https://tripeey.pages.dev/">
+  <meta property="og:type" content="website">
+
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="assets/css/global.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/common.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/layout.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/index.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/auth.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/support.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/profile.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/shop.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/product.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/cart.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/billing.css" type="text/css" fetchpriority="high">
+
+  <!-- Prefetch CSS Links -->
+  <link rel="prefetch" href="assets/css/global.css" type="text/css" fetchpriority="low">
+  <link rel="prefetch" href="assets/css/common.css" type="text/css" fetchpriority="low">
+  <link rel="prefetch" href="assets/css/layout.css" type="text/css" fetchpriority="low">
+  <link rel="prefetch" href="assets/css/index.css" type="text/css" fetchpriority="low">
+  <link rel="prefetch" href="assets/css/shop.css" type="text/css" fetchpriority="low">
+
+  <!-- Prefetch JSON Links -->
+  <link rel="prefetch" href="assets/json/billing.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/cart.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/payment.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/shipping.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/summary.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/shop_data.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/product_data.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/user.json" as="fetch" type="application/json" fetchpriority="low">
+
+  <!-- Module Scripts -->
+  <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous" fetchpriority="high"></script>
+  <link rel="stylesheet" href="assets/fontawesome-web/css/all.css">
+</head>
+
+
+<body>
+  <!-- Loader -->
+  <div class="loader-container" id="loader">
+    <div id="spinner"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="nav">
+      <div class="left-content">
+          <div class="logo-wrapper">
+              <a href="/" aria-label="Homepage">
+                  <img src="assets/images/logo-with-name.png" class="logo" alt="Tripeey">
+              </a>
+          </div>
+          <ul id="nav-items">
+              <li class="nav-item">
+                  <a href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/shop">Shop</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/faqs">FAQs</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/contact">Contact</a>
+              </li>
+              <li class="actions">
+                  <a href="/shop" class="button primary">Get Started</a>
+              </li>
+          </ul>
+      </div>
+
+      <div class="right-content">
+
+          <ul class="icon-list">
+              <li class="icon">
+                  <img src="assets/images/icons/search.svg" alt="Search" width="20">
+              </li>
+              <li class="icon">
+                  <img src="assets/images/icons/cart.svg" alt="Cart" width="20">
+              </li>
+          </ul>
+          
+          <a href="login" class="ghost login" aria-label="Log In">
+              <img src="assets/images/icons/user.svg" alt="User" width="20">
+              <span>LOG IN</span>
+          </a>
+
+          <button class="ghost menu" id="menu-btn">
+              <img src="assets/images/icons/menu.svg" id="menu-icon" alt="Menu" width="20">
+          </button>
+      </div>
+  </nav>
+
+
+  <!-- Main Container -->
+  <div class="container" id="content"></div>
+    <main>
+
+        <section class="faqs-container">
+
+            <header>
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about Tripeey, including ordering, shipping, and returns. For additional help, <a href="">contact our support team</a>.</p>
+            </header>
+        
+            <div class="accordion">
+                <details class="accordion-item" open>
+                    <summary>What is Tripeey?</summary>
+                    <p class="accordion-content">Tripeey is an online store offering a wide range of high-quality products to meet your needs. From the latest trends to everyday essentials, we strive to provide an exceptional shopping experience.</p>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>What types of t-shirts do you sell?</summary>
+                    <p class="accordion-content">We sell a range of t-shirts, including casual, graphic, vintage, athletic, and designer tees. Our collection is designed to cater to diverse preferences and styles.</p>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>Do you have a physical store?</summary>
+                    <p class="accordion-content">No, Tripeey operates exclusively online. We don't have a physical store at this time.</p>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>How can I stay updated on new t-shirts and promotions?</summary>
+                    <p class="accordion-content">Stay updated by subscribing to our newsletter or following us on social media. We regularly post updates on new arrivals and exclusive promotions.</p>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>What materials are your t-shirts made from?</summary>
+                    <p class="accordion-content">Our t-shirts are made from a variety of high-quality materials, including cotton, polyester, and blended fabrics, ensuring comfort and durability.</p>
+                </details>
+            </div>
+
+        </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+
+      <div class="content">
+
+          <div class="logo-wrapper">
+              <a href="/" aria-label="Homepage">
+                  <img src="assets/images/logo-with-name.png" class="logo" alt="Tripeey">
+              </a>
+          </div>
+
+          <div class="group">
+
+              <div class="newsletter">
+                  <h3>Subscribe for Fresh Fashion & Product Updates</h3>
+                  
+                  <form class="subscribe">
+                      <input type="email" name="email" id="#email" placeholder="Your email here">
+                      <button type="submit" class="outline">Subscribe</button>
+                  </form>
+              </div>
+
+              <nav>
+
+                  <ul class="column">
+                      <li class="title">Top Categories</li>
+                      <li><a href="#t-shirts">T-shirts</a></li>
+                      <li><a href="#sweatshirts">Sweatshirts</a></li>
+                      <li><a href="#hoodies">Hoodies</a></li>
+                      <li><a href="#long-sleeves">Long Sleeves</a></li>
+                      <li><a href="#polo-shirt">Polo Shirt</a></li>
+                  </ul>
+                  <ul class="column">
+                      <li class="title">Top Styles</li>
+                      <li><a href="#casual">Casual</a></li>
+                      <li><a href="#formal">Formal</a></li>
+                      <li><a href="#smart">Smart</a></li>
+                      <li><a href="#business">Business</a></li>
+                      <li><a href="#streetwear">Streetwear</a></li>
+                  </ul>
+                  <ul class="column">
+                      <li class="title">Tripeey</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Shop</li>
+                      <li>Categores</li>
+                  </ul>
+                  <ul class="column">
+                      <li class="title">Support</li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                      <li><a href="#faqs">FAQs</a></li>
+                  </ul>
+
+              </nav>
+          </div>
+
+      </div>
+
+      <div class="bottom">
+          <h4>&copy;2023 Tripeey. Designed and Developed by Godwin</h4>
+
+          <div class="socials">
+              <a href="#facebook" class="ghost" title="Follow us on Facebook">
+                  <img src="assets/images/icons/facebook.svg" alt="Follow Tripeey on Facebook">
+              </a>
+              <a href="#twitter" class="ghost" title="Follow us on Twitter">
+                  <img src="assets/images/icons/twitter.svg" alt="Follow Tripeey on Twitter">
+              </a>
+              <a href="#youtube" class="ghost" title="Subscribe to our YouTube channel">
+                  <img src="assets/images/icons/youtube.svg" alt="Subscribe to Tripeey on YouTube">
+              </a>
+              <a href="#instagram" class="ghost" title="Follow us on Instagram">
+                  <img src="assets/images/icons/instagram.svg" alt="Follow Tripeey on Instagram">
+              </a>
+          </div>
+
+      </div>
+
+  </footer>
+
+  <!-- JS Link -->
+  <script src="assets/js/index.js" type="module"></script>
+  
+  <!-- Product Scripts -->
+  <script src="assets/js/product/favorite.js" type="module"></script>
+  <script src="assets/js/product/productQuantityManager.js" type="module"></script>
+  <script src="assets/js/product/radioCheckboxToggle.js" type="module"></script>
+  
+  <!-- Auth Scripts -->
+  <script src="assets/js/auth/auth.js" type="module"></script>
+  <script src="assets/js/auth/formValidation.js" type="module"></script>
+  <script src="assets/js/auth/passwordToggle.js" type="module"></script>
+
+  <!-- Shop Scripts -->
+  <script src="assets/js/shop/shop.js" type="module"></script>
+  <script src="assets/js/shop/filters.js" type="module"></script>
+  <script src="assets/js/shop/shopUtils.js" type="module"></script>
+  
+  <!-- Shared Scripts -->
+  <script src="assets/js/shared/loading.js" type="module"></script>
+  <script src="assets/js/shared/domUtils.js" type="module"></script>
+  <script src="assets/js/shared/eventHandlers.js" type="module"></script>
+  <script src="assets/js/shared/formUtils.js" type="module"></script>
+  <script src="assets/js/shared/tabToggle.js" type="module"></script>
+  <script src="assets/js/shared/menuToggle.js" type="module"></script>
+  <script src="assets/js/shared/prefetching.js" type="module"></script>
+
+  <!-- Stepper Scripts -->
+  <script src="assets/js/stepper/stepper.js" type="module"></script>
+  <script src="assets/js/stepper/formValidation.js" type="module"></script>
+  <script src="assets/js/stepper/stepperUtils.js" type="module"></script>
+  <script src="assets/js/stepper/cartQuantityManager.js" type="module"></script>
+
+</body>
+
+</html>

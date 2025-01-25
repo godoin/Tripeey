@@ -75,12 +75,12 @@ const setupAppliedFilteredDataToDOM = (buttonId) => {
             .filter((product) => product.category.includes(requestedFilters.categories))
           
         }
-        // const filteredProducts = shopData
-        //   .filter((product) => product.category.includes(requestedFilters.categories))
-        //   .filter((product) => product.styles.includes(requestedFilters.styles))
-        //   .filter((product) => product.colors.includes(requestedFilters.colors))
-        //   .filter((product) => product.sizes.includes(requestedFilters.sizes))
-        //   .filter((product) => product.prices.includes(requestedFilters.prizes));
+        const filteredProducts = shopData
+          .filter((product) => product.category.includes(requestedFilters.categories))
+          .filter((product) => product.styles.includes(requestedFilters.styles))
+          .filter((product) => product.colors.includes(requestedFilters.colors))
+          .filter((product) => product.sizes.includes(requestedFilters.sizes))
+          .filter((product) => product.prices.includes(requestedFilters.prizes));
 
         console.table(Object.values(filteredProducts));
 
