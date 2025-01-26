@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="assets/images/tripeey-logo.svg" type="image/x-icon">
+  <link rel="icon" href="assets/images/logo-solo.svg" type="image/x-icon">
   
   <title>Tripeey | Your T-Shirt Store</title>
   <meta name="description" content="Discover the latest styles and categories of t-shirts at Tripeey. Shop trendy, comfortable, and high-quality t-shirts for every occasion.">
@@ -39,11 +39,12 @@
   <link rel="prefetch" href="assets/css/shop.css" type="text/css" fetchpriority="low">
 
   <!-- Prefetch JSON Links -->
-  <link rel="prefetch" href="assets/json/billing.json" as="fetch" type="application/json" fetchpriority="low">
-  <link rel="prefetch" href="assets/json/cart.json" as="fetch" type="application/json" fetchpriority="low">
-  <link rel="prefetch" href="assets/json/payment.json" as="fetch" type="application/json" fetchpriority="low">
-  <link rel="prefetch" href="assets/json/shipping.json" as="fetch" type="application/json" fetchpriority="low">
-  <link rel="prefetch" href="assets/json/summary.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/stepper/billing.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/stepper/cart.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/stepper/payment.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/stepper/shipping.json" as="fetch" type="application/json" fetchpriority="low">
+  <link rel="prefetch" href="assets/json/stepper/summary.json" as="fetch" type="application/json" fetchpriority="low">
+
   <link rel="prefetch" href="assets/json/shop_data.json" as="fetch" type="application/json" fetchpriority="low">
   <link rel="prefetch" href="assets/json/product_data.json" as="fetch" type="application/json" fetchpriority="low">
   <link rel="prefetch" href="assets/json/user.json" as="fetch" type="application/json" fetchpriority="low">
@@ -112,6 +113,68 @@
 
   <!-- Main Container -->
   <div class="container" id="content">
+      <div class="overlay" id="overlay"></div>
+      <dialog id="introProject">
+        <div class="wrapper">
+          <button class="ghost" id="closeIntroProject">
+            <img src="/assets/images/icons/x-close.svg" alt="Close Modal">
+          </button>
+          <div class="left-content">
+            <div class="group">
+              <div class="logo-wrapper">
+                <img
+                  src="/assets/images/logo-solo.svg"
+                  alt="Tripeey"
+                  height="48"
+                  width="48"
+                />
+                <span class="title">Tripeey</span>
+              </div>
+              <header>
+                <h1 class="title">Tripeey | Your T-Shirt Store</h1>
+                <p class="description">
+                  This project is a revamped version of a final vanilla web development project for CS36 - Web Systems & Technologies, serving as an introduction to core JavaScript and PHP (vanilla). For this static version, there will be no backend php involved.
+                </p>
+              </header>
+            </div>
+            <div class="special-thanks">
+              <span class="title">Features Implemented</span>
+              <ul class="list">
+                <li class="item-description">
+                  Dynamic product rendering with the Fetch API.
+                </li>
+                <li class="item-description">
+                  Interactive shopping cart with real-time updates.
+                </li>
+                <li class="item-description">
+                  Modular CSS for a responsive and modern UI.
+                </li>
+              </ul>
+            </div>
+            <div class="group">
+              <p class="disclaimer">
+                <span class="warn">Disclaimer: </span>This project is for educational purposes only and was created to demonstrate web development techniques such as dynamic content rendering, API integration, and user interface design.
+              </p>
+              <p class="created-by">
+                Created by: <a href="https://godwin-duliente.pages.dev/">Godwin Duliente</a>
+              </p>
+            </div>
+          </div>
+          <div class="right-content">
+            <picture class="image">
+              <source srcset="/assets/webp/tripeey.webp" class="visual-img" type="image/webp">
+              <img 
+                class="visual-img"
+                loading="eager" 
+                role="presentation" 
+                src="/assets/images/tripeey.jpg"
+                decoding="sync"
+                fetchpriority="high"
+                sizes=""/>
+            </picture>
+          </div>
+        </div>
+      </dialog>
       <main class="cart-container" id="stepper">
           <!-- Stepper -->
           <nav class="stepper" aria-label="Checkout Steps">

@@ -8,6 +8,7 @@ import { setupMenuToggleEventListeners } from "./shared/menuToggle.js";
 import { setupTabToggleEventListeners } from "./shared/tabToggle.js";
 import { setupLoading } from "./shared/loading.js";
 import { setupShopEventListeners } from "./shop/shop.js";
+import { setupIntroduceProject } from "./shared/introProject.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   setupAuthEventListeners();
@@ -19,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
   setupProductEventListeners();
   setupDOMEventListeners();
   setupShopEventListeners();
+
+  if(!sessionStorage.getItem('introProjectShown')) {
+    setupIntroduceProject();
+
+    sessionStorage.setItem('introProjectShown', true);
+  }
 
   window.addEventListener("load", function () {
     setupLoading();
