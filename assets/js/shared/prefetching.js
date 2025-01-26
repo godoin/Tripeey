@@ -53,6 +53,46 @@ const updateProfile = () => {
   }
 };
 
+const updateMainStyles = (targetUrl, mainSelector) => {
+  const main = document.querySelector(mainSelector);
+  const html = document.querySelector("html");
+  html.classList.remove("no-scroll");
+
+  main.classList.remove(
+    "404",
+    "cart-container",
+    "cart",
+    "checkout",
+    "contact",
+    "faqs",
+    "index",
+    "login",
+    "product",
+    "profile",
+    "shop"
+  );
+
+  if (targetUrl === "http://tripeey.pages.dev/") {
+    main.classList.add("landing-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/index") {
+    main.classList.add("landing-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/billing") {
+    main.classList.add("cart-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/cart") {
+    main.classList.add("cart-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/checkout") {
+    main.classList.add("cart-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/login") {
+    main.classList.add("login-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/product") {
+    main.classList.add("product-container");
+  } else if (targetUrl === "http://tripeey.pages.dev/shop") {
+    main.classList.add("shop-container");
+  } else {
+    main.classList.add("");
+  }
+};
+
 const scrollToTop = (position, style) => {
   window.scrollTo({
     top: position,
